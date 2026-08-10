@@ -1,84 +1,87 @@
-import heroImage from "../assets/truck engine.jpeg";
+import "./Categories.css";
+
 import diesel from "../assets/diesel-filter truck.jpeg";
 import petrol from "../assets/petrol filter.jpeg";
 import air from "../assets/air-filter truck.jpeg";
 import oil from "../assets/oil-filter.jpeg";
 import brake from "../assets/brake pad.jpeg";
 import accessories from "../assets/accessories.jpeg";
+
+import { useRef } from "react";
+
+const categories = [
+  {
+    name: "Diesel Filter",
+    image: diesel,
+  },
+  {
+    name: "Petrol Filter",
+    image: petrol,
+  },
+  {
+    name: "Air Filter",
+    image: air,
+  },
+  {
+    name: "Oil Filter",
+    image: oil,
+  },
+  {
+    name: "Brake Pad",
+    image: brake,
+  },
+  {
+    name: "Accessories",
+    image: accessories,
+  },
+];
+
 function Categories() {
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    carouselRef.current.scrollBy({
+      left: -320,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    carouselRef.current.scrollBy({
+      left: 320,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <section
-      style={{
-        padding: "60px 40px",
-        backgroundColor: "#f8f8f8",
-      }}
-    >
-      <h2
-        style={{
-          textAlign: "center",
-          color: "#d71920",
-          marginBottom: "30px",
-        }}
-      >
-        Our Categories
-      </h2>
+    <section className="categories-section">
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: "20px",
-        }}
-      >
-        <div style={cardStyle}>
-  <img src={diesel} alt="Diesel Filters" style={imageStyle} />
-  <h3>Diesel Filters</h3>
-</div>
+      <div className="categories-heading">
+        <h2>Our Categories</h2>
 
-<div style={cardStyle}>
-  <img src={petrol} alt="Petrol Filters" style={imageStyle} />
-  <h3>Petrol Filters</h3>
-</div>
-
-<div style={cardStyle}>
-  <img src={air} alt="Air Filters" style={imageStyle} />
-  <h3>Air Filters</h3>
-</div>
-
-<div style={cardStyle}>
-  <img src={oil} alt="Oil Filters" style={imageStyle} />
-  <h3>Oil Filters</h3>
-</div>
-
-<div style={cardStyle}>
-  <img src={brake} alt="Brake Pads" style={imageStyle} />
-  <h3>Brake Pads</h3>
-</div>
-
-<div style={cardStyle}>
-  <img src={accessories} alt="Accessories" style={imageStyle} />
-  <h3>Accessories</h3>
-</div>
+        <div className="categories-buttons">
+          <button onClick={scrollLeft}>←</button>
+          <button onClick={scrollRight}>→</button>
+        </div>
       </div>
+
+      <div className="categories-carousel" ref={carouselRef}>
+        {categories.map((category, index) => (
+          <div className="category-box" key={index}>
+
+            <img
+              src={category.image}
+              alt={category.name}
+            />
+
+            <h3>{category.name}</h3>
+
+          </div>
+        ))}
+      </div>
+
     </section>
   );
 }
-
-const cardStyle = {
-  background: "#fff",
-  padding: "20px",
-  borderRadius: "10px",
-  textAlign: "center",
-  boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-  fontWeight: "bold",
-};
-
-const imageStyle = {
-  width: "100%",
-  height: "180px",
-  objectFit: "cover",
-  borderRadius: "8px",
-  marginBottom: "15px",
-};
 
 export default Categories;

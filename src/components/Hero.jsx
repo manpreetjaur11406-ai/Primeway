@@ -1,7 +1,10 @@
 import "./Hero.css";
 import heroImage from "../assets/truck engine.jpeg";
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section className="hero">
 
@@ -21,7 +24,9 @@ function Hero() {
           and accessories for all major truck brands.
         </p>
 
-        <button>Shop Now</button>
+        <button onClick={() => navigate("/products")}>
+          Shop Now
+        </button>
 
       </div>
 

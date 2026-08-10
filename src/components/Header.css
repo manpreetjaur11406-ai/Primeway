@@ -10,6 +10,8 @@
   align-items: center;
   padding: 2px 60px;
   font-size: 12px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .social-icons {
@@ -33,7 +35,6 @@
   font-weight: 500;
 }
 
-
 /* =======================
    MAIN HEADER
 ======================= */
@@ -44,6 +45,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 18px 80px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .logo h1 {
@@ -56,7 +59,6 @@
 .logo span {
   color: #000;
 }
-
 
 /* =======================
    SEARCH BOX
@@ -74,6 +76,7 @@
   outline: none;
   padding: 0 18px;
   font-size: 16px;
+  min-width: 0;
 }
 
 .search-box button {
@@ -85,7 +88,6 @@
   font-size: 22px;
   cursor: pointer;
 }
-
 
 /* =======================
    HEADER ICONS
@@ -112,4 +114,96 @@
 .icon-item span {
   font-size: 11px;
   font-weight: 500;
+}
+
+/* =======================
+   TABLET
+======================= */
+
+@media (max-width: 992px) {
+  .main-header {
+    padding: 18px 30px;
+    gap: 20px;
+  }
+
+  .logo h1 {
+    font-size: 42px;
+  }
+
+  .search-box {
+    width: 40%;
+  }
+
+  .header-icons {
+    gap: 12px;
+  }
+}
+
+/* =======================
+   MOBILE
+======================= */
+
+@media (max-width: 600px) {
+
+  .top-bar {
+    width: 100%;
+    padding: 5px 12px;
+    font-size: 10px;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+
+  .top-bar p {
+    font-size: 10px;
+    text-align: right;
+  }
+
+  .main-header {
+    width: 100%;
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo h1 {
+    font-size: 38px;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-box input {
+    height: 42px;
+    font-size: 14px;
+  }
+
+  .search-box button {
+    width: 55px;
+    height: 42px;
+    font-size: 18px;
+  }
+
+  .header-icons {
+    width: 100%;
+    justify-content: center;
+    gap: 35px;
+  }
+
+  .icon-item svg {
+    font-size: 17px;
+  }
+
+  .icon-item span {
+    font-size: 11px;
+  }
 }

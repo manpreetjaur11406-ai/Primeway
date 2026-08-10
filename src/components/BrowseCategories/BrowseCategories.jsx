@@ -1,5 +1,7 @@
 import "./BrowseCategories.css";
 
+import { useRef } from "react";
+
 import dieselFilter from "../../assets/diesel-filter truck.jpeg";
 import petrolFilter from "../../assets/petrol filter.jpeg";
 import airFilter from "../../assets/air-filter truck.jpeg";
@@ -35,11 +37,35 @@ const categories = [
 ];
 
 function BrowseCategories() {
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    carouselRef.current.scrollBy({
+      left: -320,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollRight = () => {
+    carouselRef.current.scrollBy({
+      left: 320,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="browse-categories">
-      <h2>Browse Categories</h2>
 
-      <div className="category-grid">
+      <div className="browse-heading">
+        <h2>Browse Categories</h2>
+
+        <div className="carousel-buttons">
+          <button onClick={scrollLeft}>←</button>
+          <button onClick={scrollRight}>→</button>
+        </div>
+      </div>
+
+      <div className="category-grid" ref={carouselRef}>
         {categories.map((item, index) => (
           <div className="category-card" key={index}>
             <img src={item.image} alt={item.name} />
@@ -47,6 +73,7 @@ function BrowseCategories() {
           </div>
         ))}
       </div>
+
     </section>
   );
 }

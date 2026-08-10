@@ -1,22 +1,42 @@
 import "./Navbar.css";
 import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <div className="browse">
+
+      <Link to="/categories" className="browse">
         <FaBars />
         <span>Browse Categories</span>
-      </div>
+      </Link>
 
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Brands</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+
+        <li>
+          <Link to="/products">Products</Link>
+        </li>
+
+        <li>
+          <Link to="/brands">Brands</Link>
+        </li>
+
+        <li>
+          <Link to="/about">About Us</Link>
+        </li>
+
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
+
+        <li>
+          <Link to="/contact">Contact Us</Link>
+        </li>
       </ul>
+
     </nav>
   );
 }

@@ -1,0 +1,131 @@
+.categories-section {
+  padding: 60px 40px;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+/* Heading */
+
+.categories-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.categories-heading h2 {
+  color: #d71920;
+  margin: 0;
+  font-size: 34px;
+}
+
+/* Buttons */
+
+.categories-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.categories-buttons button {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #d71920;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.categories-buttons button:hover {
+  background: #b8141b;
+}
+
+/* Carousel */
+
+.categories-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 5px 5px 20px;
+  scrollbar-width: none;
+}
+
+.categories-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards */
+
+.category-box {
+  flex: 0 0 calc((100% - 40px) / 3);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  transition: 0.3s;
+}
+
+.category-box:hover {
+  transform: translateY(-6px);
+}
+
+.category-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.category-box h3 {
+  margin: 0;
+  color: #222;
+  font-size: 19px;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .categories-section {
+    padding: 50px 30px;
+  }
+
+  .category-box {
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .categories-section {
+    padding: 40px 15px;
+  }
+
+  .categories-heading h2 {
+    font-size: 27px;
+  }
+
+  .categories-buttons button {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .category-box {
+    flex: 0 0 85%;
+    padding: 15px;
+  }
+
+  .category-box img {
+    height: 170px;
+  }
+}
