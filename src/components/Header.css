@@ -1,0 +1,115 @@
+/* =======================
+   TOP BLACK BAR
+======================= */
+
+.top-bar {
+  background: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 60px;
+  font-size: 12px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons svg:hover {
+  color: #ef3b3a;
+}
+
+.top-bar p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* =======================
+   MAIN HEADER
+======================= */
+
+.main-header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 80px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 52px;
+  font-weight: 800;
+  color: #000;
+}
+
+.logo span {
+  color: #000;
+}
+
+
+/* =======================
+   SEARCH BOX
+======================= */
+
+.search-box {
+  display: flex;
+  width: 46%;
+}
+
+.search-box input {
+  flex: 1;
+  height: 46px;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.search-box button {
+  width: 85px;
+  height: 46px;
+  border: none;
+  background: #ef3b3a;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
+/* =======================
+   HEADER ICONS
+======================= */
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-item svg {
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.icon-item span {
+  font-size: 11px;
+  font-weight: 500;
+}

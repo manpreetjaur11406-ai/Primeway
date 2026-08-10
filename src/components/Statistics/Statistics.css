@@ -1,0 +1,89 @@
+/* ==========================
+   STATISTICS SECTION
+========================== */
+
+.statistics-section {
+  background: linear-gradient(rgba(31, 45, 90, 0.9), rgba(31, 45, 90, 0.9)),
+    url("../../assets/truck engine.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 80px 40px;
+}
+
+.statistics-overlay {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.statistics-title {
+  color: #ffffff;
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.statistics-subtitle {
+  color: #dddddd;
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.statistics-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.statistics-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 35px 20px;
+  transition: 0.3s ease;
+}
+
+.statistics-card:hover {
+  transform: translateY(-8px);
+  background: rgba(215, 25, 32, 0.9);
+}
+
+.statistics-card h3 {
+  color: #ffffff;
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.statistics-card p {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 992px) {
+  .statistics-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statistics-section {
+    padding: 60px 20px;
+  }
+
+  .statistics-container {
+    grid-template-columns: 1fr;
+  }
+
+  .statistics-title {
+    font-size: 32px;
+  }
+
+  .statistics-subtitle {
+    font-size: 16px;
+  }
+}

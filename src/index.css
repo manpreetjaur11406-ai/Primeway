@@ -1,0 +1,29 @@
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import BrowseCategories from "./components/BrowseCategories/BrowseCategories";
+import Products from "./assets/Products.jsx";
+import Categories from "./components/Categories";
+import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
+import Brands from "./components/Brands/Brands";
+import Footer from "./components/Footer";
+
+function App() {
+  return (
+    <> 
+      <Header />
+      <Navbar />
+      <Hero />
+      <BrowseCategories />
+      <Products />
+      <Categories />
+      <FeaturedProducts />
+      <WhyChooseUs />
+      <Brands />
+      <Footer />
+    </>
+  );
+}
+
+export default App;
