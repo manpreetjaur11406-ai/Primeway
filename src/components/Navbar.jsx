@@ -1,41 +1,33 @@
-import "./Navbar.css";
+import { useState } from "react";
 import { FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
 
-      <Link to="/categories" className="browse">
+      {/* Browse Categories */}
+      <div
+        className="browse-categories"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         <FaBars />
         <span>Browse Categories</span>
-      </Link>
+      </div>
 
-      <ul className="nav-links">
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-
-        <li>
-          <Link to="/products">Products</Link>
-        </li>
-
-        <li>
-          <Link to="/brands">Brands</Link>
-        </li>
-
-        <li>
-          <Link to="/about">About Us</Link>
-        </li>
-
-        <li>
-          <Link to="/blog">Blog</Link>
-        </li>
-
-        <li>
-          <Link to="/contact">Contact Us</Link>
-        </li>
-      </ul>
+      {/* Navigation Menu */}
+      {menuOpen && (
+        <div className="category-menu">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#brands">Brands</a>
+          <a href="#about">About Us</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact Us</a>
+        </div>
+      )}
 
     </nav>
   );

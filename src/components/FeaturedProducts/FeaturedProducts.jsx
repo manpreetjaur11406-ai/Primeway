@@ -1,60 +1,77 @@
 import "./FeaturedProducts.css";
 
-import diesel from "../../assets/diesel-filter truck.jpeg";
-import petrol from "../../assets/petrol filter.jpeg";
-import air from "../../assets/air-filter truck.jpeg";
-import oil from "../../assets/oil-filter.jpeg";
-
-import { FaShoppingCart } from "react-icons/fa";
+import airFilter from "../../assets/air-filter truck.jpeg";
+import oilFilter from "../../assets/oil-filter.jpeg";
+import brakePad from "../../assets/brake pad.jpeg";
+import dieselFilter from "../../assets/diesel-filter truck.jpeg";
+import truckEngine from "../../assets/truck engine.jpeg";
+import petrolFilter from "../../assets/petrol filter.jpeg";
 
 function FeaturedProducts() {
   const products = [
     {
-      image: diesel,
-      name: "Diesel Filter",
-      price: "₹899",
+      name: "Truck Air Filter",
+      image: airFilter,
     },
     {
-      image: petrol,
+      name: "Heavy Duty Oil Filter",
+      image: oilFilter,
+    },
+    {
+      name: "Truck Brake Pads",
+      image: brakePad,
+    },
+    {
+      name: "Diesel Fuel Filter",
+      image: dieselFilter,
+    },
+    {
+      name: "Truck Engine Parts",
+      image: truckEngine,
+    },
+    {
       name: "Petrol Filter",
-      price: "₹799",
-    },
-    {
-      image: air,
-      name: "Air Filter",
-      price: "₹999",
-    },
-    {
-      image: oil,
-      name: "Oil Filter",
-      price: "₹699",
+      image: petrolFilter,
     },
   ];
 
   return (
-    <section className="featured-products">
-      <h2>Featured Products</h2>
-      <p>Best Selling Truck Spare Parts</p>
+    <section className="featured-products" id="products">
+
+      <div className="featured-heading">
+        <h2>Featured Products</h2>
+        <p>Quality Truck Spare Parts</p>
+      </div>
 
       <div className="products-grid">
+
         {products.map((product, index) => (
           <div className="product-card" key={index}>
 
-            <img src={product.image} alt={product.name} />
+            <div className="product-image">
+              <img
+                src={product.image}
+                alt={product.name}
+              />
+            </div>
 
-            <h3>{product.name}</h3>
+            <div className="product-info">
+              <h3>{product.name}</h3>
 
-            <p className="price">{product.price}</p>
-
-            <div className="product-buttons">
-              <button>
-                <FaShoppingCart /> Enquiry
+              <button className="enquiry-btn">
+                Enquiry
               </button>
             </div>
 
           </div>
         ))}
+
       </div>
+
+      <button className="view-all-btn">
+        View All Products
+      </button>
+
     </section>
   );
 }

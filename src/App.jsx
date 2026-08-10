@@ -1,82 +1,54 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-
-import BrowseCategories from "./components/BrowseCategories/BrowseCategories";
 import Categories from "./components/Categories";
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
-import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
-import Brands from "./components/Brands/Brands";
-import Testimonials from "./components/Testimonials/Testimonials";
-import Statistics from "./components/Statistics/Statistics";
-import CallToAction from "./components/CallToAction/CallToAction";
-import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer";
-
-import Products from "./pages/Products";
-import About from "./pages/About";
-import Blog from "./pages/Blog";
-import Cart from "./pages/Cart";
-
-
-function Home() {
-  return (
-    <>
-      <Hero />
-      <BrowseCategories />
-      <Categories />
-      <FeaturedProducts />
-      <WhyChooseUs />
-      <Brands />
-      <Testimonials />
-      <Statistics />
-      <CallToAction />
-      <Contact />
-    </>
-  );
-}
-
 
 function App() {
   return (
-    <BrowserRouter>
-
+    <>
       <Header />
       <Navbar />
 
-      <Routes>
+      <section id="home">
+        <Hero />
+      </section>
 
-        {/* Home Page */}
-        <Route path="/" element={<Home />} />
+      <Categories />
 
-        {/* Products Page */}
-        <Route path="/products" element={<Products />} />
+      <section id="products">
+        <FeaturedProducts />
+      </section>
 
-        {/* Categories Page */}
-        <Route path="/categories" element={<Categories />} />
+      {/* Brands section */}
+      <section id="brands" className="page-section">
+        <h2>Our Brands</h2>
+        <p>Explore our trusted truck spare parts brands.</p>
+      </section>
 
-        {/* Brands Page */}
-        <Route path="/brands" element={<Brands />} />
+      {/* About Us section */}
+      <section id="about" className="page-section">
+        <h2>About Us</h2>
+        <p>
+          PrimeWay provides quality truck spare parts and accessories.
+        </p>
+      </section>
 
-        {/* About Us Page */}
-        <Route path="/about" element={<About />} />
+      {/* Blog section */}
+      <section id="blog" className="page-section">
+        <h2>Latest Blogs</h2>
+        <p>Read our latest truck spare parts articles and updates.</p>
+      </section>
 
-        {/* Blog Page */}
-        <Route path="/blog" element={<Blog />} />
-
-        {/* Contact Page */}
-        <Route path="/contact" element={<Contact />} />
-
-        {/* Cart Page */}
-        <Route path="/cart" element={<Cart />} />
-
-      </Routes>
+      {/* Contact section */}
+      <section id="contact" className="page-section">
+        <h2>Contact Us</h2>
+        <p>Get in touch with our team for enquiries.</p>
+      </section>
 
       <Footer />
-
-    </BrowserRouter>
+    </>
   );
 }
 
