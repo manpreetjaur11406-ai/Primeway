@@ -1,52 +1,61 @@
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Categories from "./components/Categories";
+
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
+import Brands from "./components/Brands/Brands";
+import Statistics from "./components/Statistics/Statistics";
+import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
+import Testimonials from "./components/Testimonials/Testimonials";
+import CallToAction from "./components/CallToAction/CallToAction";
+import Contact from "./components/Contact/Contact";
+
 import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
+      {/* HEADER */}
       <Header />
+
+      {/* NAVBAR */}
       <Navbar />
 
+      {/* HOME */}
       <section id="home">
         <Hero />
       </section>
 
-      <Categories />
-
+      {/* FEATURED PRODUCTS */}
       <section id="products">
         <FeaturedProducts />
       </section>
 
-      {/* Brands section */}
-      <section id="brands" className="page-section">
-        <h2>Our Brands</h2>
-        <p>Explore our trusted truck spare parts brands.</p>
+      {/* BRANDS */}
+      <section id="brands">
+        <Brands />
       </section>
 
-      {/* About Us section */}
-      <section id="about" className="page-section">
-        <h2>About Us</h2>
-        <p>
-          PrimeWay provides quality truck spare parts and accessories.
-        </p>
+      {/* WHY CHOOSE US */}
+      <section id="about">
+        <WhyChooseUs />
       </section>
 
-      {/* Blog section */}
-      <section id="blog" className="page-section">
-        <h2>Latest Blogs</h2>
-        <p>Read our latest truck spare parts articles and updates.</p>
+      {/* STATISTICS */}
+      <Statistics />
+
+      {/* TESTIMONIALS */}
+      <Testimonials />
+
+      {/* ENQUIRY */}
+      <CallToAction />
+
+      {/* CONTACT */}
+      <section id="contact">
+        <Contact />
       </section>
 
-      {/* Contact section */}
-      <section id="contact" className="page-section">
-        <h2>Contact Us</h2>
-        <p>Get in touch with our team for enquiries.</p>
-      </section>
-
+      {/* FOOTER */}
       <Footer />
     </>
   );

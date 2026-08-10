@@ -1,4 +1,5 @@
 import "./Categories.css";
+import { useRef } from "react";
 
 import diesel from "../assets/diesel-filter truck.jpeg";
 import petrol from "../assets/petrol filter.jpeg";
@@ -6,8 +7,6 @@ import air from "../assets/air-filter truck.jpeg";
 import oil from "../assets/oil-filter.jpeg";
 import brake from "../assets/brake pad.jpeg";
 import accessories from "../assets/accessories.jpeg";
-
-import { useRef } from "react";
 
 const categories = [
   {
@@ -55,31 +54,35 @@ function Categories() {
 
   return (
     <section className="categories-section">
-
       <div className="categories-heading">
-        <h2>Our Categories</h2>
+        <div>
+          <h2>Our Categories</h2>
+          <p>Explore our range of quality truck spare parts.</p>
+        </div>
 
         <div className="categories-buttons">
-          <button onClick={scrollLeft}>←</button>
-          <button onClick={scrollRight}>→</button>
+          <button onClick={scrollLeft} aria-label="Previous category">
+            ←
+          </button>
+
+          <button onClick={scrollRight} aria-label="Next category">
+            →
+          </button>
         </div>
       </div>
 
       <div className="categories-carousel" ref={carouselRef}>
         {categories.map((category, index) => (
           <div className="category-box" key={index}>
-
             <img
               src={category.image}
               alt={category.name}
             />
 
             <h3>{category.name}</h3>
-
           </div>
         ))}
       </div>
-
     </section>
   );
 }

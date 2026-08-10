@@ -1,17 +1,22 @@
  import "./Hero.css";
 import heroImage from "../assets/truck engine.jpeg";
-import { useNavigate } from "react-router-dom";
 
 function Hero() {
-  const navigate = useNavigate();
+  const handleShopNow = () => {
+    const productsSection = document.getElementById("products");
+
+    if (productsSection) {
+      productsSection.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section
       className="hero"
       style={{ backgroundImage: `url("${heroImage}")` }}
     >
-      <div className="hero-overlay"></div>
-
       <div className="hero-content">
         <div className="hero-text">
           <h5>TRUCK SPARE PARTS</h5>
@@ -28,7 +33,7 @@ function Hero() {
             and accessories for all major truck brands.
           </p>
 
-          <button onClick={() => navigate("/products")}>
+          <button onClick={handleShopNow}>
             Shop Now
           </button>
         </div>

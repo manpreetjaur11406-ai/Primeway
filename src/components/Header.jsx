@@ -1,6 +1,11 @@
 
 import { Link } from "react-router-dom";
-import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import {
+  FaSearch,
+  FaUser,
+  FaHeart,
+  FaShoppingCart,
+} from "react-icons/fa";
 import "./Header.css";
 
 function Header() {
@@ -8,7 +13,7 @@ function Header() {
     <>
       {/* Top Bar */}
       <div className="top-bar">
-        <div className="shipping-text">
+        <div className="top-left">
           🚚 Free Shipping on Orders Over ₹1500
         </div>
 
@@ -32,7 +37,8 @@ function Header() {
             type="text"
             placeholder="Search truck spare parts..."
           />
-          <button>
+
+          <button type="button">
             <FaSearch />
           </button>
         </div>
@@ -40,15 +46,23 @@ function Header() {
         {/* Header Icons */}
         <div className="header-icons">
 
-          <div className="header-icon">
+          {/* Login */}
+          <Link to="/login" className="header-icon">
             <FaUser />
-            <span>Account</span>
-          </div>
+            <span>Login</span>
+          </Link>
 
-          <div className="header-icon">
+          {/* Wishlist */}
+          <Link to="/wishlist" className="header-icon">
+            <FaHeart />
+            <span>Wishlist</span>
+          </Link>
+
+          {/* Cart */}
+          <Link to="/cart" className="header-icon">
             <FaShoppingCart />
             <span>Cart</span>
-          </div>
+          </Link>
 
         </div>
 

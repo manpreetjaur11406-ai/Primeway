@@ -1,3 +1,121 @@
+/* Our Categories */
+
+.categories-section {
+  width: 100%;
+  padding: 60px;
+  background: #f7f7f7;
+}
+
+.categories-heading {
+  max-width: 1400px;
+  margin: 0 auto 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories-heading h2 {
+  margin: 0 0 8px;
+  font-size: 38px;
+  font-weight: 700;
+  color: #111;
+}
+
+.categories-heading p {
+  margin: 0;
+  font-size: 17px;
+  color: #666;
+}
+
+/* Arrow buttons */
+
+.categories-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.categories-buttons button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #e31b23;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.categories-buttons button:hover {
+  background: #b9141b;
+  transform: scale(1.05);
+}
+
+/* Category carousel */
+
+.categories-carousel {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 10px 5px 20px;
+}
+
+.categories-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Category cards */
+
+.category-box {
+  flex: 0 0 calc(33.333% - 17px);
+  min-width: 280px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #eeeeee;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.category-box img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.category-box h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .categories-section {
+    padding: 50px 30px;
+  }
+
+  .category-box {
+    flex: 0 0 calc(50% - 13px);
+  }
+}
+
+/* Mobile */
+
 @media (max-width: 600px) {
   .categories-section {
     padding: 40px 15px;
@@ -7,17 +125,23 @@
     position: relative;
     justify-content: center;
     margin-bottom: 25px;
+    text-align: center;
   }
 
   .categories-heading h2 {
     font-size: 26px;
     text-align: center;
-    white-space: nowrap;
+    white-space: normal;
+  }
+
+  .categories-heading p {
+    font-size: 14px;
   }
 
   .categories-buttons {
     position: absolute;
     right: 0;
+    top: 0;
   }
 
   .categories-buttons button {
@@ -32,6 +156,12 @@
   }
 
   .category-box img {
+    width: 100%;
     height: 170px;
+    object-fit: contain;
+  }
+
+  .category-box h3 {
+    font-size: 18px;
   }
 }

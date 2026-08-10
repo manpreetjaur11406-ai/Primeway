@@ -41,7 +41,6 @@ function Testimonials() {
 
   return (
     <section className="testimonials">
-
       <div className="testimonials-heading">
         <div>
           <h2 className="testimonials-title">
@@ -54,8 +53,13 @@ function Testimonials() {
         </div>
 
         <div className="testimonial-buttons">
-          <button onClick={scrollLeft}>←</button>
-          <button onClick={scrollRight}>→</button>
+          <button onClick={scrollLeft} aria-label="Previous testimonial">
+            ←
+          </button>
+
+          <button onClick={scrollRight} aria-label="Next testimonial">
+            →
+          </button>
         </div>
       </div>
 
@@ -65,7 +69,6 @@ function Testimonials() {
       >
         {testimonials.map((item, index) => (
           <div className="testimonial-card" key={index}>
-
             <div className="customer-image">
               {item.name.charAt(0)}
             </div>
@@ -77,11 +80,9 @@ function Testimonials() {
             <div className="stars">★★★★★</div>
 
             <p>"{item.review}"</p>
-
           </div>
         ))}
       </div>
-
     </section>
   );
 }
