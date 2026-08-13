@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* =========================
+
+/* =====================================================
    GLOBAL
-========================= */
+===================================================== */
 
 * {
   margin: 0;
@@ -12,31 +13,43 @@
 
 body {
   font-family: "Poppins", Arial, sans-serif;
+
   background: #0a0a0a;
+
   color: #ffffff;
 }
 
-/* =========================
+
+/* =====================================================
    COLORS
-========================= */
+===================================================== */
 
 :root {
   --black: #090909;
+
   --black-soft: #101010;
+
   --gold: #f5b82e;
+
   --gold-light: #ffc83d;
+
   --gold-dark: #b98512;
+
   --white: #ffffff;
+
   --gray: #bdbdbd;
+
   --border: rgba(245, 184, 46, 0.35);
 }
 
-/* =========================
+
+/* =====================================================
    TOP BAR
-========================= */
+===================================================== */
 
 .top-bar {
   width: 100%;
+
   height: 52px;
 
   background: var(--black);
@@ -46,64 +59,89 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+
 .top-bar-inner {
   width: 100%;
+
   max-width: 1500px;
 
   height: 100%;
 
   margin: 0 auto;
+
   padding: 0 55px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
-/* SHIPPING */
+
+/* =====================================================
+   SHIPPING
+===================================================== */
 
 .top-shipping {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 
   color: #ffffff;
 
   font-size: 14px;
+
   font-weight: 500;
 }
 
+
 .top-shipping svg {
   color: var(--gold);
+
   font-size: 20px;
 }
 
-/* SOCIAL */
+
+/* =====================================================
+   SOCIAL
+===================================================== */
 
 .top-social {
   display: flex;
+
   align-items: center;
+
   gap: 14px;
 }
+
 
 .follow-text {
   color: var(--gold);
 
   font-size: 14px;
+
   font-weight: 600;
 
   margin-right: 8px;
 }
 
+
 .top-social a {
   width: 32px;
+
   height: 32px;
 
   border: 1px solid var(--gold);
+
   border-radius: 50%;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   color: var(--gold);
@@ -115,14 +153,17 @@ body {
   transition: all 0.2s ease;
 }
 
+
 .top-social a:hover {
   background: var(--gold);
+
   color: var(--black);
 }
 
-/* =========================
+
+/* =====================================================
    MAIN HEADER
-========================= */
+===================================================== */
 
 .main-header {
   width: 100%;
@@ -132,40 +173,50 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+
 .main-header-inner {
   width: 100%;
+
   max-width: 1500px;
 
   min-height: 145px;
 
   margin: 0 auto;
+
   padding: 25px 55px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
   gap: 55px;
 }
 
-/* =========================
+
+/* =====================================================
    LOGO
-========================= */
+===================================================== */
 
 .logo {
   width: 255px;
+
   min-width: 255px;
 
   display: flex;
+
   align-items: center;
 
   text-decoration: none;
 }
 
+
 .logo img {
   display: block;
 
   width: 100%;
+
   max-width: 250px;
 
   height: auto;
@@ -173,9 +224,10 @@ body {
   object-fit: contain;
 }
 
-/* =========================
+
+/* =====================================================
    SEARCH
-========================= */
+===================================================== */
 
 .search-box {
   flex: 1;
@@ -195,12 +247,14 @@ body {
   overflow: hidden;
 }
 
+
 .search-box input {
   flex: 1;
 
   width: 100%;
 
   border: none;
+
   outline: none;
 
   background: transparent;
@@ -214,9 +268,11 @@ body {
   font-size: 15px;
 }
 
+
 .search-box input::placeholder {
   color: #a7a7a7;
 }
+
 
 .search-box button {
   width: 150px;
@@ -228,7 +284,9 @@ body {
   color: var(--black);
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 12px;
@@ -238,28 +296,34 @@ body {
   font-family: "Poppins", Arial, sans-serif;
 
   font-size: 15px;
+
   font-weight: 600;
 
   transition: all 0.2s ease;
 }
 
+
 .search-box button:hover {
   background: var(--gold-light);
 }
+
 
 .search-box button svg {
   font-size: 18px;
 }
 
-/* =========================
+
+/* =====================================================
    LOGIN
-========================= */
+===================================================== */
 
 .login-link {
   min-width: 180px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   gap: 12px;
@@ -269,6 +333,7 @@ body {
   text-decoration: none;
 
   font-size: 15px;
+
   font-weight: 500;
 
   white-space: nowrap;
@@ -276,26 +341,50 @@ body {
   transition: color 0.2s ease;
 }
 
+
 .login-link svg {
   color: var(--gold);
+
   font-size: 23px;
 }
+
 
 .login-link:hover {
   color: var(--gold);
 }
 
-/* =========================
-   MOBILE
-========================= */
 
-.mobile-menu-bar {
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-button {
   display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: #333333;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
-/* =========================
+
+.mobile-menu-button svg {
+  font-size: 30px;
+}
+
+
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 1100px) {
 
@@ -303,101 +392,234 @@ body {
     padding: 0 30px;
   }
 
+
   .main-header-inner {
     padding: 20px 30px;
+
     gap: 30px;
   }
 
+
   .logo {
     width: 190px;
+
     min-width: 190px;
   }
+
 
   .logo img {
     max-width: 190px;
   }
 
+
   .search-box {
     height: 52px;
   }
 
+
   .search-box button {
     width: 120px;
   }
+
 
   .login-link {
     min-width: auto;
   }
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 768px) {
 
+  /* =================================
+     HIDE TOP BAR
+  ================================= */
+
   .top-bar {
-    height: 42px;
-  }
-
-  .top-bar-inner {
-    padding: 0 15px;
-    justify-content: center;
-  }
-
-  .top-shipping {
-    font-size: 11px;
-  }
-
-  .top-shipping svg {
-    font-size: 15px;
-  }
-
-  .top-social {
     display: none;
   }
+
+
+  /* =================================
+     WHITE MOBILE HEADER
+  ================================= */
+
+  .main-header {
+    width: 100%;
+
+    height: 105px;
+
+    min-height: 105px;
+
+    background: #ffffff;
+
+    border-bottom: none;
+  }
+
+
+  /* =================================
+     MOBILE HEADER INNER
+  ================================= */
 
   .main-header-inner {
-    min-height: auto;
+    width: 100%;
 
-    padding: 18px 15px;
+    height: 105px;
 
-    display: grid;
+    min-height: 105px;
 
-    grid-template-columns: 1fr auto;
+    padding: 0 25px;
 
-    gap: 15px;
+    margin: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    gap: 0;
+
+    background: #ffffff;
   }
+
+
+  /* =================================
+     MOBILE HAMBURGER
+  ================================= */
+
+  .mobile-menu-button {
+    display: flex;
+
+    position: absolute;
+
+    left: 27px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 35px;
+
+    height: 35px;
+
+    z-index: 5;
+  }
+
+
+  .mobile-menu-button svg {
+    font-size: 30px;
+
+    color: #333333;
+  }
+
+
+  /* =================================
+     CENTER LOGO
+  ================================= */
 
   .logo {
-    width: 170px;
-    min-width: 170px;
+    width: 145px;
+
+    min-width: 145px;
+
+    height: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
   }
+
 
   .logo img {
-    max-width: 170px;
+    display: block;
+
+    width: 145px;
+
+    max-width: 145px;
+
+    height: auto;
+
+    object-fit: contain;
   }
 
-  .login-link {
-    min-width: auto;
-  }
 
-  .login-link span {
-    display: none;
-  }
+  /* =================================
+     HIDE SEARCH
+  ================================= */
 
   .search-box {
-    grid-column: 1 / -1;
-
-    width: 100%;
-    height: 48px;
-  }
-
-  .search-box button {
-    width: 60px;
-  }
-
-  .search-box button span {
     display: none;
+  }
+
+
+  /* =================================
+     HIDE LOGIN
+  ================================= */
+
+  .login-link {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .main-header {
+    height: 105px;
+
+    min-height: 105px;
+  }
+
+
+  .main-header-inner {
+    height: 105px;
+
+    min-height: 105px;
+
+    padding: 0 20px;
+  }
+
+
+  .mobile-menu-button {
+    left: 25px;
+  }
+
+
+  .mobile-menu-button svg {
+    font-size: 29px;
+  }
+
+
+  .logo {
+    width: 140px;
+
+    min-width: 140px;
+  }
+
+
+  .logo img {
+    width: 140px;
+
+    max-width: 140px;
   }
 }

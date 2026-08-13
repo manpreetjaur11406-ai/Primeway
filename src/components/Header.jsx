@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import {
   FaSearch,
   FaUser,
@@ -6,6 +7,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
+  FaBars,
 } from "react-icons/fa";
 
 import "./Header.css";
@@ -18,15 +20,27 @@ function Header() {
       {/* =========================
           TOP BAR
       ========================= */}
+
       <div className="top-bar">
+
         <div className="top-bar-inner">
+
           <div className="top-shipping">
+
             <FaTruck />
-            <span>Free shipping for all orders of $150</span>
+
+            <span>
+              Free shipping for all orders of $150
+            </span>
+
           </div>
 
+
           <div className="top-social">
-            <span className="follow-text">Follow us</span>
+
+            <span className="follow-text">
+              Follow us
+            </span>
 
             <a href="#" aria-label="Facebook">
               <FaFacebookF />
@@ -39,45 +53,99 @@ function Header() {
             <a href="#" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
+
           </div>
+
         </div>
+
       </div>
+
 
       {/* =========================
           MAIN HEADER
       ========================= */}
+
       <header className="main-header">
+
         <div className="main-header-inner">
 
-          {/* LOGO */}
-          <Link to="/" className="logo">
+
+          {/* =========================
+              MOBILE MENU
+          ========================= */}
+
+          <button
+            className="mobile-menu-button"
+            type="button"
+            aria-label="Open menu"
+          >
+            <FaBars />
+          </button>
+
+
+          {/* =========================
+              LOGO
+          ========================= */}
+
+          <Link
+            to="/"
+            className="logo"
+          >
+
             <img
               src={primewayLogo}
               alt="PrimeWay Traders LLC"
             />
+
           </Link>
 
-          {/* SEARCH */}
+
+          {/* =========================
+              SEARCH
+          ========================= */}
+
           <div className="search-box">
+
             <input
               type="text"
               placeholder="Search for products"
             />
 
             <button type="button">
+
               <FaSearch />
-              <span>Search</span>
+
+              <span>
+                Search
+              </span>
+
             </button>
+
           </div>
 
-          {/* LOGIN */}
-          <Link to="/login" className="login-link">
+
+          {/* =========================
+              LOGIN
+          ========================= */}
+
+          <Link
+            to="/login"
+            className="login-link"
+          >
+
             <FaUser />
-            <span>Login / Register</span>
+
+            <span>
+              Login / Register
+            </span>
+
           </Link>
 
+
         </div>
+
       </header>
+
     </>
   );
 }
