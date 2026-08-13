@@ -22,22 +22,14 @@ function Header() {
       ========================= */}
 
       <div className="top-bar">
-
         <div className="top-bar-inner">
 
           <div className="top-shipping">
-
             <FaTruck />
-
-            <span>
-              Free shipping for all orders of $150
-            </span>
-
+            <span>Free shipping for all orders of $150</span>
           </div>
 
-
           <div className="top-social">
-
             <span className="follow-text">
               Follow us
             </span>
@@ -53,11 +45,9 @@ function Header() {
             <a href="#" aria-label="LinkedIn">
               <FaLinkedinIn />
             </a>
-
           </div>
 
         </div>
-
       </div>
 
 
@@ -69,10 +59,7 @@ function Header() {
 
         <div className="main-header-inner">
 
-
-          {/* =========================
-              MOBILE MENU
-          ========================= */}
+          {/* MOBILE MENU BUTTON */}
 
           <button
             className="mobile-menu-button"
@@ -83,26 +70,20 @@ function Header() {
           </button>
 
 
-          {/* =========================
-              LOGO
-          ========================= */}
+          {/* LOGO */}
 
           <Link
             to="/"
             className="logo"
           >
-
             <img
               src={primewayLogo}
               alt="PrimeWay Traders LLC"
             />
-
           </Link>
 
 
-          {/* =========================
-              SEARCH
-          ========================= */}
+          {/* SEARCH */}
 
           <div className="search-box">
 
@@ -124,9 +105,7 @@ function Header() {
           </div>
 
 
-          {/* =========================
-              LOGIN
-          ========================= */}
+          {/* LOGIN */}
 
           <Link
             to="/login"
@@ -141,11 +120,9 @@ function Header() {
 
           </Link>
 
-
         </div>
 
       </header>
-
     </>
   );
 }
