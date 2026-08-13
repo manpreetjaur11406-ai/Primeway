@@ -9,6 +9,7 @@ import truckEngine from "../../assets/truckk engine.jpeg";
 import petrolFilter from "../../assets/petrol filter.png";
 
 function FeaturedProducts() {
+
   const products = [
     {
       name: "Truck Air Filter",
@@ -39,14 +40,14 @@ function FeaturedProducts() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((current) =>
-      current >= products.length - 3 ? 0 : current + 1
+    setCurrentIndex((prev) =>
+      prev < products.length - 1 ? prev + 1 : 0
     );
   };
 
   const previousSlide = () => {
-    setCurrentIndex((current) =>
-      current === 0 ? products.length - 3 : current - 1
+    setCurrentIndex((prev) =>
+      prev > 0 ? prev - 1 : products.length - 1
     );
   };
 
@@ -73,10 +74,12 @@ function FeaturedProducts() {
 
 
       {/* =========================
-          PRODUCTS
+          CAROUSEL
       ========================= */}
 
       <div className="products-carousel">
+
+        {/* LEFT ARROW */}
 
         <button
           className="carousel-button"
@@ -87,14 +90,14 @@ function FeaturedProducts() {
         </button>
 
 
+        {/* PRODUCTS */}
+
         <div className="products-window">
 
           <div
             className="products-track"
             style={{
-              transform: `translateX(-${
-                currentIndex * (100 / 3)
-              }%)`,
+              transform: `translateX(-${currentIndex * 280}px)`,
             }}
           >
 
@@ -114,10 +117,11 @@ function FeaturedProducts() {
 
                 </div>
 
-
                 <div className="product-info">
 
-                  <h3>{product.name}</h3>
+                  <h3>
+                    {product.name}
+                  </h3>
 
                   <button className="enquiry-btn">
                     Enquiry
@@ -133,6 +137,8 @@ function FeaturedProducts() {
 
         </div>
 
+
+        {/* RIGHT ARROW */}
 
         <button
           className="carousel-button"

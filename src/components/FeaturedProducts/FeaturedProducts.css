@@ -5,9 +5,12 @@
 .featured-products {
   width: 100%;
   padding: 85px 40px 90px;
+
   background: #080808;
   color: #ffffff;
+
   font-family: "Poppins", Arial, sans-serif;
+
   box-sizing: border-box;
 }
 
@@ -18,7 +21,9 @@
 
 .featured-heading {
   text-align: center;
+
   max-width: 750px;
+
   margin: 0 auto 50px;
 }
 
@@ -58,7 +63,7 @@
 }
 
 
-/* GOLD LINE BELOW HEADING */
+/* GOLD LINE */
 
 .featured-heading::after {
   content: "";
@@ -82,15 +87,21 @@
 
 .products-carousel {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1350px;
 
   margin: 0 auto;
 
   display: flex;
+
   align-items: center;
 
   gap: 18px;
 }
+
+
+/* =====================================================
+   WINDOW
+===================================================== */
 
 .products-window {
   width: 100%;
@@ -98,10 +109,17 @@
   overflow: hidden;
 }
 
+
+/* =====================================================
+   ALL 6 PRODUCTS — ONE ROW
+===================================================== */
+
 .products-track {
   display: flex;
 
   gap: 25px;
+
+  width: max-content;
 
   transition: transform 0.45s ease;
 }
@@ -114,7 +132,9 @@
 .featured-products .product-card {
   position: relative;
 
-  flex: 0 0 calc((100% - 50px) / 3);
+  flex: 0 0 255px;
+
+  width: 255px;
 
   background: #111111;
 
@@ -129,6 +149,7 @@
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
+
 
 .featured-products .product-card:hover {
   transform: translateY(-7px);
@@ -194,7 +215,9 @@
     filter 0.45s ease;
 }
 
-.featured-products .product-card:hover .product-image img {
+.featured-products
+.product-card:hover
+.product-image img {
   transform: scale(1.05);
 
   filter: brightness(0.82);
@@ -363,14 +386,19 @@
     padding: 65px 25px 75px;
   }
 
-  .featured-products .product-card {
-    flex: 0 0 calc((100% - 25px) / 2);
-  }
-
   .featured-heading h2 {
     font-size: 32px;
   }
 
+  .featured-products .product-card {
+    flex: 0 0 230px;
+
+    width: 230px;
+  }
+
+  .featured-products .product-image {
+    height: 220px;
+  }
 }
 
 
@@ -411,7 +439,9 @@
   }
 
   .featured-products .product-card {
-    flex: 0 0 100%;
+    flex: 0 0 calc(100vw - 90px);
+
+    width: calc(100vw - 90px);
   }
 
   .featured-products .product-image {
@@ -426,5 +456,4 @@
 
     font-size: 15px;
   }
-
 }
