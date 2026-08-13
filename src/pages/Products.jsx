@@ -31,29 +31,70 @@ function Products() {
   ];
 
   return (
-    <section className="products-section">
-      <h2 className="section-title">Featured Truck Parts</h2>
+    <section className="products-page">
 
-      <div className="products-container">
+      {/* PAGE HEADER */}
+      <div className="products-page-header">
+        <span className="products-eyebrow">
+          PREMIUM TRUCK PARTS
+        </span>
+
+        <h1>Our Products</h1>
+
+        <p>
+          Quality truck spare parts built for reliable performance
+          and heavy-duty applications.
+        </p>
+      </div>
+
+
+      {/* PRODUCTS GRID */}
+      <div className="products-page-container">
+
         {products.map((product, index) => (
-          <div className="product-card" key={index}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-image"
-            />
+          <div
+            className="products-page-card"
+            key={index}
+          >
 
-            <div className="product-info">
-              <h3>{product.name}</h3>
-              <p>{product.price}</p>
+            {/* IMAGE */}
+            <div className="products-page-image">
+              <img
+                src={product.image}
+                alt={product.name}
+              />
 
-              <button className="product-btn">
-                Enquiry
-              </button>
+              <div className="products-image-overlay">
+                VIEW PRODUCT
+              </div>
             </div>
+
+
+            {/* PRODUCT CONTENT */}
+            <div className="products-page-info">
+
+              <span className="product-category">
+                TRUCK SPARE PART
+              </span>
+
+              <h2>{product.name}</h2>
+
+              <div className="product-price">
+                {product.price}
+              </div>
+
+              <button className="products-page-btn">
+                Enquiry
+                <span>→</span>
+              </button>
+
+            </div>
+
           </div>
         ))}
+
       </div>
+
     </section>
   );
 }

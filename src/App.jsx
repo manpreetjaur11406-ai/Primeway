@@ -1,6 +1,9 @@
+import { Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import ServiceFeatures from "./components/ServiceFeatures";
 
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
 import Brands from "./components/Brands/Brands";
@@ -11,54 +14,139 @@ import CallToAction from "./components/CallToAction/CallToAction";
 import Contact from "./components/Contact/Contact";
 
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
+import Products from "./pages/Products";
 
-function App() {
+
+/* =====================================================
+   HOME PAGE
+===================================================== */
+
+function Home() {
   return (
     <>
-      {/* HEADER */}
+      {/* =========================
+          HEADER
+      ========================= */}
       <Header />
 
-      {/* NAVBAR */}
+
+      {/* =========================
+          NAVBAR
+      ========================= */}
       <Navbar />
 
-      {/* HOME */}
+
+      {/* =========================
+          HERO
+      ========================= */}
       <section id="home">
         <Hero />
       </section>
 
-      {/* FEATURED PRODUCTS */}
+
+      {/* =========================
+          SERVICE FEATURES
+      ========================= */}
+      <ServiceFeatures />
+
+
+      {/* =========================
+          FEATURED PRODUCTS
+      ========================= */}
       <section id="products">
         <FeaturedProducts />
       </section>
 
-      {/* BRANDS */}
+
+      {/* =========================
+          BRANDS
+      ========================= */}
       <section id="brands">
         <Brands />
       </section>
 
-      {/* WHY CHOOSE US */}
+
+      {/* =========================
+          WHY CHOOSE US
+      ========================= */}
       <section id="about">
         <WhyChooseUs />
       </section>
 
-      {/* STATISTICS */}
+
+      {/* =========================
+          STATISTICS
+      ========================= */}
       <Statistics />
 
-      {/* TESTIMONIALS */}
+
+      {/* =========================
+          TESTIMONIALS
+      ========================= */}
       <Testimonials />
 
-      {/* ENQUIRY */}
+
+      {/* =========================
+          ENQUIRY / CALL TO ACTION
+      ========================= */}
       <CallToAction />
 
-      {/* CONTACT */}
+
+      {/* =========================
+          CONTACT
+      ========================= */}
       <section id="contact">
         <Contact />
       </section>
 
-      {/* FOOTER */}
+
+      {/* =========================
+          FOOTER
+      ========================= */}
       <Footer />
     </>
   );
 }
+
+
+/* =====================================================
+   MAIN APP / ROUTES
+===================================================== */
+
+function App() {
+  return (
+    <Routes>
+
+      {/* =========================
+          HOME PAGE
+      ========================= */}
+      <Route
+        path="/"
+        element={<Home />}
+      />
+
+
+      {/* =========================
+          PRODUCTS PAGE
+      ========================= */}
+      <Route
+        path="/products"
+        element={<Products />}
+      />
+
+
+      {/* =========================
+          LOGIN / SIGNUP PAGE
+      ========================= */}
+      <Route
+        path="/login"
+        element={<Login />}
+      />
+
+    </Routes>
+  );
+}
+
 
 export default App;

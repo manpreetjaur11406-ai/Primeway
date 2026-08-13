@@ -3,97 +3,226 @@
 ========================== */
 
 .cta-section {
-  background: linear-gradient(rgba(215, 25, 32, 0.9), rgba(31, 45, 90, 0.9)),
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.88),
+      rgba(0, 0, 0, 0.92)
+    ),
     url("../../assets/truck engine.jpeg");
+
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+
   padding: 90px 20px;
+
   text-align: center;
+
+  box-sizing: border-box;
 }
+
+
+/* ==========================
+   CTA CONTENT
+========================== */
 
 .cta-content {
   max-width: 850px;
   margin: 0 auto;
 }
 
+
+/* ==========================
+   HEADING
+========================== */
+
 .cta-content h2 {
   font-size: 42px;
-  color: #ffffff;
-  margin-bottom: 20px;
+
+  color: #d4af37;
+
+  margin: 0 0 20px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
 }
+
+
+/* ==========================
+   DESCRIPTION
+========================== */
 
 .cta-content p {
   font-size: 18px;
-  color: #f5f5f5;
+
+  color: #e5e5e5;
+
   line-height: 1.8;
-  margin-bottom: 40px;
+
+  margin: 0 0 40px;
 }
+
+
+/* ==========================
+   BUTTONS
+========================== */
 
 .cta-buttons {
   display: flex;
+
   justify-content: center;
+
   gap: 20px;
+
   flex-wrap: wrap;
 }
+
+
+/* ==========================
+   COMMON BUTTON STYLE
+========================== */
 
 .quote-btn,
 .contact-btn {
   padding: 14px 35px;
-  border: none;
+
   border-radius: 6px;
+
   font-size: 17px;
+
   font-weight: 600;
+
   cursor: pointer;
-  transition: 0.3s ease;
+
+  transition: all 0.3s ease;
+
+  min-width: 180px;
+
+  box-sizing: border-box;
 }
+
+
+/* ==========================
+   GET A QUOTE
+========================== */
 
 .quote-btn {
-  background: #ffffff;
-  color: #d71920;
+  background: #d4af37;
+
+  color: #000000;
+
+  border: 2px solid #d4af37;
 }
 
+
 .quote-btn:hover {
-  background: #f0f0f0;
+  background: #f0cf62;
+
+  border-color: #f0cf62;
+
+  color: #000000;
+
   transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
+
+
+/* ==========================
+   CONTACT US
+========================== */
 
 .contact-btn {
   background: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+
+  color: #d4af37;
+
+  border: 2px solid #d4af37;
 }
 
+
 .contact-btn:hover {
-  background: #ffffff;
-  color: #1f2d5a;
+  background: #d4af37;
+
+  color: #000000;
+
   transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
 }
+
 
 /* ==========================
    RESPONSIVE
 ========================== */
 
 @media (max-width: 768px) {
+
   .cta-section {
     padding: 60px 20px;
+
+    background-attachment: scroll;
   }
+
 
   .cta-content h2 {
     font-size: 32px;
   }
 
+
   .cta-content p {
     font-size: 16px;
+
+    line-height: 1.7;
   }
+
 
   .cta-buttons {
     flex-direction: column;
+
     align-items: center;
+
+    gap: 15px;
   }
+
 
   .quote-btn,
   .contact-btn {
     width: 220px;
+  }
+}
+
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width: 480px) {
+
+  .cta-section {
+    padding: 50px 15px;
+  }
+
+
+  .cta-content h2 {
+    font-size: 28px;
+  }
+
+
+  .cta-content p {
+    font-size: 15px;
+
+    margin-bottom: 30px;
+  }
+
+
+  .quote-btn,
+  .contact-btn {
+    width: 200px;
+
+    padding: 13px 25px;
+
+    font-size: 16px;
   }
 }

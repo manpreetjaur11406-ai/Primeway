@@ -1,57 +1,167 @@
 import "./WhyChooseUs.css";
+
 import {
-  FaTruck,
-  FaShieldAlt,
+  FaCreditCard,
   FaHeadset,
-  FaTags,
 } from "react-icons/fa";
 
+import truckImage from "../../assets/trucck.png";
+
+
 function WhyChooseUs() {
+
   return (
+
     <section className="why-choose-us">
-      <div className="why-container">
-        <h2>Why Choose Us?</h2>
 
-        <p className="subtitle">
-          Trusted supplier of premium truck spare parts across India.
-        </p>
 
-        <div className="features">
-          <div className="feature-card">
-            <FaTruck className="icon" />
-            <h3>Fast Delivery</h3>
-            <p>
-              Quick and reliable delivery to your location.
-            </p>
-          </div>
+      {/* =========================
+          TOP FEATURES
+      ========================= */}
 
-          <div className="feature-card">
-            <FaShieldAlt className="icon" />
-            <h3>Genuine Parts</h3>
-            <p>
-              100% original and quality-tested truck parts.
-            </p>
-          </div>
+      <div className="why-features">
 
-          <div className="feature-card">
-            <FaTags className="icon" />
-            <h3>Best Prices</h3>
-            <p>
-              Affordable prices with the best value.
-            </p>
-          </div>
 
-          <div className="feature-card">
-            <FaHeadset className="icon" />
-            <h3>24/7 Support</h3>
-            <p>
-              Friendly customer support whenever you need help.
-            </p>
-          </div>
+        {/* ONLINE PAYMENT */}
+
+        <div className="why-feature-card">
+
+          <FaCreditCard className="why-feature-icon" />
+
+          <h3>
+            Secure Payment
+          </h3>
+
+          <p>
+            Safe and convenient payment
+            options for all your truck
+            spare parts orders.
+          </p>
+
         </div>
+
+
+
+        {/* SUPPORT */}
+
+        <div className="why-feature-card">
+
+          <FaHeadset className="why-feature-icon" />
+
+          <h3>
+            Support 24/7
+          </h3>
+
+          <p>
+            Our team is always ready to
+            help you with product and
+            order-related queries.
+          </p>
+
+        </div>
+
+
+
+        {/* SPECIAL OFFER */}
+
+        <div className="why-offer-card">
+
+
+          <div className="offer-content">
+
+            <span className="offer-label">
+              SPECIAL OFFER
+            </span>
+
+
+            <h2>
+              Free Delivery
+              <br />
+              Across India
+            </h2>
+
+
+            <p>
+              Get fast and reliable delivery
+              on your truck spare parts
+              orders.
+            </p>
+
+          </div>
+
+
+
+          <div className="offer-image">
+
+            <img
+              src={truckImage}
+              alt="PrimeWay truck delivery"
+            />
+
+          </div>
+
+
+        </div>
+
       </div>
+
+
+
+      {/* =========================
+          WELCOME SECTION
+      ========================= */}
+
+      <div className="welcome-section">
+
+
+        {/* IMAGE */}
+
+        <div className="welcome-image">
+
+          <img
+            src={truckImage}
+            alt="PrimeWay truck spare parts"
+          />
+
+        </div>
+
+
+
+        {/* CONTENT */}
+
+        <div className="welcome-content">
+
+          <h2>
+            Welcome to PrimeWay –
+            <br />
+            Your Trusted Truck Parts
+            <br />
+            Partner
+          </h2>
+
+
+          <p>
+            At PrimeWay, we specialize in
+            supplying high-quality, reliable,
+            and durable truck spare parts that
+            keep your fleet moving. With a
+            commitment to excellence and
+            customer satisfaction, we ensure
+            every part meets strict quality
+            standards.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
     </section>
+
   );
+
 }
+
 
 export default WhyChooseUs;

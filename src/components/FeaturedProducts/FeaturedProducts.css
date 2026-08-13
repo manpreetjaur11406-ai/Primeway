@@ -1,130 +1,430 @@
+/* =====================================================
+   FEATURED PRODUCTS — BLACK & GOLD
+===================================================== */
+
 .featured-products {
   width: 100%;
-  padding: 60px 60px;
-  background: #fff;
+  padding: 85px 40px 90px;
+  background: #080808;
+  color: #ffffff;
   font-family: "Poppins", Arial, sans-serif;
+  box-sizing: border-box;
 }
+
+
+/* =====================================================
+   HEADING
+===================================================== */
 
 .featured-heading {
   text-align: center;
-  margin-bottom: 40px;
+  max-width: 750px;
+  margin: 0 auto 50px;
+}
+
+.section-small-title {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #d6a62c;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
 }
 
 .featured-heading h2 {
-  font-size: 34px;
-  color: #222;
-  margin-bottom: 8px;
+  margin: 0 0 12px;
+
+  color: #f2c14e;
+
+  font-size: 38px;
+  line-height: 1.2;
+
   font-weight: 700;
+
+  letter-spacing: -0.5px;
 }
 
 .featured-heading p {
-  font-size: 16px;
-  color: #777;
+  margin: 0;
+
+  color: #a9a9a9;
+
+  font-size: 15px;
+  line-height: 1.6;
 }
 
-.products-grid {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+
+/* GOLD LINE BELOW HEADING */
+
+.featured-heading::after {
+  content: "";
+
+  display: block;
+
+  width: 55px;
+  height: 2px;
+
+  margin: 22px auto 0;
+
+  background: #d6a62c;
+
+  box-shadow: 0 0 12px rgba(214, 166, 44, 0.35);
 }
 
-.product-card {
-  background: white;
-  border: 1px solid #e5e5e5;
-  border-radius: 6px;
-  overflow: hidden;
-  transition: 0.3s;
-}
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
+/* =====================================================
+   CAROUSEL
+===================================================== */
 
-.product-image {
+.products-carousel {
   width: 100%;
-  height: 220px;
-  overflow: hidden;
-  background: #f5f5f5;
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
 }
 
-.product-image img {
+.products-window {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.products-track {
+  display: flex;
+
+  gap: 25px;
+
+  transition: transform 0.45s ease;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.featured-products .product-card {
+  position: relative;
+
+  flex: 0 0 calc((100% - 50px) / 3);
+
+  background: #111111;
+
+  border: 1px solid rgba(214, 166, 44, 0.35);
+
+  border-radius: 3px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.featured-products .product-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #d6a62c;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.55),
+    0 0 20px rgba(214, 166, 44, 0.12);
+}
+
+
+/* =====================================================
+   GOLD TOP BORDER
+===================================================== */
+
+.featured-products .product-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #d6a62c,
+    transparent
+  );
+
+  z-index: 2;
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.featured-products .product-image {
+  width: 100%;
+
+  height: 245px;
+
+  background: #151515;
+
+  overflow: hidden;
+}
+
+.featured-products .product-image img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   display: block;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
 }
 
-.product-info {
-  padding: 20px;
+.featured-products .product-card:hover .product-image img {
+  transform: scale(1.05);
+
+  filter: brightness(0.82);
+}
+
+
+/* =====================================================
+   PRODUCT INFORMATION
+===================================================== */
+
+.featured-products .product-info {
+  padding: 22px 20px 23px;
+
   text-align: center;
+
+  background: #111111;
 }
 
-.product-info h3 {
-  font-size: 18px;
-  color: #222;
-  margin-bottom: 18px;
+.featured-products .product-info h3 {
+  margin: 0 0 17px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  line-height: 1.4;
+
   font-weight: 600;
 }
 
-.enquiry-btn {
+
+/* =====================================================
+   ENQUIRY BUTTON
+===================================================== */
+
+.featured-products .enquiry-btn {
   width: 100%;
+
   padding: 12px 20px;
-  background: #e31b23;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.enquiry-btn:hover {
-  background: #c9141b;
-}
+  border: 1px solid #d6a62c;
 
-.view-all-btn {
-  display: block;
-  margin: 40px auto 0;
-  padding: 13px 30px;
-  background: #222;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  border-radius: 2px;
+
+  background: #d6a62c;
+
+  color: #080808;
+
   font-family: "Poppins", Arial, sans-serif;
-  font-size: 15px;
+
+  font-size: 14px;
+
   font-weight: 600;
+
   cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.view-all-btn:hover {
-  background: #e31b23;
+.featured-products .enquiry-btn:hover {
+  background: transparent;
+
+  border-color: #e7bc4c;
+
+  color: #e7bc4c;
 }
+
+
+/* =====================================================
+   CAROUSEL BUTTONS
+===================================================== */
+
+.featured-products .carousel-button {
+  width: 45px;
+  height: 45px;
+
+  min-width: 45px;
+
+  border: 1px solid rgba(214, 166, 44, 0.55);
+
+  border-radius: 50%;
+
+  background: #111111;
+
+  color: #d6a62c;
+
+  font-size: 19px;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.featured-products .carousel-button:hover {
+  background: #d6a62c;
+
+  border-color: #d6a62c;
+
+  color: #080808;
+
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   VIEW ALL BUTTON
+===================================================== */
+
+.featured-products .view-all-btn {
+  display: block;
+
+  margin: 42px auto 0;
+
+  padding: 13px 32px;
+
+  border: 1px solid #d6a62c;
+
+  border-radius: 2px;
+
+  background: transparent;
+
+  color: #d6a62c;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.featured-products .view-all-btn:hover {
+  background: #d6a62c;
+
+  border-color: #d6a62c;
+
+  color: #080808;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 900px) {
+
   .featured-products {
-    padding: 50px 25px;
+    padding: 65px 25px 75px;
   }
 
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .featured-products .product-card {
+    flex: 0 0 calc((100% - 25px) / 2);
   }
+
+  .featured-heading h2 {
+    font-size: 32px;
+  }
+
 }
 
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 600px) {
+
   .featured-products {
-    padding: 40px 15px;
+    padding: 55px 15px 65px;
   }
 
-  .products-grid {
-    grid-template-columns: 1fr;
+  .featured-heading {
+    margin-bottom: 35px;
+  }
+
+  .section-small-title {
+    font-size: 11px;
+
+    letter-spacing: 2px;
   }
 
   .featured-heading h2 {
     font-size: 28px;
   }
+
+  .featured-heading p {
+    font-size: 14px;
+  }
+
+  .products-carousel {
+    gap: 8px;
+  }
+
+  .products-track {
+    gap: 15px;
+  }
+
+  .featured-products .product-card {
+    flex: 0 0 100%;
+  }
+
+  .featured-products .product-image {
+    height: 220px;
+  }
+
+  .featured-products .carousel-button {
+    width: 37px;
+    height: 37px;
+
+    min-width: 37px;
+
+    font-size: 15px;
+  }
+
 }

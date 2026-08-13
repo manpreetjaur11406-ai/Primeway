@@ -1,81 +1,147 @@
+/* =========================
+   HERO
+========================= */
+
 .hero {
   position: relative;
-  min-height: 600px;
+
+  width: 100%;
+  min-height: 500px;
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
   display: flex;
   align-items: center;
+
   overflow: hidden;
 }
 
+/* =========================
+   DARK OVERLAY
+========================= */
+
 .hero::before {
   content: "";
+
   position: absolute;
+
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+
+  background: rgba(0, 0, 0, 0.48);
+
   z-index: 1;
 }
 
+/* =========================
+   HERO CONTENT
+========================= */
+
 .hero-content {
   position: relative;
+
   z-index: 2;
+
   width: 100%;
   max-width: 1200px;
+
   margin: 0 auto;
-  padding: 80px 40px;
+
+  padding: 70px 60px;
 }
+
+/* =========================
+   HERO TEXT
+========================= */
 
 .hero-text {
   max-width: 650px;
+
   color: #ffffff;
 }
 
 .hero-text h5 {
-  font-size: 18px;
+  margin: 0 0 12px;
+
+  color: #d4af37;
+
+  font-size: 17px;
   font-weight: 600;
+
   letter-spacing: 2px;
-  margin-bottom: 15px;
 }
 
 .hero-text h1 {
-  font-size: 52px;
-  line-height: 1.15;
-  font-weight: 700;
   margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: 52px;
+
+  line-height: 1.15;
+
+  font-weight: 700;
 }
 
 .hero-text p {
+  margin: 0 0 28px;
+
+  max-width: 620px;
+
+  color: #ffffff;
+
   font-size: 17px;
+
   line-height: 1.7;
-  margin-bottom: 30px;
-  max-width: 600px;
 }
 
+/* =========================
+   SHOP NOW BUTTON
+========================= */
+
 .hero-text button {
-  background: #e63946;
-  color: #ffffff;
+  padding: 13px 30px;
+
   border: none;
-  padding: 14px 32px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 5px;
+
+  border-radius: 3px;
+
+  background: #d4af37;
+
+  color: #111111;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
   cursor: pointer;
-  transition: 0.3s ease;
+
+  transition: all 0.25s ease;
 }
 
 .hero-text button:hover {
-  background: #c92f3b;
+  background: #f0c75e;
+
+  color: #000000;
+
   transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
 }
 
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 900px) {
+
   .hero {
-    min-height: 550px;
+    min-height: 500px;
   }
 
   .hero-content {
-    padding: 70px 30px;
+    padding: 60px 35px;
   }
 
   .hero-text h1 {
@@ -83,22 +149,18 @@
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 600px) {
+
   .hero {
-    min-height: 500px;
-    background-position: center;
+    min-height: 450px;
   }
 
   .hero-content {
-    padding: 60px 20px;
-  }
-
-  .hero-text {
-    max-width: 100%;
-  }
-
-  .hero-text h5 {
-    font-size: 14px;
+    padding: 50px 20px;
   }
 
   .hero-text h1 {
@@ -109,8 +171,7 @@
     font-size: 15px;
   }
 
-  .hero-text button {
-    padding: 12px 26px;
-    font-size: 15px;
+  .hero-text h5 {
+    font-size: 14px;
   }
 }

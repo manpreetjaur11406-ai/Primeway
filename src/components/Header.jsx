@@ -1,71 +1,82 @@
-
 import { Link } from "react-router-dom";
 import {
   FaSearch,
   FaUser,
-  FaHeart,
-  FaShoppingCart,
+  FaTruck,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
 } from "react-icons/fa";
+
 import "./Header.css";
+
+import primewayLogo from "../assets/img.jpeg.png";
 
 function Header() {
   return (
     <>
-      {/* Top Bar */}
+      {/* =========================
+          TOP BAR
+      ========================= */}
       <div className="top-bar">
-        <div className="top-left">
-          🚚 Free Shipping on Orders Over ₹1500
-        </div>
+        <div className="top-bar-inner">
+          <div className="top-shipping">
+            <FaTruck />
+            <span>Free shipping for all orders of $150</span>
+          </div>
 
-        <div className="top-right">
-          <span>Need Help?</span>
-          <span>📞 +91 98765 43210</span>
+          <div className="top-social">
+            <span className="follow-text">Follow us</span>
+
+            <a href="#" aria-label="Facebook">
+              <FaFacebookF />
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <FaInstagram />
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+              <FaLinkedinIn />
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Main Header */}
+      {/* =========================
+          MAIN HEADER
+      ========================= */}
       <header className="main-header">
+        <div className="main-header-inner">
 
-        {/* Logo */}
-        <Link to="/" className="logo">
-          PrimeWay
-        </Link>
+          {/* LOGO */}
+          <Link to="/" className="logo">
+            <img
+              src={primewayLogo}
+              alt="PrimeWay Traders LLC"
+            />
+          </Link>
 
-        {/* Search */}
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Search truck spare parts..."
-          />
+          {/* SEARCH */}
+          <div className="search-box">
+            <input
+              type="text"
+              placeholder="Search for products"
+            />
 
-          <button type="button">
-            <FaSearch />
-          </button>
-        </div>
+            <button type="button">
+              <FaSearch />
+              <span>Search</span>
+            </button>
+          </div>
 
-        {/* Header Icons */}
-        <div className="header-icons">
-
-          {/* Login */}
-          <Link to="/login" className="header-icon">
+          {/* LOGIN */}
+          <Link to="/login" className="login-link">
             <FaUser />
-            <span>Login</span>
-          </Link>
-
-          {/* Wishlist */}
-          <Link to="/wishlist" className="header-icon">
-            <FaHeart />
-            <span>Wishlist</span>
-          </Link>
-
-          {/* Cart */}
-          <Link to="/cart" className="header-icon">
-            <FaShoppingCart />
-            <span>Cart</span>
+            <span>Login / Register</span>
           </Link>
 
         </div>
-
       </header>
     </>
   );

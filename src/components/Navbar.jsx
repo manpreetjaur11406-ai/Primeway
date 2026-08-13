@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {
+  FaBars,
+  FaChevronDown,
+} from "react-icons/fa";
+
 import "./Navbar.css";
 
 function Navbar() {
@@ -8,24 +13,46 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      {/* Browse Categories */}
-      <div
+      {/* =========================
+          BROWSE CATEGORIES
+      ========================= */}
+      <button
+        type="button"
         className="browse-categories"
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <FaBars />
+        <FaBars className="menu-icon" />
+
         <span>Browse Categories</span>
+
+        <FaChevronDown
+          className={`arrow-icon ${
+            menuOpen ? "arrow-open" : ""
+          }`}
+        />
+      </button>
+
+      {/* =========================
+          MAIN NAVIGATION
+      ========================= */}
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
+        <Link to="/about">About Us</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/contact">Contact Us</Link>
       </div>
 
-      {/* Navigation Menu */}
+      {/* =========================
+          CATEGORY DROPDOWN
+      ========================= */}
       {menuOpen && (
         <div className="category-menu">
-          <a href="#home">Home</a>
-          <a href="#products">Products</a>
-          <a href="#brands">Brands</a>
-          <a href="#about">About Us</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact Us</a>
+          <Link to="/products">All Products</Link>
+          <Link to="/products">Engine Parts</Link>
+          <Link to="/products">Filters</Link>
+          <Link to="/products">Brake Parts</Link>
+          <Link to="/products">Truck Accessories</Link>
         </div>
       )}
 

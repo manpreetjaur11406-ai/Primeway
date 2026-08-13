@@ -1,115 +1,544 @@
-/* Why Choose Us */
+/* =========================
+   WHY CHOOSE US
+========================= */
 
 .why-choose-us {
   width: 100%;
-  padding: 70px 60px;
-  background: #f7f7f7;
+  padding: 70px 5% 90px;
+
+  background: #0b0b0b;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  box-sizing: border-box;
 }
 
-.why-container {
+
+/* =========================
+   TOP FEATURES
+========================= */
+
+.why-features {
+  width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
-  text-align: center;
-}
 
-.why-container h2 {
-  margin: 0 0 12px;
-  font-size: 38px;
-  font-weight: 700;
-  color: #111;
-}
+  margin: 0 auto 100px;
 
-.subtitle {
-  margin: 0 auto 45px;
-  font-size: 18px;
-  color: #555;
-}
-
-/* Feature cards */
-
-.features {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns: 1fr 1fr 1.8fr;
+
   gap: 25px;
 }
 
-.feature-card {
-  background: #ffffff;
-  padding: 35px 25px;
-  border-radius: 10px;
+
+/* =========================
+   FEATURE CARD
+========================= */
+
+.why-feature-card {
+  min-height: 275px;
+
+  background: #151515;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
   text-align: center;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #2b2b2b;
+
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
 }
 
-.feature-card:hover {
+
+/* =========================
+   FEATURE CARD HOVER
+========================= */
+
+.why-feature-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+  border-color: #d4af37;
+
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18);
 }
 
-.feature-card .icon {
-  font-size: 42px;
-  color: #e31b23;
-  margin-bottom: 18px;
+
+/* =========================
+   FEATURE ICON
+========================= */
+
+.why-feature-icon {
+  color: #d4af37;
+
+  font-size: 55px;
+
+  margin-bottom: 25px;
 }
 
-.feature-card h3 {
+
+/* =========================
+   FEATURE TITLE
+========================= */
+
+.why-feature-card h3 {
   margin: 0 0 12px;
-  font-size: 21px;
-  color: #111;
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  font-weight: 600;
 }
 
-.feature-card p {
+
+/* =========================
+   FEATURE TEXT
+========================= */
+
+.why-feature-card p {
+  max-width: 300px;
+
   margin: 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #666;
+
+  color: #c9c9c9;
+
+  font-size: 16px;
+
+  line-height: 1.7;
 }
 
-/* Tablet */
+
+/* =========================
+   SPECIAL OFFER
+========================= */
+
+.why-offer-card {
+  min-height: 275px;
+
+  background: #151515;
+
+  padding: 30px 35px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border: 1px solid #d4af37;
+
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
+}
+
+
+/* =========================
+   OFFER HOVER
+========================= */
+
+.why-offer-card:hover {
+  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.18);
+
+  transform: translateY(-4px);
+}
+
+
+/* =========================
+   OFFER CONTENT
+========================= */
+
+.offer-content {
+  flex: 1;
+
+  padding-right: 20px;
+}
+
+
+/* =========================
+   OFFER LABEL
+========================= */
+
+.offer-label {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: #d4af37;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   OFFER HEADING
+========================= */
+
+.offer-content h2 {
+  margin: 0 0 15px;
+
+  color: #ffffff;
+
+  font-size: 34px;
+
+  line-height: 1.35;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   OFFER TEXT
+========================= */
+
+.offer-content p {
+  max-width: 380px;
+
+  margin: 0;
+
+  color: #c9c9c9;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   OFFER IMAGE
+========================= */
+
+.offer-image {
+  width: 45%;
+
+  height: 220px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* =========================
+   OFFER IMAGE IMG
+========================= */
+
+.offer-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 55px;
+
+  align-items: center;
+}
+
+
+/* =========================
+   WELCOME IMAGE
+========================= */
+
+.welcome-image {
+  width: 100%;
+
+  height: 420px;
+
+  overflow: hidden;
+
+  border-radius: 25px;
+
+  border: 1px solid #2b2b2b;
+}
+
+
+/* =========================
+   WELCOME IMAGE IMG
+========================= */
+
+.welcome-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.5s ease;
+}
+
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+.welcome-image:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================
+   WELCOME CONTENT
+========================= */
+
+.welcome-content {
+  padding: 10px 20px;
+}
+
+
+/* =========================
+   WELCOME HEADING
+========================= */
+
+.welcome-content h2 {
+  margin: 0 0 30px;
+
+  color: #d4af37;
+
+  font-size: 42px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   GOLD LINE
+========================= */
+
+.welcome-content h2::after {
+  content: "";
+
+  display: block;
+
+  width: 70px;
+
+  height: 3px;
+
+  margin-top: 18px;
+
+  background: #d4af37;
+}
+
+
+/* =========================
+   WELCOME TEXT
+========================= */
+
+.welcome-content p {
+  margin: 0;
+
+  color: #d0d0d0;
+
+  font-size: 17px;
+
+  line-height: 2;
+}
+
+
+/* =========================
+   TABLET
+========================= */
 
 @media (max-width: 1000px) {
-  .why-choose-us {
-    padding: 60px 30px;
+
+  .why-features {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .features {
-    grid-template-columns: repeat(2, 1fr);
+
+  .why-offer-card {
+    grid-column: span 2;
   }
+
+
+  .welcome-section {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+
+  .welcome-image {
+    height: 400px;
+  }
+
+
+  .welcome-content {
+    padding: 0;
+  }
+
 }
 
-/* Mobile */
 
-@media (max-width: 600px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
   .why-choose-us {
-    padding: 50px 15px;
+    padding: 50px 15px 65px;
   }
 
-  .why-container h2 {
-    font-size: 28px;
-    white-space: normal;
-  }
 
-  .subtitle {
-    font-size: 15px;
-    line-height: 1.5;
-    margin-bottom: 30px;
-  }
-
-  .features {
+  .why-features {
     grid-template-columns: 1fr;
-    gap: 18px;
+
+    gap: 15px;
+
+    margin-bottom: 65px;
   }
 
-  .feature-card {
+
+  .why-feature-card {
+    min-height: 240px;
+
     padding: 30px 20px;
   }
 
-  .feature-card .icon {
-    font-size: 38px;
+
+  .why-feature-icon {
+    font-size: 48px;
+
+    margin-bottom: 20px;
   }
 
-  .feature-card h3 {
+
+  .why-feature-card h3 {
     font-size: 20px;
   }
+
+
+  .why-feature-card p {
+    font-size: 15px;
+  }
+
+
+  /* SPECIAL OFFER */
+
+  .why-offer-card {
+    grid-column: span 1;
+
+    min-height: 350px;
+
+    padding: 25px;
+
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+
+  .offer-content {
+    padding: 0;
+  }
+
+
+  .offer-label {
+    margin-bottom: 10px;
+  }
+
+
+  .offer-content h2 {
+    font-size: 28px;
+  }
+
+
+  .offer-content p {
+    font-size: 14px;
+  }
+
+
+  .offer-image {
+    width: 85%;
+
+    height: 140px;
+  }
+
+
+  /* WELCOME */
+
+  .welcome-section {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+
+  .welcome-image {
+    height: 300px;
+
+    border-radius: 20px;
+  }
+
+
+  .welcome-content {
+    padding: 0;
+  }
+
+
+  .welcome-content h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .welcome-content h2::after {
+    width: 55px;
+
+    margin-top: 14px;
+  }
+
+
+  .welcome-content p {
+    font-size: 15px;
+
+    line-height: 1.8;
+  }
+
 }
