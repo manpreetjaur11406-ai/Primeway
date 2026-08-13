@@ -4,7 +4,6 @@
 
 .navbar {
   position: relative;
-
   width: 100%;
   height: 58px;
 
@@ -17,9 +16,9 @@
   align-items: center;
 
   font-family: "Poppins", Arial, sans-serif;
-
   box-sizing: border-box;
 }
+
 
 /* =========================
    BROWSE CATEGORIES
@@ -33,23 +32,19 @@
   outline: none;
 
   background: #f5b82e;
-
   color: #090909;
 
   display: flex;
   align-items: center;
 
   padding: 0 35px;
-
   gap: 25px;
 
   font-family: "Poppins", Arial, sans-serif;
-
   font-size: 20px;
   font-weight: 600;
 
   cursor: pointer;
-
   box-sizing: border-box;
 
   flex-shrink: 0;
@@ -61,27 +56,18 @@
   background: #ffc83d;
 }
 
-/* Hamburger */
-
 .browse-categories .menu-icon {
   font-size: 27px;
-
   flex-shrink: 0;
 }
 
-/* Text */
-
 .browse-categories span {
   flex: 1;
-
   text-align: left;
 }
 
-/* Arrow */
-
 .browse-categories .arrow-icon {
   font-size: 17px;
-
   transition: transform 0.2s ease;
 }
 
@@ -89,13 +75,13 @@
   transform: rotate(180deg);
 }
 
+
 /* =========================
    MAIN NAVIGATION
 ========================= */
 
 .nav-links {
   height: 100%;
-
   flex: 1;
 
   display: flex;
@@ -115,7 +101,6 @@
   font-family: "Poppins", Arial, sans-serif;
 
   font-size: 18px;
-
   font-weight: 500;
 
   transition: color 0.2s ease;
@@ -124,6 +109,7 @@
 .nav-links a:hover {
   color: #f5b82e;
 }
+
 
 /* =========================
    CATEGORY DROPDOWN
@@ -158,7 +144,6 @@
   font-family: "Poppins", Arial, sans-serif;
 
   font-size: 15px;
-
   font-weight: 500;
 
   border-bottom: 1px solid rgba(245, 184, 46, 0.2);
@@ -168,13 +153,13 @@
 
 .category-menu a:hover {
   background: #f5b82e;
-
   color: #090909;
 }
 
 .category-menu a:last-child {
   border-bottom: none;
 }
+
 
 /* =========================
    TABLET
@@ -186,7 +171,6 @@
     width: 300px;
 
     padding: 0 25px;
-
     gap: 18px;
 
     font-size: 17px;
@@ -194,7 +178,6 @@
 
   .nav-links {
     gap: 20px;
-
     padding: 0 20px;
   }
 
@@ -207,6 +190,7 @@
   }
 }
 
+
 /* =========================
    MOBILE
 ========================= */
@@ -214,58 +198,76 @@
 @media (max-width: 768px) {
 
   .navbar {
-    height: auto;
+    height: 55px;
 
     display: block;
+
+    background: #090909;
+
+    border-top: 1px solid rgba(245, 184, 46, 0.3);
+    border-bottom: 1px solid rgba(245, 184, 46, 0.4);
   }
+
+
+  /* ONLY BROWSE CATEGORIES */
 
   .browse-categories {
     width: 100%;
-
     height: 55px;
 
     padding: 0 20px;
 
-    font-size: 16px;
+    background: #f5b82e;
+    color: #090909;
+
+    font-size: 17px;
 
     gap: 15px;
   }
 
   .browse-categories .menu-icon {
-    font-size: 21px;
+    font-size: 22px;
   }
 
   .browse-categories .arrow-icon {
-    font-size: 14px;
+    font-size: 15px;
   }
+
+
+  /* HIDE HOME PRODUCTS ABOUT BLOG CONTACT */
 
   .nav-links {
-    width: 100%;
-
-    height: auto;
-
-    padding: 15px 20px;
-
-    display: flex;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-
-    justify-content: flex-start;
-
-    box-sizing: border-box;
-
-    background: #090909;
+    display: none;
   }
 
-  .nav-links a {
-    font-size: 14px;
-  }
+
+  /* MOBILE CATEGORY DROPDOWN */
 
   .category-menu {
     top: 55px;
+    left: 0;
 
     width: 100%;
+
+    background: #090909;
+
+    border: 1px solid #f5b82e;
+
+    z-index: 9999;
+  }
+
+  .category-menu a {
+    padding: 15px 22px;
+
+    font-size: 15px;
+
+    color: #ffffff;
+
+    border-bottom: 1px solid rgba(245, 184, 46, 0.2);
+  }
+
+  .category-menu a:hover {
+    background: #f5b82e;
+    color: #090909;
   }
 }
