@@ -12,6 +12,8 @@
   font-family: "Poppins", Arial, sans-serif;
 
   box-sizing: border-box;
+
+  overflow: hidden;
 }
 
 
@@ -63,7 +65,9 @@
 }
 
 
-/* GOLD LINE */
+/* =====================================================
+   GOLD LINE
+===================================================== */
 
 .featured-heading::after {
   content: "";
@@ -96,22 +100,28 @@
   align-items: center;
 
   gap: 18px;
+
+  box-sizing: border-box;
 }
 
 
 /* =====================================================
-   WINDOW
+   PRODUCTS WINDOW
 ===================================================== */
 
 .products-window {
-  width: 100%;
+  flex: 1;
+
+  min-width: 0;
 
   overflow: hidden;
+
+  box-sizing: border-box;
 }
 
 
 /* =====================================================
-   ALL 6 PRODUCTS — ONE ROW
+   PRODUCTS TRACK
 ===================================================== */
 
 .products-track {
@@ -122,6 +132,8 @@
   width: max-content;
 
   transition: transform 0.45s ease;
+
+  will-change: transform;
 }
 
 
@@ -144,12 +156,18 @@
 
   overflow: hidden;
 
+  box-sizing: border-box;
+
   transition:
     transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
 }
 
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
 
 .featured-products .product-card:hover {
   transform: translateY(-7px);
@@ -189,7 +207,7 @@
 
 
 /* =====================================================
-   PRODUCT IMAGE
+   PRODUCT IMAGE FRAME
 ===================================================== */
 
 .featured-products .product-image {
@@ -200,7 +218,14 @@
   background: #151515;
 
   overflow: hidden;
+
+  box-sizing: border-box;
 }
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
 
 .featured-products .product-image img {
   width: 100%;
@@ -208,12 +233,19 @@
 
   object-fit: cover;
 
+  object-position: center;
+
   display: block;
 
   transition:
     transform 0.45s ease,
     filter 0.45s ease;
 }
+
+
+/* =====================================================
+   IMAGE HOVER
+===================================================== */
 
 .featured-products
 .product-card:hover
@@ -234,7 +266,14 @@
   text-align: center;
 
   background: #111111;
+
+  box-sizing: border-box;
 }
+
+
+/* =====================================================
+   PRODUCT NAME
+===================================================== */
 
 .featured-products .product-info h3 {
   margin: 0 0 17px;
@@ -280,6 +319,11 @@
     border-color 0.25s ease;
 }
 
+
+/* =====================================================
+   ENQUIRY HOVER
+===================================================== */
+
 .featured-products .enquiry-btn:hover {
   background: transparent;
 
@@ -299,6 +343,8 @@
 
   min-width: 45px;
 
+  flex-shrink: 0;
+
   border: 1px solid rgba(214, 166, 44, 0.55);
 
   border-radius: 50%;
@@ -314,7 +360,10 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  padding: 0;
 
   transition:
     background 0.25s ease,
@@ -322,6 +371,11 @@
     border-color 0.25s ease,
     transform 0.25s ease;
 }
+
+
+/* =====================================================
+   CAROUSEL BUTTON HOVER
+===================================================== */
 
 .featured-products .carousel-button:hover {
   background: #d6a62c;
@@ -367,6 +421,11 @@
     border-color 0.25s ease;
 }
 
+
+/* =====================================================
+   VIEW ALL HOVER
+===================================================== */
+
 .featured-products .view-all-btn:hover {
   background: #d6a62c;
 
@@ -386,9 +445,13 @@
     padding: 65px 25px 75px;
   }
 
+
   .featured-heading h2 {
     font-size: 32px;
   }
+
+
+  /* TABLET CARD */
 
   .featured-products .product-card {
     flex: 0 0 230px;
@@ -396,8 +459,33 @@
     width: 230px;
   }
 
+
   .featured-products .product-image {
     height: 220px;
+  }
+
+
+  /* TABLET TRACK */
+
+  .products-track {
+    gap: 25px;
+  }
+
+
+  /* TABLET CAROUSEL */
+
+  .products-carousel {
+    gap: 12px;
+  }
+
+
+  .featured-products .carousel-button {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    font-size: 17px;
   }
 }
 
@@ -410,11 +498,19 @@
 
   .featured-products {
     padding: 55px 15px 65px;
+
+    overflow: hidden;
   }
+
+
+  /* =========================
+     HEADING
+  ========================= */
 
   .featured-heading {
     margin-bottom: 35px;
   }
+
 
   .section-small-title {
     font-size: 11px;
@@ -422,38 +518,148 @@
     letter-spacing: 2px;
   }
 
+
   .featured-heading h2 {
     font-size: 28px;
   }
 
+
   .featured-heading p {
     font-size: 14px;
+
+    padding: 0 5px;
   }
 
+
+  /* =========================
+     MOBILE CAROUSEL
+  ========================= */
+
   .products-carousel {
-    gap: 8px;
+    width: 100%;
+
+    gap: 6px;
+
+    box-sizing: border-box;
   }
+
+
+  /* =========================
+     MOBILE WINDOW
+  ========================= */
+
+  .products-window {
+    flex: 1;
+
+    min-width: 0;
+
+    overflow: hidden;
+  }
+
+
+  /* =========================
+     MOBILE TRACK
+  ========================= */
 
   .products-track {
     gap: 15px;
+
+    width: max-content;
   }
+
+
+  /* =========================
+     MOBILE PRODUCT CARD
+  ========================= */
 
   .featured-products .product-card {
-    flex: 0 0 calc(100vw - 90px);
+    flex: 0 0 calc(100vw - 110px);
 
-    width: calc(100vw - 90px);
+    width: calc(100vw - 110px);
+
+    max-width: calc(100vw - 110px);
   }
 
+
+  /* =========================
+     MOBILE IMAGE
+  ========================= */
+
   .featured-products .product-image {
+    width: 100%;
+
     height: 220px;
   }
 
-  .featured-products .carousel-button {
-    width: 37px;
-    height: 37px;
 
-    min-width: 37px;
+  .featured-products .product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+
+  /* =========================
+     MOBILE PRODUCT INFO
+  ========================= */
+
+  .featured-products .product-info {
+    padding: 20px 15px 20px;
+  }
+
+
+  .featured-products .product-info h3 {
+    font-size: 16px;
+
+    margin-bottom: 15px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+
+  /* =========================
+     MOBILE ENQUIRY
+  ========================= */
+
+  .featured-products .enquiry-btn {
+    padding: 11px 15px;
+
+    font-size: 14px;
+  }
+
+
+  /* =========================
+     MOBILE ARROWS
+  ========================= */
+
+  .featured-products .carousel-button {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
 
     font-size: 15px;
+
+    flex-shrink: 0;
+  }
+
+
+  /* =========================
+     VIEW ALL
+  ========================= */
+
+  .featured-products .view-all-btn {
+    margin-top: 35px;
+
+    padding: 12px 25px;
+
+    font-size: 13px;
   }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./FeaturedProducts.css";
 
 import airFilter from "../../assets/ee.png";
@@ -9,7 +9,6 @@ import truckEngine from "../../assets/truckk engine.jpeg";
 import petrolFilter from "../../assets/petrol filter.png";
 
 function FeaturedProducts() {
-
   const products = [
     {
       name: "Truck Air Filter",
@@ -38,17 +37,77 @@ function FeaturedProducts() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev < products.length - 1 ? prev + 1 : 0
-    );
+  /* =========================
+     RESPONSIVE SCREEN WIDTH
+  ========================= */
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  /* =========================
+     SLIDE WIDTH
+  ========================= */
+
+  const getSlideWidth = () => {
+    // Mobile
+    if (windowWidth <= 600) {
+      // Card width = viewport - 110px
+      // Gap = 15px
+      return windowWidth - 95;
+    }
+
+    // Tablet
+    if (windowWidth <= 900) {
+      // Card width = 230px
+      // Gap = 25px
+      return 255;
+    }
+
+    // Laptop / Desktop
+    // Card width = 255px
+    // Gap = 25px
+    return 280;
   };
 
+  const slideWidth = getSlideWidth();
+
+  /* =========================
+     NEXT SLIDE
+  ========================= */
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => {
+      if (prev < products.length - 1) {
+        return prev + 1;
+      }
+
+      return 0;
+    });
+  };
+
+  /* =========================
+     PREVIOUS SLIDE
+  ========================= */
+
   const previousSlide = () => {
-    setCurrentIndex((prev) =>
-      prev > 0 ? prev - 1 : products.length - 1
-    );
+    setCurrentIndex((prev) => {
+      if (prev > 0) {
+        return prev - 1;
+      }
+
+      return products.length - 1;
+    });
   };
 
   return (
@@ -64,7 +123,9 @@ function FeaturedProducts() {
           OUR PRODUCTS
         </span>
 
-        <h2>Featured Products</h2>
+        <h2>
+          Featured Products
+        </h2>
 
         <p>
           Quality truck spare parts for reliable performance
@@ -90,14 +151,14 @@ function FeaturedProducts() {
         </button>
 
 
-        {/* PRODUCTS */}
+        {/* PRODUCTS WINDOW */}
 
         <div className="products-window">
 
           <div
             className="products-track"
             style={{
-              transform: `translateX(-${currentIndex * 280}px)`,
+              transform: `translateX(-${currentIndex * slideWidth}px)`,
             }}
           >
 
@@ -108,6 +169,8 @@ function FeaturedProducts() {
                 key={index}
               >
 
+                {/* IMAGE */}
+
                 <div className="product-image">
 
                   <img
@@ -116,6 +179,9 @@ function FeaturedProducts() {
                   />
 
                 </div>
+
+
+                {/* PRODUCT INFORMATION */}
 
                 <div className="product-info">
 
