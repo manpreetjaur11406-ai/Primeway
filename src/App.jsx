@@ -40,16 +40,16 @@ function Home() {
         <Hero />
       </section>
 
-      {/* SERVICE FEATURES */}
-      <ServiceFeatures />
-
-      {/* WELCOME */}
-      <Welcome />
-
       {/* FEATURED PRODUCTS */}
       <section id="products">
         <FeaturedProducts />
       </section>
+
+      {/* WELCOME */}
+      <Welcome />
+
+      {/* SERVICE FEATURES */}
+      <ServiceFeatures />
 
       {/* BRANDS */}
       <section id="brands">
