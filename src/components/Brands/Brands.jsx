@@ -2,7 +2,7 @@ import "./Brands.css";
 
 import donaldson from "../../assets/Donaldson-logo.jpeg";
 import mannFilter from "../../assets/mann-filter.jpeg";
-import fleetGuard from "../../assets/logo.jpeg";
+import fleetGuard from "../../assets/Logo.jpeg";
 import bosch from "../../assets/bosch-logo.jpeg";
 function Brands() {
   const brands = [
