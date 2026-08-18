@@ -1,33 +1,39 @@
 import { useEffect, useState } from "react";
 import "./FeaturedProducts.css";
 
-import airFilter from "../../assets/ee.png";
-import oilFilter from "../../assets/oil filter.png";
-import brakePad from "../../assets/brake pads.png";
-import dieselFilter from "../../assets/diesel filter image.png";
-import truckEngine from "../../assets/truckk engine.jpeg";
-import petrolFilter from "../../assets/petrol filter.png";
+import airFilter from "../../assets/air-filter truck.jpeg";
+import oilFilter from "../../assets/oil-filter.jpeg";
+import brakePad from "../../assets/brake pad.jpeg";
+import dieselFilter from "../../assets/diesel-filter truck.jpeg";
+import truckEngine from "../../assets/truck engine.jpeg";
+import petrolFilter from "../../assets/petrol filter.jpeg";
+
 
 function FeaturedProducts() {
+
+  /* =====================================================
+     PRODUCTS
+  ===================================================== */
+
   const products = [
     {
-      name: "Truck Air Filter",
+      name: "Air Filter",
       image: airFilter,
     },
     {
-      name: "Heavy Duty Oil Filter",
+      name: " Oil Filter",
       image: oilFilter,
     },
     {
-      name: "Truck Brake Pads",
+      name: "Brake Pads",
       image: brakePad,
     },
     {
-      name: "Diesel Fuel Filter",
+      name: "Diesel Filter",
       image: dieselFilter,
     },
     {
-      name: "Truck Engine Parts",
+      name: "Truck Engine ",
       image: truckEngine,
     },
     {
@@ -36,59 +42,162 @@ function FeaturedProducts() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  /* =========================
+  /* =====================================================
+     SCREEN WIDTH
+  ===================================================== */
+
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined"
+      ? window.innerWidth
+      : 1200
+  );
+
+
+  /* =====================================================
+     CURRENT SLIDE
+  ===================================================== */
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+
+  /* =====================================================
      RESPONSIVE SCREEN WIDTH
-  ========================= */
+  ===================================================== */
 
   useEffect(() => {
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
     };
+
   }, []);
 
-  /* =========================
-     SLIDE WIDTH
-  ========================= */
 
-  const getSlideWidth = () => {
-    // Mobile
+  /* =====================================================
+     GET NUMBER OF VISIBLE CARDS
+  ===================================================== */
+
+  const getVisibleCards = () => {
+
+    /* Mobile = 2 cards */
     if (windowWidth <= 600) {
-      // Card width = viewport - 110px
-      // Gap = 15px
-      return windowWidth - 95;
+      return 2;
     }
 
-    // Tablet
+    /* Tablet */
     if (windowWidth <= 900) {
-      // Card width = 230px
-      // Gap = 25px
+      return 3;
+    }
+
+    /* Desktop */
+    return 4;
+  };
+
+
+  /* =====================================================
+     VISIBLE CARDS
+  ===================================================== */
+
+  const visibleCards = getVisibleCards();
+
+
+  /* =====================================================
+     MAX SLIDE INDEX
+  ===================================================== */
+
+  const maxIndex = Math.max(
+    products.length - visibleCards,
+    0
+  );
+
+
+  /* =====================================================
+     SLIDE WIDTH
+  ===================================================== */
+
+  const getSlideWidth = () => {
+
+    /* ================================================
+       MOBILE
+
+       Card width:
+       (viewport - 125px) / 2
+
+       Gap:
+       15px
+
+       Card + gap:
+       (viewport - 95px) / 2
+    ================================================ */
+
+    if (windowWidth <= 600) {
+
+      return (windowWidth - 95) / 2;
+    }
+
+
+    /* ================================================
+       TABLET
+
+       Card = 230px
+       Gap = 25px
+    ================================================ */
+
+    if (windowWidth <= 900) {
+
       return 255;
     }
 
-    // Laptop / Desktop
-    // Card width = 255px
-    // Gap = 25px
+
+    /* ================================================
+       DESKTOP
+
+       Card = 255px
+       Gap = 25px
+    ================================================ */
+
     return 280;
   };
 
+
   const slideWidth = getSlideWidth();
 
-  /* =========================
+
+  /* =====================================================
+     KEEP INDEX VALID WHEN SCREEN SIZE CHANGES
+  ===================================================== */
+
+  useEffect(() => {
+
+    setCurrentIndex((prev) =>
+      Math.min(prev, maxIndex)
+    );
+
+  }, [maxIndex]);
+
+
+  /* =====================================================
      NEXT SLIDE
-  ========================= */
+  ===================================================== */
 
   const nextSlide = () => {
+
     setCurrentIndex((prev) => {
-      if (prev < products.length - 1) {
+
+      if (prev < maxIndex) {
         return prev + 1;
       }
 
@@ -96,26 +205,36 @@ function FeaturedProducts() {
     });
   };
 
-  /* =========================
+
+  /* =====================================================
      PREVIOUS SLIDE
-  ========================= */
+  ===================================================== */
 
   const previousSlide = () => {
+
     setCurrentIndex((prev) => {
+
       if (prev > 0) {
         return prev - 1;
       }
 
-      return products.length - 1;
+      return maxIndex;
     });
   };
 
+
+  /* =====================================================
+     JSX
+  ===================================================== */
+
   return (
+
     <section className="featured-products">
 
-      {/* =========================
+
+      {/* =================================================
           HEADING
-      ========================= */}
+      ================================================= */}
 
       <div className="featured-heading">
 
@@ -134,13 +253,16 @@ function FeaturedProducts() {
       </div>
 
 
-      {/* =========================
+      {/* =================================================
           CAROUSEL
-      ========================= */}
+      ================================================= */}
 
       <div className="products-carousel">
 
-        {/* LEFT ARROW */}
+
+        {/* ===============================================
+            LEFT ARROW
+        =============================================== */}
 
         <button
           className="carousel-button"
@@ -151,16 +273,25 @@ function FeaturedProducts() {
         </button>
 
 
-        {/* PRODUCTS WINDOW */}
+        {/* ===============================================
+            PRODUCTS WINDOW
+        =============================================== */}
 
         <div className="products-window">
 
           <div
             className="products-track"
             style={{
-              transform: `translateX(-${currentIndex * slideWidth}px)`,
+              transform: `translateX(-${
+                currentIndex * slideWidth
+              }px)`,
             }}
           >
+
+
+            {/* ===========================================
+                PRODUCTS
+            =========================================== */}
 
             {products.map((product, index) => (
 
@@ -169,7 +300,10 @@ function FeaturedProducts() {
                 key={index}
               >
 
-                {/* IMAGE */}
+
+                {/* =======================================
+                    PRODUCT IMAGE
+                ======================================= */}
 
                 <div className="product-image">
 
@@ -181,7 +315,9 @@ function FeaturedProducts() {
                 </div>
 
 
-                {/* PRODUCT INFORMATION */}
+                {/* =======================================
+                    PRODUCT INFORMATION
+                ======================================= */}
 
                 <div className="product-info">
 
@@ -189,7 +325,14 @@ function FeaturedProducts() {
                     {product.name}
                   </h3>
 
-                  <button className="enquiry-btn">
+
+                  {/* =====================================
+                      ENQUIRY BUTTON
+                  ===================================== */}
+
+                  <button
+                    className="enquiry-btn"
+                  >
                     Enquiry
                   </button>
 
@@ -204,7 +347,9 @@ function FeaturedProducts() {
         </div>
 
 
-        {/* RIGHT ARROW */}
+        {/* ===============================================
+            RIGHT ARROW
+        =============================================== */}
 
         <button
           className="carousel-button"
@@ -217,9 +362,9 @@ function FeaturedProducts() {
       </div>
 
 
-      {/* =========================
-          VIEW ALL
-      ========================= */}
+      {/* =================================================
+          VIEW ALL BUTTON
+      ================================================= */}
 
       <button className="view-all-btn">
         View All Products
@@ -228,5 +373,6 @@ function FeaturedProducts() {
     </section>
   );
 }
+
 
 export default FeaturedProducts;

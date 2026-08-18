@@ -1,36 +1,58 @@
-/* ==========================
+/* =====================================================
    TESTIMONIALS SECTION
-========================== */
+   PRIME WAY - WHITE / BLACK / GOLD
+===================================================== */
 
 .testimonials {
   width: 100%;
 
-  padding: 70px 60px;
+  padding: 40px 60px;
 
-  background: #0b0b0b;
+  background: #ffffff;
 
   box-sizing: border-box;
 
   font-family: "Poppins", Arial, sans-serif;
+
+  position: relative;
 }
 
 
-/* ==========================
+/* =====================================================
    HEADING
-========================== */
+===================================================== */
 
 .testimonials-heading {
   max-width: 1400px;
 
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
+
+  position: relative;
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content: center;
 
   align-items: center;
+
+  text-align: center;
 }
 
+
+/* =====================================================
+   TITLE + SUBTITLE WRAPPER
+===================================================== */
+
+.testimonials-heading > div:first-child {
+  width: 100%;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
 
 .testimonials-title {
   margin: 0 0 10px;
@@ -39,27 +61,48 @@
 
   font-weight: 700;
 
+  color: #111111;
+
+  text-align: center;
+}
+
+
+/* Gold word/accent if used separately */
+
+.testimonials-title span {
   color: #d4af37;
 }
 
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
 
 .testimonials-subtitle {
   margin: 0;
 
   font-size: 18px;
 
-  color: #d6d6d6;
+  color: #666666;
+
+  text-align: center;
 }
 
 
-/* ==========================
+/* =====================================================
    NAVIGATION BUTTONS
-========================== */
+===================================================== */
 
 .testimonial-buttons {
   display: flex;
 
   gap: 10px;
+
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
 }
 
 
@@ -97,9 +140,9 @@
 }
 
 
-/* ==========================
+/* =====================================================
    CARDS CONTAINER
-========================== */
+===================================================== */
 
 .testimonials-container {
   max-width: 1400px;
@@ -125,9 +168,9 @@
 }
 
 
-/* ==========================
+/* =====================================================
    TESTIMONIAL CARD
-========================== */
+===================================================== */
 
 .testimonial-card {
   flex: 0 0 calc(33.333% - 17px);
@@ -136,18 +179,18 @@
 
   padding: 35px 28px;
 
-  background: #151515;
+  background: #ffffff;
 
-  border-radius: 12px;
+  border-radius: 10px;
 
   text-align: center;
 
-  border: 1px solid #333333;
+  border: 1px solid #e2e2e2;
 
   border-top: 4px solid #d4af37;
 
   box-shadow:
-    0 5px 20px rgba(0, 0, 0, 0.4);
+    0 5px 20px rgba(0, 0, 0, 0.08);
 
   box-sizing: border-box;
 
@@ -155,9 +198,9 @@
 }
 
 
-/* ==========================
+/* =====================================================
    CARD HOVER
-========================== */
+===================================================== */
 
 .testimonial-card:hover {
   transform: translateY(-6px);
@@ -165,13 +208,13 @@
   border-color: #d4af37;
 
   box-shadow:
-    0 10px 30px rgba(212, 175, 55, 0.18);
+    0 12px 30px rgba(212, 175, 55, 0.18);
 }
 
 
-/* ==========================
+/* =====================================================
    CUSTOMER CIRCLE
-========================== */
+===================================================== */
 
 .customer-image {
   width: 65px;
@@ -200,39 +243,39 @@
 }
 
 
-/* ==========================
+/* =====================================================
    CUSTOMER NAME
-========================== */
+===================================================== */
 
 .testimonial-card h3 {
   margin: 0 0 5px;
 
   font-size: 21px;
 
-  color: #ffffff;
+  color: #111111;
 
   font-weight: 600;
 }
 
 
-/* ==========================
+/* =====================================================
    LOCATION
-========================== */
+===================================================== */
 
 .testimonial-card span {
   display: block;
 
   margin-bottom: 12px;
 
-  color: #bdbdbd;
+  color: #777777;
 
   font-size: 14px;
 }
 
 
-/* ==========================
+/* =====================================================
    STARS
-========================== */
+===================================================== */
 
 .stars {
   margin-bottom: 18px;
@@ -245,14 +288,14 @@
 }
 
 
-/* ==========================
+/* =====================================================
    REVIEW
-========================== */
+===================================================== */
 
 .testimonial-card p {
   margin: 0;
 
-  color: #dddddd;
+  color: #555555;
 
   font-size: 15px;
 
@@ -260,14 +303,18 @@
 }
 
 
-/* ==========================
+/* =====================================================
    TABLET
-========================== */
+===================================================== */
 
 @media (max-width: 1000px) {
 
   .testimonials {
-    padding: 60px 30px;
+    padding: 40px 30px;
+  }
+
+  .testimonials-heading {
+    padding-right: 60px;
   }
 
   .testimonial-card {
@@ -277,14 +324,14 @@
 }
 
 
-/* ==========================
+/* =====================================================
    MOBILE
-========================== */
+===================================================== */
 
 @media (max-width: 600px) {
 
   .testimonials {
-    padding: 50px 15px;
+    padding: 35px 15px;
   }
 
 
@@ -296,6 +343,15 @@
     align-items: center;
 
     margin-bottom: 25px;
+
+    padding-right: 45px;
+
+    text-align: center;
+  }
+
+
+  .testimonials-heading > div:first-child {
+    width: 100%;
 
     text-align: center;
   }
@@ -314,6 +370,8 @@
     font-size: 15px;
 
     line-height: 1.5;
+
+    text-align: center;
   }
 
 

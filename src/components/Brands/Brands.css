@@ -4,9 +4,9 @@
 
 .brands {
   width: 100%;
-  padding: 75px 40px;
+  padding: 40px 40px;
 
-  background: #0b0b0b;
+  background: #ffffff;
 
   font-family: "Poppins", Arial, sans-serif;
 
@@ -21,7 +21,7 @@
 .brands-heading {
   max-width: 700px;
 
-  margin: 0 auto 45px;
+  margin: 0 auto 30px;
 
   text-align: center;
 }
@@ -36,10 +36,9 @@
 
   margin-bottom: 8px;
 
-  color: #d4af37;
+  color: #c99516;
 
   font-size: 13px;
-
   font-weight: 600;
 
   letter-spacing: 2px;
@@ -53,7 +52,7 @@
 .brands-heading h2 {
   margin: 0 0 10px;
 
-  color: #ffffff;
+  color: #111111;
 
   font-size: 34px;
 
@@ -70,7 +69,7 @@
 .brands-heading p {
   margin: 0;
 
-  color: #c9c9c9;
+  color: #666666;
 
   font-size: 15px;
 
@@ -106,10 +105,8 @@
 
   padding: 25px;
 
-  /* BLACK CARD */
-  background: #0b0b0b;
+  background: #ffffff;
 
-  /* GOLD BORDER */
   border: 1px solid #d4af37;
 
   display: flex;
@@ -124,7 +121,7 @@
 
   transition: all 0.3s ease;
 
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 
@@ -135,14 +132,14 @@
 .brand-card:hover {
   transform: translateY(-6px);
 
-  border-color: #f5d76e;
+  border-color: #f5b82e;
 
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 
 /* =========================
-   BRAND IMAGE
+   BRAND IMAGE CONTAINER
 ========================= */
 
 .brand-image {
@@ -156,7 +153,7 @@
 
   justify-content: center;
 
-  background: #0b0b0b;
+  background: #ffffff;
 }
 
 
@@ -184,8 +181,7 @@
 .brand-card h3 {
   margin: 18px 0 0;
 
-  /* GOLD BRAND NAME */
-  color: #d4af37;
+  color: #c99516;
 
   font-size: 16px;
 
@@ -202,7 +198,7 @@
 @media (max-width: 900px) {
 
   .brands {
-    padding: 60px 25px;
+    padding: 40px 25px;
   }
 
   .brands-container {
@@ -219,11 +215,11 @@
 @media (max-width: 600px) {
 
   .brands {
-    padding: 50px 15px;
+    padding: 35px 15px;
   }
 
   .brands-heading {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .brands-heading h2 {

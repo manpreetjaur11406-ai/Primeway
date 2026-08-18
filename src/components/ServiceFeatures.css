@@ -1,136 +1,302 @@
+/* =====================================================
+   SERVICE FEATURES
+===================================================== */
+
 .service-features {
   width: 100%;
-  background: #0b0b0b;
-  border-bottom: 1px solid #c9a227;
+
+  background: #f7f7f7;
+
+  padding: 55px 0 65px;
+
   font-family: "Poppins", Arial, sans-serif;
-}
 
-.service-features-container {
-  width: 100%;
-  max-width: 1250px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  padding: 28px 30px;
   box-sizing: border-box;
 }
 
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.service-features-container {
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 0 25px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   FEATURE CARD
+===================================================== */
+
 .service-feature {
-  display: flex;
-  align-items: center;
+  min-height: 230px;
 
-  padding: 12px 25px;
+  background: #ffffff;
 
-  border-right: 1px solid #c9a227;
-}
-
-.service-feature:last-child {
-  border-right: none;
-}
-
-/* =========================
-   ICON
-========================= */
-
-.service-feature-icon {
-  width: 48px;
-  min-width: 48px;
-  height: 48px;
+  padding: 35px;
 
   display: flex;
+
+  flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
-  margin-right: 15px;
+  text-align: center;
 
-  color: #d4af37;
-  font-size: 30px;
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* =========================
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.service-feature-icon {
+  width: 62px;
+
+  height: 62px;
+
+  margin-bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #d4a017;
+
+  font-size: 42px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =====================================================
    TITLE
-========================= */
+===================================================== */
 
 .service-feature-content h3 {
-  margin: 0 0 5px;
+  margin: 0 0 12px;
 
-  color: #ffffff;
+  color: #111111;
 
-  font-size: 15px;
+  font-size: 21px;
+
   font-weight: 600;
+
+  line-height: 1.3;
+
+  transition: color 0.3s ease;
 }
 
-/* =========================
+
+/* =====================================================
    DESCRIPTION
-========================= */
+===================================================== */
 
 .service-feature-content p {
   margin: 0;
 
-  color: #d4af37;
+  max-width: 280px;
 
-  font-size: 12px;
-  line-height: 1.5;
+  color: #333333;
+
+  font-size: 15px;
+
+  font-weight: 400;
+
+  line-height: 1.7;
+
+  transition: color 0.3s ease;
 }
 
-/* =========================
-   HOVER EFFECT
-========================= */
+
+/* =====================================================
+   HOVER
+   SAME BEHAVIOR AS WHY CHOOSE US
+===================================================== */
+
+.service-feature:hover {
+  transform: translateY(-8px);
+
+  background: #111111;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   HOVER ICON
+===================================================== */
 
 .service-feature:hover .service-feature-icon {
-  color: #f5d76e;
-  transform: scale(1.08);
-  transition: 0.3s ease;
+  color: #f5b82e;
+
+  transform: translateY(-3px);
 }
 
-.service-feature:hover h3 {
-  color: #d4af37;
-  transition: 0.3s ease;
+
+/* =====================================================
+   HOVER TITLE
+===================================================== */
+
+.service-feature:hover .service-feature-content h3 {
+  color: #ffffff;
 }
 
-/* =========================
+
+/* =====================================================
+   HOVER DESCRIPTION
+===================================================== */
+
+.service-feature:hover .service-feature-content p {
+  color: #cccccc;
+}
+
+
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 900px) {
+
+  .service-features {
+    padding: 45px 0 55px;
+  }
+
+
   .service-features-container {
     grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    padding: 0 20px;
   }
 
-  .service-feature:nth-child(2) {
-    border-right: none;
-  }
-
-  .service-feature:nth-child(1),
-  .service-feature:nth-child(2) {
-    border-bottom: 1px solid #c9a227;
-  }
-
-  .service-feature:nth-child(3),
-  .service-feature:nth-child(4) {
-    border-bottom: none;
-  }
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-  .service-features-container {
-    grid-template-columns: 1fr;
-    padding: 15px;
-  }
 
   .service-feature {
-    border-right: none;
-    border-bottom: 1px solid #c9a227;
-    padding: 18px 10px;
+    min-height: 220px;
+
+    padding: 30px 25px;
   }
 
-  .service-feature:last-child {
-    border-bottom: none;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .service-features {
+    padding: 35px 0 45px;
   }
+
+
+  .service-features-container {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding: 0 18px;
+  }
+
+
+  .service-feature {
+    width: 100%;
+
+    min-height: 210px;
+
+    padding: 30px 25px;
+  }
+
+
+  .service-feature-icon {
+    width: 55px;
+
+    height: 55px;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .service-feature-content h3 {
+    font-size: 19px;
+  }
+
+
+  .service-feature-content p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .service-features {
+    padding: 30px 0 40px;
+  }
+
+
+  .service-features-container {
+    padding: 0 15px;
+
+    gap: 15px;
+  }
+
+
+  .service-feature {
+    min-height: 195px;
+
+    padding: 25px 20px;
+  }
+
+
+  .service-feature-content h3 {
+    font-size: 18px;
+  }
+
+
+  .service-feature-content p {
+    font-size: 13px;
+  }
+
 }

@@ -1,100 +1,141 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  FaBars,
-  FaChevronDown,
-} from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./Navbar.css";
 
 function Navbar() {
+
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
+  /* =========================================
+     SMOOTH SCROLL TO HOME SECTION
+  ========================================= */
+
+  const goToSection = (sectionId) => {
+    closeMenu();
+
+    const currentPath = window.location.pathname;
+
+    if (currentPath === "/") {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+
+      return;
+    }
+
+    navigate("/");
+
+    setTimeout(() => {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 300);
+  };
+
   return (
     <nav className="navbar">
 
-      {/* =========================
-          BROWSE CATEGORIES
-      ========================= */}
-
-      <button
-        type="button"
-        className="browse-categories"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <FaBars className="menu-icon" />
-
-        <span>Browse Categories</span>
-
-        <FaChevronDown
-          className={`arrow-icon ${
-            menuOpen ? "arrow-open" : ""
-          }`}
-        />
-      </button>
-
-
-      {/* =========================
-          DESKTOP NAVIGATION
-      ========================= */}
+      {/* MAIN NAVIGATION */}
 
       <div className="nav-links">
 
-        <Link to="/" onClick={closeMenu}>
+        <button
+          type="button"
+          onClick={() => goToSection("home")}
+        >
           Home
-        </Link>
+        </button>
 
-        <Link to="/products" onClick={closeMenu}>
+        <Link
+          to="/products"
+          onClick={closeMenu}
+        >
           Products
         </Link>
 
-        <Link to="/about" onClick={closeMenu}>
+        <button
+          type="button"
+          onClick={() => goToSection("about")}
+        >
           About Us
-        </Link>
+        </button>
 
-        <Link to="/blog" onClick={closeMenu}>
+        <Link
+          to="/blog"
+          onClick={closeMenu}
+        >
           Blog
         </Link>
 
-        <Link to="/contact" onClick={closeMenu}>
+        <button
+          type="button"
+          onClick={() => goToSection("contact")}
+        >
           Contact Us
-        </Link>
+        </button>
 
       </div>
 
-
-      {/* =========================
-          CATEGORY DROPDOWN
-      ========================= */}
+      {/* CATEGORY DROPDOWN */}
 
       {menuOpen && (
+
         <div className="category-menu">
 
-          <Link to="/products" onClick={closeMenu}>
+          <Link
+            to="/products"
+            onClick={closeMenu}
+          >
             All Products
           </Link>
 
-          <Link to="/products" onClick={closeMenu}>
+          <Link
+            to="/products"
+            onClick={closeMenu}
+          >
             Engine Parts
           </Link>
 
-          <Link to="/products" onClick={closeMenu}>
+          <Link
+            to="/products"
+            onClick={closeMenu}
+          >
             Filters
           </Link>
 
-          <Link to="/products" onClick={closeMenu}>
+          <Link
+            to="/products"
+            onClick={closeMenu}
+          >
             Brake Parts
           </Link>
 
-          <Link to="/products" onClick={closeMenu}>
+          <Link
+            to="/products"
+            onClick={closeMenu}
+          >
             Truck Accessories
           </Link>
 
         </div>
+
       )}
 
     </nav>

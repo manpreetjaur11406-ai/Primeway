@@ -1,5 +1,6 @@
 import "./Hero.css";
-import heroImage from "../assets/truckk engine.jpeg";
+
+import heroImage from "../assets/tttruck.png";
 
 function Hero() {
   const handleShopNow = () => {
@@ -19,30 +20,33 @@ function Hero() {
         backgroundImage: `url("${heroImage}")`,
       }}
     >
-      <div className="hero-content">
+      <div className="hero-overlay"></div>
 
+      <div className="hero-content">
         <div className="hero-text">
 
           <h5>TRUCK SPARE PARTS</h5>
 
           <h1>
-            Premium <span>Filters</span>
+            Premium Filters
             <br />
-            &amp; Truck <span>Parts</span>
+            &amp; Truck Parts
           </h1>
 
           <p>
-            We provide high-quality diesel filters, petrol filters,
-            oil filters, air filters, brake parts, engine parts,
-            and accessories for all major truck brands.
+            Quality truck spare parts, engine parts,
+            brake parts, and accessories for all major
+            truck brands.
           </p>
 
-          <button onClick={handleShopNow}>
+          <button
+            type="button"
+            onClick={handleShopNow}
+          >
             Shop Now
           </button>
 
         </div>
-
       </div>
     </section>
   );

@@ -4,10 +4,15 @@
 
 .footer {
   width: 100%;
+
   background: #0b0b0b;
+
   color: #ffffff;
+
   border-top: 3px solid #d4af37;
+
   padding: 50px 0 20px;
+
   box-sizing: border-box;
 }
 
@@ -18,12 +23,17 @@
 
 .footer-container {
   width: 100%;
+
   max-width: 1200px;
+
   margin: 0 auto;
+
   padding: 0 40px;
 
   display: grid;
+
   grid-template-columns: 1.5fr 1fr 1.3fr 1fr;
+
   gap: 50px;
 
   box-sizing: border-box;
@@ -39,32 +49,47 @@
 }
 
 
-/* Company Name */
+/* =========================
+   COMPANY NAME
+========================= */
 
 .footer-column h2 {
   color: #d4af37;
+
   font-size: 22px;
+
   font-weight: 700;
+
   margin: 0 0 18px;
 }
 
 
-/* Column Headings */
+/* =========================
+   COLUMN HEADINGS
+========================= */
 
 .footer-column h3 {
   color: #d4af37;
+
   font-size: 18px;
+
   font-weight: 600;
+
   margin: 0 0 18px;
 }
 
 
-/* Paragraph */
+/* =========================
+   PARAGRAPH
+========================= */
 
 .footer-column p {
   color: #dddddd;
+
   font-size: 14px;
+
   line-height: 1.7;
+
   margin: 0 0 12px;
 }
 
@@ -75,7 +100,9 @@
 
 .footer-column ul {
   list-style: none;
+
   padding: 0;
+
   margin: 0;
 }
 
@@ -87,14 +114,18 @@
 
 .footer-column li a {
   color: #dddddd;
+
   text-decoration: none;
+
   font-size: 14px;
+
   transition: 0.25s ease;
 }
 
 
 .footer-column li a:hover {
   color: #d4af37;
+
   padding-left: 4px;
 }
 
@@ -105,15 +136,20 @@
 
 .footer-column p:has(svg) {
   display: flex;
+
   align-items: flex-start;
+
   gap: 10px;
 }
 
 
 .footer-column p svg {
   color: #d4af37;
+
   font-size: 15px;
+
   min-width: 15px;
+
   margin-top: 4px;
 }
 
@@ -124,23 +160,30 @@
 
 .social-icons {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
 }
 
 
 .social-icons a {
   width: 38px;
+
   height: 38px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   background: #222222;
+
   color: #ffffff;
 
-  border: 1px solid #3a3a3a;
+  border: 1px solid #444444;
+
   border-radius: 50%;
 
   text-decoration: none;
@@ -151,8 +194,11 @@
 
 .social-icons a:hover {
   background: #d4af37;
+
   color: #0b0b0b;
+
   border-color: #d4af37;
+
   transform: translateY(-3px);
 }
 
@@ -163,24 +209,29 @@
 
 .footer-bottom {
   width: 100%;
+
   margin-top: 40px;
+
   padding: 18px 20px 0;
 
   border-top: 1px solid #333333;
 
   text-align: center;
+
   box-sizing: border-box;
 }
 
 
 .footer-bottom p {
   margin: 0;
+
   color: #aaaaaa;
+
   font-size: 13px;
 }
 
 
-/* Golden copyright text */
+/* GOLDEN COPYRIGHT SYMBOL */
 
 .footer-bottom p::first-letter {
   color: #d4af37;
@@ -195,7 +246,9 @@
 
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
+
     gap: 40px;
+
     padding: 0 30px;
   }
 
@@ -203,56 +256,153 @@
 
 
 /* =========================
-   MOBILE
+   MOBILE — LEFT ALIGN
 ========================= */
 
 @media (max-width: 600px) {
 
   .footer {
     padding: 40px 0 18px;
+
+    text-align: left;
   }
 
+
+  /* =========================
+     CONTAINER
+  ========================= */
 
   .footer-container {
     grid-template-columns: 1fr;
+
     gap: 30px;
+
     padding: 0 25px;
+
+    text-align: left;
+
+    justify-items: start;
   }
 
+
+  /* =========================
+     COLUMNS
+  ========================= */
 
   .footer-column {
-    text-align: center;
+    width: 100%;
+
+    text-align: left;
   }
 
+
+  /* =========================
+     HEADINGS
+  ========================= */
 
   .footer-column h2,
   .footer-column h3 {
-    text-align: center;
+    text-align: left;
+
+    margin-left: 0;
   }
 
+
+  /* =========================
+     PARAGRAPH
+  ========================= */
 
   .footer-column p {
-    text-align: center;
+    text-align: left;
+
+    margin-left: 0;
+
+    margin-right: 0;
   }
 
 
-  .footer-column p:has(svg) {
-    justify-content: center;
+  /* =========================
+     COMPANY DESCRIPTION
+  ========================= */
+
+  .footer-column:first-child p {
+    max-width: 100%;
   }
 
+
+  /* =========================
+     QUICK LINKS
+  ========================= */
 
   .footer-column ul {
-    text-align: center;
+    text-align: left;
+
+    padding-left: 0;
+
+    margin-left: 0;
   }
 
+
+  .footer-column li {
+    text-align: left;
+  }
+
+
+  .footer-column li a {
+    display: inline-block;
+
+    text-align: left;
+  }
+
+
+  /* =========================
+     CONTACT DETAILS
+  ========================= */
+
+  .footer-column p:has(svg) {
+    justify-content: flex-start;
+
+    align-items: flex-start;
+
+    text-align: left;
+
+    width: 100%;
+  }
+
+
+  .footer-column p:has(svg) span {
+    text-align: left;
+  }
+
+
+  /* =========================
+     SOCIAL ICONS
+  ========================= */
 
   .social-icons {
-    justify-content: center;
+    justify-content: flex-start;
+
+    align-items: center;
   }
 
+
+  /* =========================
+     FOOTER BOTTOM
+  ========================= */
 
   .footer-bottom {
     margin-top: 30px;
+
+    text-align: left;
+
+    padding-left: 25px;
+
+    padding-right: 25px;
+  }
+
+
+  .footer-bottom p {
+    text-align: left;
   }
 
 }

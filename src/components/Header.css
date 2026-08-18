@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 
 /* =====================================================
@@ -6,34 +6,40 @@
 ===================================================== */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: "Poppins", Arial, sans-serif;
-  background: #0a0a0a;
-  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #111111;
+
+  --gold: #f5b82e;
+  --gold-dark: #d4a017;
+  --gold-light: #ffc83d;
+
+  --border: #e5e5e5;
 }
 
 
 /* =====================================================
-   COLORS
+   HEADER FONT
 ===================================================== */
 
-:root {
-  --black: #090909;
-  --black-soft: #101010;
-
-  --gold: #f5b82e;
-  --gold-light: #ffc83d;
-  --gold-dark: #b98512;
-
-  --white: #ffffff;
-  --gray: #bdbdbd;
-
-  --border: rgba(245, 184, 46, 0.35);
+.top-bar,
+.main-header,
+.mobile-side-menu {
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 
@@ -43,24 +49,23 @@ body {
 
 .top-bar {
   width: 100%;
-  height: 52px;
+  height: 45px;
 
-  background: var(--black);
-  color: var(--white);
+  margin: 0;
+  padding: 0;
 
-  border-bottom: 1px solid var(--border);
+  background: #111111;
+  color: #ffffff;
+
+  border: none;
 }
-
 
 .top-bar-inner {
   width: 100%;
-  max-width: 1500px;
+  height: 45px;
 
-  height: 100%;
-
-  margin: 0 auto;
-
-  padding: 0 55px;
+  margin: 0;
+  padding: 0 30px;
 
   display: flex;
   align-items: center;
@@ -69,77 +74,61 @@ body {
 
 
 /* =====================================================
-   SHIPPING
+   SOCIAL ICONS
+===================================================== */
+
+.top-social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-social a {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  transition: color 0.2s ease;
+}
+
+.top-social a:hover {
+  color: var(--gold);
+}
+
+
+/* =====================================================
+   SHIPPING TEXT
 ===================================================== */
 
 .top-shipping {
   display: flex;
   align-items: center;
 
-  gap: 12px;
+  gap: 8px;
 
   color: #ffffff;
 
-  font-size: 14px;
-  font-weight: 500;
-}
+  font-size: 12px;
+  font-weight: 400;
 
+  line-height: 1;
+
+  white-space: nowrap;
+}
 
 .top-shipping svg {
   color: var(--gold);
-
-  font-size: 20px;
-}
-
-
-/* =====================================================
-   SOCIAL
-===================================================== */
-
-.top-social {
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
-}
-
-
-.follow-text {
-  color: var(--gold);
-
   font-size: 14px;
-  font-weight: 600;
-
-  margin-right: 8px;
-}
-
-
-.top-social a {
-  width: 32px;
-  height: 32px;
-
-  border: 1px solid var(--gold);
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: var(--gold);
-
-  text-decoration: none;
-
-  font-size: 13px;
-
-  transition: all 0.2s ease;
-}
-
-
-.top-social a:hover {
-  background: var(--gold);
-
-  color: var(--black);
 }
 
 
@@ -150,29 +139,36 @@ body {
 .main-header {
   width: 100%;
 
-  background: var(--black);
+  height: 125px;
+  min-height: 125px;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
 
   border-bottom: 1px solid var(--border);
+
+  position: relative;
+  z-index: 100;
 }
 
 
+/* =====================================================
+   MAIN HEADER INNER
+===================================================== */
+
 .main-header-inner {
   width: 100%;
-  max-width: 1500px;
+  height: 125px;
 
-  min-height: 145px;
-
-  margin: 0 auto;
-
-  padding: 25px 55px;
+  margin: 0;
+  padding: 0 30px;
 
   display: flex;
-
   align-items: center;
 
-  justify-content: space-between;
-
-  gap: 55px;
+  gap: 32px;
 }
 
 
@@ -181,24 +177,28 @@ body {
 ===================================================== */
 
 .logo {
-  width: 255px;
+  flex: 0 0 190px;
 
-  min-width: 255px;
+  width: 190px;
+  min-width: 190px;
+  max-width: 190px;
+
+  height: 110px;
 
   display: flex;
-
   align-items: center;
+  justify-content: center;
 
   text-decoration: none;
-}
 
+  overflow: hidden;
+}
 
 .logo img {
   display: block;
 
-  width: 100%;
-
-  max-width: 250px;
+  width: 150px;
+  max-width: 150px;
 
   height: auto;
 
@@ -207,90 +207,90 @@ body {
 
 
 /* =====================================================
-   SEARCH
+   SEARCH BOX
 ===================================================== */
 
 .search-box {
-  flex: 1;
+  flex: 1 1 auto;
 
-  max-width: 760px;
+  min-width: 0;
 
-  height: 58px;
+  height: 54px;
 
   display: flex;
+  align-items: stretch;
 
-  background: var(--black);
+  background: #ffffff;
 
-  border: 1px solid var(--gold);
+  border: 1px solid #dddddd;
 
-  border-radius: 5px;
+  border-radius: 27px;
 
   overflow: hidden;
 }
 
-
 .search-box input {
-  flex: 1;
+  flex: 1 1 auto;
+
+  min-width: 0;
 
   width: 100%;
+  height: 100%;
 
   border: none;
-
   outline: none;
 
-  background: transparent;
+  background: #ffffff;
 
-  color: #ffffff;
+  color: #111111;
 
-  padding: 0 25px;
+  padding: 0 20px;
 
   font-family: "Poppins", Arial, sans-serif;
 
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: 400;
 }
-
 
 .search-box input::placeholder {
-  color: #a7a7a7;
+  color: #777777;
+  opacity: 1;
 }
 
 
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
 .search-box button {
-  width: 150px;
+  flex: 0 0 58px;
+
+  width: 58px;
+  min-width: 58px;
+
+  height: 54px;
+
+  padding: 0;
 
   border: none;
 
   background: var(--gold);
 
-  color: var(--black);
+  color: #111111;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  gap: 12px;
 
   cursor: pointer;
 
-  font-family: "Poppins", Arial, sans-serif;
+  font-size: 17px;
 
-  font-size: 15px;
-
-  font-weight: 600;
-
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
 }
-
 
 .search-box button:hover {
   background: var(--gold-light);
-}
-
-
-.search-box button svg {
-  font-size: 18px;
 }
 
 
@@ -299,39 +299,29 @@ body {
 ===================================================== */
 
 .login-link {
-  min-width: 180px;
+  flex: 0 0 150px;
+
+  width: 150px;
+  min-width: 150px;
 
   display: flex;
-
   align-items: center;
+  justify-content: flex-end;
 
-  justify-content: center;
-
-  gap: 12px;
-
-  color: #ffffff;
+  color: #111111;
 
   text-decoration: none;
 
-  font-size: 15px;
-
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;
 
   white-space: nowrap;
 
   transition: color 0.2s ease;
 }
 
-
-.login-link svg {
-  color: var(--gold);
-
-  font-size: 23px;
-}
-
-
 .login-link:hover {
-  color: var(--gold);
+  color: var(--gold-dark);
 }
 
 
@@ -346,22 +336,285 @@ body {
 
   background: transparent;
 
-  color: #ffffff;
+  color: #111111;
 
   cursor: pointer;
 
   padding: 0;
 
   align-items: center;
-
   justify-content: center;
 }
 
-
 .mobile-menu-button svg {
-  font-size: 30px;
+  font-size: 24px;
+}
 
-  color: #ffffff;
+
+/* =====================================================
+   MOBILE SIDE MENU
+===================================================== */
+
+.mobile-side-menu {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: min(450px, 92vw);
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+
+  z-index: 1000;
+
+  transform: translateX(-105%);
+
+  transition: transform 0.35s ease;
+
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
+
+  overflow-y: auto;
+}
+
+.mobile-side-menu-open {
+  transform: translateX(0);
+}
+
+
+/* =====================================================
+   DARK OVERLAY
+===================================================== */
+
+.mobile-menu-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  z-index: 999;
+}
+
+
+/* =====================================================
+   MOBILE SEARCH
+===================================================== */
+
+.mobile-search {
+  width: 100%;
+
+  padding: 25px 30px 18px;
+
+  background: #ffffff;
+}
+
+.mobile-search-title {
+  color: #666666;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  margin-bottom: 14px;
+}
+
+.mobile-search-box {
+  width: 100%;
+
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #333333;
+
+  background: #ffffff;
+}
+
+.mobile-search-box input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 0 12px;
+
+  color: #222222;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 15px;
+}
+
+.mobile-search-box input::placeholder {
+  color: #555555;
+}
+
+.mobile-search-box button {
+  width: 48px;
+  height: 100%;
+
+  border: none;
+
+  background: transparent;
+
+  color: #666666;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MOBILE MENU TABS
+===================================================== */
+
+.mobile-menu-tabs {
+  width: 100%;
+
+  height: 78px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #dddddd;
+
+  background: #ffffff;
+}
+
+.mobile-tab {
+  position: relative;
+
+  border: none;
+
+  background: #ffffff;
+
+  color: #999999;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.mobile-tab.active {
+  color: #111111;
+}
+
+.mobile-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 3px;
+
+  background: var(--gold-dark);
+}
+
+
+/* =====================================================
+   MOBILE MENU LINKS
+===================================================== */
+
+.mobile-menu-links {
+  width: 100%;
+}
+
+.mobile-menu-links a {
+  width: 100%;
+
+  min-height: 74px;
+
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.mobile-menu-links a:hover {
+  background: #fafafa;
+  color: var(--gold-dark);
+}
+
+
+/* =====================================================
+   MOBILE LOGIN
+===================================================== */
+
+.mobile-menu-links .mobile-login-link {
+  gap: 12px;
+}
+
+.mobile-login-link svg {
+  font-size: 20px;
+  color: #111111;
+}
+
+
+/* =====================================================
+   MOBILE CATEGORIES
+===================================================== */
+
+.mobile-categories {
+  width: 100%;
+}
+
+.mobile-categories a {
+  width: 100%;
+
+  min-height: 65px;
+
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+
+  color: #111111;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  border-bottom: 1px solid #e5e5e5;
+
+  transition: background 0.2s ease;
+}
+
+.mobile-categories a:hover {
+  background: #fafafa;
+  color: var(--gold-dark);
 }
 
 
@@ -372,23 +625,36 @@ body {
 @media (max-width: 1100px) {
 
   .top-bar-inner {
-    padding: 0 30px;
+    padding: 0 20px;
   }
 
   .main-header-inner {
-    padding: 20px 30px;
-
-    gap: 30px;
+    padding: 0 20px;
+    gap: 25px;
   }
 
   .logo {
-    width: 190px;
+    flex: 0 0 170px;
 
-    min-width: 190px;
+    width: 170px;
+    min-width: 170px;
+    max-width: 170px;
+
+    height: 105px;
   }
 
   .logo img {
-    max-width: 190px;
+    width: 155px;
+    max-width: 155px;
+  }
+
+  .login-link {
+    flex: 0 0 130px;
+
+    width: 130px;
+    min-width: 130px;
+
+    font-size: 13px;
   }
 
   .search-box {
@@ -396,11 +662,12 @@ body {
   }
 
   .search-box button {
-    width: 120px;
-  }
+    flex: 0 0 55px;
 
-  .login-link {
-    min-width: auto;
+    width: 55px;
+    min-width: 55px;
+
+    height: 52px;
   }
 }
 
@@ -411,160 +678,117 @@ body {
 
 @media (max-width: 768px) {
 
-  /* ---------------------------------
-     HIDE TOP BAR
-  --------------------------------- */
-
+  /* Hide desktop top bar */
   .top-bar {
     display: none;
   }
 
 
-  /* ---------------------------------
-     BLACK MOBILE HEADER
-  --------------------------------- */
+  /* ==========================================
+     MOBILE HEADER
+  ========================================== */
 
   .main-header {
     width: 100%;
 
-    height: 105px;
+    height: 85px;
+    min-height: 85px;
 
-    min-height: 105px;
+    margin: 0;
+    padding: 0;
 
-    background: #090909;
+    border-bottom: 1px solid #e5e5e5;
 
-    border-bottom: none;
+    z-index: 100;
   }
-
-
-  /* ---------------------------------
-     MOBILE HEADER INNER
-  --------------------------------- */
 
   .main-header-inner {
     width: 100%;
 
-    height: 105px;
-
-    min-height: 105px;
-
-    padding: 0 25px;
+    height: 85px;
+    min-height: 85px;
 
     margin: 0;
+    padding: 0 20px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     position: relative;
 
     gap: 0;
-
-    background: #090909;
   }
 
 
-  /* ---------------------------------
+  /* ==========================================
      HAMBURGER
-  --------------------------------- */
+  ========================================== */
 
   .mobile-menu-button {
     display: flex;
 
     position: absolute;
 
-    left: 27px;
-
+    left: 18px;
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 35px;
+    width: 40px;
+    height: 40px;
 
-    height: 35px;
-
-    z-index: 5;
-
-    border: none;
-
-    background: transparent;
-
-    color: #ffffff;
-
-    cursor: pointer;
-
+    margin: 0;
     padding: 0;
 
-    align-items: center;
-
-    justify-content: center;
+    z-index: 101;
   }
-
 
   .mobile-menu-button svg {
-    font-size: 30px;
-
-    color: #ffffff;
+    font-size: 25px;
   }
 
 
-  /* ---------------------------------
-     CENTER LOGO
-  --------------------------------- */
+  /* ==========================================
+     LOGO
+  ========================================== */
 
   .logo {
-    width: 145px;
+    flex: none;
 
-    min-width: 145px;
+    width: 135px;
+    min-width: 135px;
+    max-width: 135px;
 
-    height: auto;
+    height: 78px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 
     position: absolute;
 
     left: 50%;
-
     top: 50%;
 
     transform: translate(-50%, -50%);
   }
 
-
   .logo img {
-    display: block;
-
-    width: 145px;
-
-    max-width: 145px;
+    width: 135px;
+    max-width: 135px;
 
     height: auto;
-
-    object-fit: contain;
   }
 
 
-  /* ---------------------------------
-     HIDE SEARCH
-  --------------------------------- */
+  /* ==========================================
+     HIDE DESKTOP ELEMENTS
+  ========================================== */
 
-  .search-box {
-    display: none;
-  }
-
-
-  /* ---------------------------------
-     HIDE LOGIN
-  --------------------------------- */
-
+  .search-box,
   .login-link {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -576,41 +800,114 @@ body {
 @media (max-width: 480px) {
 
   .main-header {
-    height: 105px;
+    height: 80px;
+    min-height: 80px;
 
-    min-height: 105px;
+    margin: 0;
+    padding: 0;
   }
-
 
   .main-header-inner {
-    height: 105px;
+    height: 80px;
+    min-height: 80px;
 
-    min-height: 105px;
-
-    padding: 0 20px;
+    margin: 0;
+    padding: 0 15px;
   }
 
+
+  /* Hamburger */
 
   .mobile-menu-button {
-    left: 25px;
-  }
+    left: 15px;
 
+    width: 38px;
+    height: 38px;
+  }
 
   .mobile-menu-button svg {
-    font-size: 29px;
+    font-size: 24px;
   }
 
+
+  /* Logo */
 
   .logo {
-    width: 140px;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
 
-    min-width: 140px;
+    height: 70px;
+  }
+
+  .logo img {
+    width: 120px;
+    max-width: 120px;
   }
 
 
-  .logo img {
-    width: 140px;
+  /* Side menu */
 
-    max-width: 140px;
+  .mobile-side-menu {
+    width: min(450px, 92vw);
+  }
+
+  .mobile-search {
+    padding: 24px 28px 18px;
+  }
+
+  .mobile-search-title {
+    font-size: 17px;
+  }
+
+  .mobile-menu-tabs {
+    height: 72px;
+  }
+
+  .mobile-tab {
+    font-size: 16px;
+  }
+
+  .mobile-menu-links a {
+    min-height: 72px;
+
+    padding: 0 28px;
+
+    font-size: 16px;
+  }
+
+  .mobile-categories a {
+    min-height: 62px;
+
+    padding: 0 28px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =====================================================
+   EXTRA SMALL PHONES
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .mobile-side-menu {
+    width: 94vw;
+  }
+
+  .mobile-search {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .mobile-menu-links a {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .mobile-categories a {
+    padding-left: 22px;
+    padding-right: 22px;
   }
 }

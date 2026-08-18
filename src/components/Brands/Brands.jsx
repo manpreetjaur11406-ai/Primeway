@@ -1,9 +1,9 @@
 import "./Brands.css";
 
-import donaldson from "../../assets/donaldson.jpeg";
-import mannFilter from "../../assets/mann filter.jpeg";
-import fleetGuard from "../../assets/fleetguard.jpeg";
-import bosch from "../../assets/bosch .jpeg";
+import donaldson from "../../assets/donaldson-logo.jpeg";
+import mannFilter from "../../assets/mann-filter.jpeg";
+import fleetGuard from "../../assets/logo.jpeg";
+import bosch from "../../assets/bosch-logo.jpeg";
 function Brands() {
   const brands = [
     {

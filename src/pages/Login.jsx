@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
+import loginLogo from "../assets/login logo.png";
+
 function Login() {
   const navigate = useNavigate();
 
@@ -17,12 +19,20 @@ function Login() {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // =========================
+  // HANDLE INPUT CHANGE
+  // =========================
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
+
+  // =========================
+  // HANDLE LOGIN / SIGNUP
+  // =========================
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,14 +44,17 @@ function Login() {
       // =========================
       // LOGIN
       // =========================
+
       if (!isSignup) {
         const response = await fetch(
           "http://localhost:5000/user/login",
           {
             method: "POST",
+
             headers: {
               "Content-Type": "application/json",
             },
+
             body: JSON.stringify({
               email: formData.email,
               password: formData.password,
@@ -64,21 +77,24 @@ function Login() {
           JSON.stringify(data.user)
         );
 
-        // Move to PrimeWay homepage
+        // Go to homepage
         navigate("/");
       }
 
       // =========================
       // SIGNUP
       // =========================
+
       else {
         const response = await fetch(
           "http://localhost:5000/user/signup",
           {
             method: "POST",
+
             headers: {
               "Content-Type": "application/json",
             },
+
             body: JSON.stringify({
               name: formData.name,
               email: formData.email,
@@ -114,12 +130,31 @@ function Login() {
 
   return (
     <div className="auth-page">
+
       <div className="auth-box">
 
-        {/* Heading */}
+        {/* =========================
+            LOGO
+        ========================= */}
+
+        <div className="login-logo">
+          <img
+            src={loginLogo}
+            alt="PrimeWay Logo"
+          />
+        </div>
+
+
+        {/* =========================
+            HEADER
+        ========================= */}
+
         <div className="auth-header">
+
           <h2>
-            {isSignup ? "Create Account" : "Welcome Back"}
+            {isSignup
+              ? "Create Account"
+              : "Welcome Back"}
           </h2>
 
           <p>
@@ -127,16 +162,28 @@ function Login() {
               ? "Create your PrimeWay account"
               : "Login to your PrimeWay account"}
           </p>
+
         </div>
 
-        {/* Form */}
+
+        {/* =========================
+            FORM
+        ========================= */}
+
         <form onSubmit={handleSubmit}>
 
-          {/* Signup Fields */}
+          {/* =========================
+              SIGNUP FIELDS
+          ========================= */}
+
           {isSignup && (
             <>
+
               <div className="form-group">
-                <label>Full Name</label>
+
+                <label>
+                  Full Name
+                </label>
 
                 <input
                   type="text"
@@ -146,10 +193,15 @@ function Login() {
                   onChange={handleChange}
                   required
                 />
+
               </div>
 
+
               <div className="form-group">
-                <label>Phone Number</label>
+
+                <label>
+                  Phone Number
+                </label>
 
                 <input
                   type="tel"
@@ -159,13 +211,22 @@ function Login() {
                   onChange={handleChange}
                   required
                 />
+
               </div>
+
             </>
           )}
 
-          {/* Email */}
+
+          {/* =========================
+              EMAIL
+          ========================= */}
+
           <div className="form-group">
-            <label>Email</label>
+
+            <label>
+              Email
+            </label>
 
             <input
               type="email"
@@ -175,11 +236,19 @@ function Login() {
               onChange={handleChange}
               required
             />
+
           </div>
 
-          {/* Password */}
+
+          {/* =========================
+              PASSWORD
+          ========================= */}
+
           <div className="form-group">
-            <label>Password</label>
+
+            <label>
+              Password
+            </label>
 
             <input
               type="password"
@@ -189,16 +258,25 @@ function Login() {
               onChange={handleChange}
               required
             />
+
           </div>
 
-          {/* Message */}
+
+          {/* =========================
+              MESSAGE
+          ========================= */}
+
           {message && (
             <p className="auth-message">
               {message}
             </p>
           )}
 
-          {/* Submit */}
+
+          {/* =========================
+              LOGIN BUTTON
+          ========================= */}
+
           <button
             type="submit"
             className="auth-button"
@@ -213,7 +291,11 @@ function Login() {
 
         </form>
 
-        {/* Switch Login / Signup */}
+
+        {/* =========================
+            LOGIN / SIGNUP SWITCH
+        ========================= */}
+
         <div className="auth-switch">
 
           {isSignup ? (
@@ -249,6 +331,7 @@ function Login() {
         </div>
 
       </div>
+
     </div>
   );
 }

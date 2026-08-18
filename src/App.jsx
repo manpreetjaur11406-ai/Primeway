@@ -1,9 +1,10 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ServiceFeatures from "./components/ServiceFeatures";
+import Welcome from "./components/Welcome/Welcome";
 
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
 import Brands from "./components/Brands/Brands";
@@ -14,8 +15,11 @@ import CallToAction from "./components/CallToAction/CallToAction";
 import Contact from "./components/Contact/Contact";
 
 import Footer from "./components/Footer";
+
 import Login from "./pages/Login";
 import Products from "./pages/Products";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
 
 
 /* =====================================================
@@ -25,85 +29,107 @@ import Products from "./pages/Products";
 function Home() {
   return (
     <>
-      {/* =========================
-          HEADER
-      ========================= */}
+      {/* HEADER */}
       <Header />
 
-
-      {/* =========================
-          NAVBAR
-      ========================= */}
+      {/* NAVBAR */}
       <Navbar />
 
-
-      {/* =========================
-          HERO
-      ========================= */}
+      {/* HERO */}
       <section id="home">
         <Hero />
       </section>
 
-
-      {/* =========================
-          SERVICE FEATURES
-      ========================= */}
+      {/* SERVICE FEATURES */}
       <ServiceFeatures />
 
+      {/* WELCOME */}
+      <Welcome />
 
-      {/* =========================
-          FEATURED PRODUCTS
-      ========================= */}
+      {/* FEATURED PRODUCTS */}
       <section id="products">
         <FeaturedProducts />
       </section>
 
-
-      {/* =========================
-          BRANDS
-      ========================= */}
+      {/* BRANDS */}
       <section id="brands">
         <Brands />
       </section>
 
-
-      {/* =========================
-          WHY CHOOSE US
-      ========================= */}
+      {/* WHY CHOOSE US */}
       <section id="about">
         <WhyChooseUs />
       </section>
 
-
-      {/* =========================
-          STATISTICS
-      ========================= */}
+      {/* STATISTICS */}
       <Statistics />
 
-
-      {/* =========================
-          TESTIMONIALS
-      ========================= */}
+      {/* TESTIMONIALS */}
       <Testimonials />
 
-
-      {/* =========================
-          ENQUIRY / CALL TO ACTION
-      ========================= */}
+      {/* CALL TO ACTION */}
       <CallToAction />
 
-
-      {/* =========================
-          CONTACT
-      ========================= */}
+      {/* CONTACT */}
       <section id="contact">
         <Contact />
       </section>
 
+      {/* FOOTER */}
+      <Footer />
+    </>
+  );
+}
 
-      {/* =========================
-          FOOTER
-      ========================= */}
+
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+function AboutPage() {
+  return (
+    <>
+      <Header />
+      <Navbar />
+
+      <About />
+
+      <Footer />
+    </>
+  );
+}
+
+
+/* =====================================================
+   BLOG PAGE
+===================================================== */
+
+function BlogPage() {
+  return (
+    <>
+      <Header />
+      <Navbar />
+
+      <Blog />
+
+      <Footer />
+    </>
+  );
+}
+
+
+/* =====================================================
+   CONTACT PAGE
+===================================================== */
+
+function ContactPage() {
+  return (
+    <>
+      <Header />
+      <Navbar />
+
+      <Contact />
+
       <Footer />
     </>
   );
@@ -118,30 +144,46 @@ function App() {
   return (
     <Routes>
 
-      {/* =========================
-          HOME PAGE
-      ========================= */}
+      {/* HOME */}
       <Route
         path="/"
         element={<Home />}
       />
 
-
-      {/* =========================
-          PRODUCTS PAGE
-      ========================= */}
+      {/* PRODUCTS */}
       <Route
         path="/products"
         element={<Products />}
       />
 
+      {/* ABOUT US */}
+      <Route
+        path="/about"
+        element={<AboutPage />}
+      />
 
-      {/* =========================
-          LOGIN / SIGNUP PAGE
-      ========================= */}
+      {/* BLOG */}
+      <Route
+        path="/blog"
+        element={<BlogPage />}
+      />
+
+      {/* CONTACT US */}
+      <Route
+        path="/contact"
+        element={<ContactPage />}
+      />
+
+      {/* LOGIN */}
       <Route
         path="/login"
         element={<Login />}
+      />
+
+      {/* ANY UNKNOWN URL → HOME */}
+      <Route
+        path="*"
+        element={<Navigate to="/" replace />}
       />
 
     </Routes>

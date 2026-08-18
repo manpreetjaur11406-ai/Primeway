@@ -7,15 +7,11 @@
   min-height: 100vh;
   padding: 85px 50px 100px;
 
-  background:
-    radial-gradient(
-      circle at top center,
-      rgba(212, 160, 23, 0.08),
-      transparent 38%
-    ),
-    #080808;
+  /* CHANGE PAGE BACKGROUND HERE */
+  background: #ffffff;
 
-  color: #ffffff;
+  /* MAIN TEXT COLOR */
+  color: #111111;
 
   font-family: "Poppins", Arial, sans-serif;
 
@@ -39,7 +35,7 @@
 
   margin-bottom: 14px;
 
-  color: #d6a62c;
+  color: #b8860b;
 
   font-size: 13px;
   font-weight: 600;
@@ -56,7 +52,8 @@
 
   font-weight: 700;
 
-  color: #f4c75a;
+  /* HEADING COLOR */
+  color: #111111;
 
   letter-spacing: -1px;
 }
@@ -67,7 +64,8 @@
 
   margin: 0 auto;
 
-  color: #a7a7a7;
+  /* DESCRIPTION COLOR */
+  color: #555555;
 
   font-size: 16px;
   line-height: 1.7;
@@ -121,14 +119,10 @@
 .products-page-card {
   position: relative;
 
-  background:
-    linear-gradient(
-      145deg,
-      #151515,
-      #0d0d0d
-    );
+  /* CARD BACKGROUND */
+  background: #ffffff;
 
-  border: 1px solid rgba(214, 166, 44, 0.35);
+  border: 1px solid rgba(214, 166, 44, 0.55);
 
   border-radius: 4px;
 
@@ -147,8 +141,8 @@
   border-color: #d6a62c;
 
   box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.55),
-    0 0 25px rgba(214, 166, 44, 0.12);
+    0 18px 40px rgba(0, 0, 0, 0.18),
+    0 0 25px rgba(214, 166, 44, 0.18);
 }
 
 
@@ -164,7 +158,8 @@
 
   overflow: hidden;
 
-  background: #111111;
+  /* IMAGE AREA BACKGROUND */
+  background: #ffffff;
 }
 
 
@@ -244,8 +239,15 @@
   padding: 25px 24px 26px;
 
   text-align: left;
+
+  /* INFORMATION BACKGROUND */
+  background: #ffffff;
 }
 
+
+/* =========================================
+   PRODUCT CATEGORY
+========================================= */
 
 .product-category {
   display: block;
@@ -261,10 +263,15 @@
 }
 
 
+/* =========================================
+   PRODUCT NAME
+========================================= */
+
 .products-page-info h2 {
   margin: 0 0 15px;
 
-  color: #ffffff;
+  /* PRODUCT NAME */
+  color: #111111;
 
   font-size: 22px;
 
@@ -281,7 +288,7 @@
 .product-price {
   margin-bottom: 22px;
 
-  color: #e8b83e;
+  color: #c49218;
 
   font-size: 22px;
 
@@ -307,13 +314,14 @@
 
   border-radius: 2px;
 
-  background: transparent;
+  background: #111111;
 
   color: #e8b83e;
 
   font-family: "Poppins", Arial, sans-serif;
 
   font-size: 13px;
+
   font-weight: 600;
 
   letter-spacing: 0.5px;
@@ -372,7 +380,7 @@
       transparent
     );
 
-  opacity: 0.7;
+  opacity: 0.9;
 
   z-index: 2;
 }
@@ -436,10 +444,14 @@
 
   .products-page-image {
     height: 250px;
+
+    background: #ffffff;
   }
 
   .products-page-info {
     padding: 22px;
+
+    background: #ffffff;
   }
 
 }

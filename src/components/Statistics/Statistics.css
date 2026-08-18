@@ -1,106 +1,152 @@
-/* ==========================
-   STATISTICS SECTION
-========================== */
+/* =====================================================
+   STATISTICS / OUR ACHIEVEMENTS
+   PRIME WAY - WHITE / BLACK / GOLD
+===================================================== */
 
 .statistics-section {
   width: 100%;
 
-  background:
-    linear-gradient(
-      rgba(11, 11, 11, 0.92),
-      rgba(11, 11, 11, 0.92)
-    ),
-    url("../../assets/truck engine.jpeg");
+  min-height: auto;
 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-
-  padding: 80px 40px;
+  padding: 40px 50px;
 
   box-sizing: border-box;
+
+  background: #ffffff;
 
   font-family: "Poppins", Arial, sans-serif;
 }
 
 
-/* ==========================
-   MAIN CONTAINER
-========================== */
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
 .statistics-overlay {
   width: 100%;
-  max-width: 1200px;
+
+  max-width: 1250px;
 
   margin: 0 auto;
 
-  text-align: center;
+  box-sizing: border-box;
 }
 
 
-/* ==========================
-   TITLE
-========================== */
+/* =====================================================
+   HEADING
+===================================================== */
+
+.statistics-heading {
+  width: 100%;
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   SMALL GOLD TITLE
+===================================================== */
+
+.statistics-small-title {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #d4a017;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
 
 .statistics-title {
-  margin: 0 0 15px;
+  margin: 0;
 
-  color: #d4af37;
+  color: #111111;
 
-  font-size: 42px;
-
-  font-weight: 700;
+  font-size: 40px;
 
   line-height: 1.2;
+
+  font-weight: 700;
 }
 
 
-/* ==========================
+/* =====================================================
    SUBTITLE
-========================== */
+===================================================== */
 
 .statistics-subtitle {
-  margin: 0 0 50px;
+  max-width: 700px;
 
-  color: #e5e5e5;
+  margin: 14px auto 0;
 
-  font-size: 18px;
+  color: #666666;
 
-  line-height: 1.6;
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  font-weight: 400;
 }
 
 
-/* ==========================
+/* =====================================================
+   GOLD LINE
+===================================================== */
+
+.statistics-line {
+  width: 60px;
+
+  height: 3px;
+
+  margin: 15px auto 0;
+
+  background: #d4a017;
+
+  border-radius: 10px;
+}
+
+
+/* =====================================================
    STATISTICS CONTAINER
-========================== */
+===================================================== */
 
 .statistics-container {
   width: 100%;
 
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 
-  gap: 30px;
+  gap: 22px;
+
+  box-sizing: border-box;
 }
 
 
-/* ==========================
+/* =====================================================
    STATISTICS CARD
-========================== */
+===================================================== */
 
 .statistics-card {
-  min-height: 180px;
+  position: relative;
 
-  background: rgba(20, 20, 20, 0.85);
-
-  border: 1px solid #d4af37;
-
-  border-radius: 10px;
+  min-height: 190px;
 
   padding: 35px 20px;
-
-  box-sizing: border-box;
 
   display: flex;
 
@@ -110,55 +156,101 @@
 
   justify-content: center;
 
-  transition: all 0.3s ease;
+  text-align: center;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e2e2;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 
-/* ==========================
-   CARD HOVER
-========================== */
+/* =====================================================
+   GOLD TOP ACCENT
+===================================================== */
 
-.statistics-card:hover {
-  transform: translateY(-8px);
+.statistics-card::before {
+  content: "";
 
-  background: #d4af37;
+  position: absolute;
 
-  border-color: #f5d76e;
+  top: 0;
+  left: 0;
 
-  box-shadow:
-    0 10px 30px rgba(212, 175, 55, 0.3);
+  width: 100%;
+  height: 3px;
+
+  background: #d4a017;
+
+  transform: scaleX(0);
+
+  transition: transform 0.3s ease;
 }
 
 
-/* ==========================
+/* =====================================================
    NUMBER
-========================== */
+===================================================== */
 
-.statistics-card h3 {
-  margin: 0 0 12px;
+.statistics-number {
+  color: #d4a017;
 
-  color: #d4af37;
+  font-size: 46px;
 
-  font-size: 42px;
+  line-height: 1;
 
   font-weight: 700;
 
-  line-height: 1.2;
+  margin-bottom: 15px;
 
   transition: color 0.3s ease;
 }
 
 
-/* ==========================
+/* =====================================================
+   CARD GOLD LINE
+===================================================== */
+
+.statistics-card-line {
+  width: 38px;
+
+  height: 2px;
+
+  margin-bottom: 15px;
+
+  background: #d4a017;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* =====================================================
    CARD TEXT
-========================== */
+===================================================== */
 
 .statistics-card p {
   margin: 0;
 
-  color: #ffffff;
+  color: #222222;
 
-  font-size: 18px;
+  font-size: 16px;
+
+  line-height: 1.5;
 
   font-weight: 500;
 
@@ -166,73 +258,179 @@
 }
 
 
-/* ==========================
-   HOVER TEXT
-========================== */
+/* =====================================================
+   HOVER
+===================================================== */
 
-.statistics-card:hover h3,
+.statistics-card:hover {
+  transform: translateY(-8px);
+
+  background: #111111;
+
+  border-color: #d4a017;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.statistics-card:hover::before {
+  transform: scaleX(1);
+}
+
+.statistics-card:hover .statistics-number {
+  color: #d4a017;
+}
+
+.statistics-card:hover .statistics-card-line {
+  width: 55px;
+
+  background: #d4a017;
+}
+
 .statistics-card:hover p {
-  color: #111111;
+  color: #ffffff;
 }
 
 
-/* ==========================
+/* =====================================================
    TABLET
-========================== */
+===================================================== */
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
 
   .statistics-section {
-    padding: 70px 30px;
+    padding: 40px 30px;
   }
 
   .statistics-container {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .statistics-card {
+    min-height: 175px;
+
+    padding: 30px 15px;
+  }
+
+  .statistics-number {
+    font-size: 40px;
+  }
+
+  .statistics-card p {
+    font-size: 14px;
   }
 
 }
 
 
-/* ==========================
-   MOBILE
-========================== */
+/* =====================================================
+   SMALL TABLET
+===================================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   .statistics-section {
-    padding: 60px 20px;
+    padding: 40px 25px;
+  }
 
-    background-attachment: scroll;
+  .statistics-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    gap: 20px;
   }
 
   .statistics-title {
-    font-size: 32px;
+    font-size: 36px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .statistics-section {
+    min-height: auto;
+
+    padding: 40px 18px;
+  }
+
+  .statistics-small-title {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .statistics-title {
+    font-size: 30px;
   }
 
   .statistics-subtitle {
-    font-size: 16px;
+    font-size: 14px;
 
-    margin-bottom: 35px;
+    margin-top: 12px;
+  }
+
+  .statistics-heading {
+    margin-bottom: 30px;
   }
 
   .statistics-container {
     grid-template-columns: 1fr;
 
-    gap: 15px;
+    max-width: 420px;
+
+    gap: 16px;
   }
 
   .statistics-card {
-    min-height: 160px;
+    min-height: 165px;
 
     padding: 30px 20px;
   }
 
-  .statistics-card h3 {
-    font-size: 36px;
+  .statistics-number {
+    font-size: 38px;
   }
 
   .statistics-card p {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .statistics-section {
+    padding: 35px 14px;
+  }
+
+  .statistics-title {
+    font-size: 27px;
+  }
+
+  .statistics-subtitle {
+    font-size: 13px;
+  }
+
+  .statistics-card {
+    min-height: 155px;
+  }
+
+  .statistics-number {
+    font-size: 35px;
   }
 
 }

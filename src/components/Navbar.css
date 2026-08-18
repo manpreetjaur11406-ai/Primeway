@@ -1,119 +1,144 @@
-/* =========================
+/* =====================================================
    NAVBAR
-========================= */
+===================================================== */
 
 .navbar {
   position: relative;
+
   width: 100%;
   height: 58px;
 
-  background: #090909;
+  margin: 0;
+  padding: 0;
 
-  border-top: 1px solid rgba(245, 184, 46, 0.35);
-  border-bottom: 1px solid rgba(245, 184, 46, 0.45);
+  background: #ffffff;
+
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 
   display: flex;
   align-items: center;
 
   font-family: "Poppins", Arial, sans-serif;
-  box-sizing: border-box;
-}
 
-
-/* =========================
-   BROWSE CATEGORIES
-========================= */
-
-.browse-categories {
-  width: 456px;
-  height: 58px;
-
-  border: none;
-  outline: none;
-
-  background: #f5b82e;
-  color: #090909;
-
-  display: flex;
-  align-items: center;
-
-  padding: 0 35px;
-  gap: 25px;
-
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-
-  cursor: pointer;
   box-sizing: border-box;
 
-  flex-shrink: 0;
-
-  transition: background 0.2s ease;
-}
-
-.browse-categories:hover {
-  background: #ffc83d;
-}
-
-.browse-categories .menu-icon {
-  font-size: 27px;
-  flex-shrink: 0;
-}
-
-.browse-categories span {
-  flex: 1;
-  text-align: left;
-}
-
-.browse-categories .arrow-icon {
-  font-size: 17px;
-  transition: transform 0.2s ease;
-}
-
-.browse-categories .arrow-open {
-  transform: rotate(180deg);
+  z-index: 100;
 }
 
 
-/* =========================
+/* =====================================================
    MAIN NAVIGATION
-========================= */
+===================================================== */
 
 .nav-links {
-  height: 100%;
-  flex: 1;
+  width: 100%;
+  height: 58px;
 
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 
-  padding: 0 35px;
+  gap: 45px;
+
+  padding: 0 25px;
 
   white-space: nowrap;
+
+  box-sizing: border-box;
 }
 
+
+/* =====================================================
+   NORMAL NAVIGATION LINKS
+   PRODUCTS / BLOG
+===================================================== */
+
 .nav-links a {
-  color: #ffffff;
+  color: #222222;
 
   text-decoration: none;
 
   font-family: "Poppins", Arial, sans-serif;
 
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1;
 
   transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #f5b82e;
+  color: #d4a017;
 }
 
 
-/* =========================
+/* =====================================================
+   NAVIGATION BUTTONS
+   HOME / ABOUT US / CONTACT US
+===================================================== */
+
+.nav-links button {
+  position: relative;
+
+  color: #222222;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  padding: 0;
+  margin: 0;
+
+  font-family: "Poppins", Arial, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  box-shadow: none;
+
+  transition: color 0.2s ease;
+}
+
+
+/* =====================================================
+   BUTTON HOVER
+===================================================== */
+
+.nav-links button:hover {
+  color: #d4a017;
+}
+
+
+/* =====================================================
+   REMOVE BROWSER DEFAULT BUTTON STYLE
+===================================================== */
+
+.nav-links button:focus,
+.nav-links button:active,
+.nav-links button:focus-visible {
+  outline: none;
+
+  border: none;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
    CATEGORY DROPDOWN
-========================= */
+===================================================== */
 
 .category-menu {
   position: absolute;
@@ -121,39 +146,47 @@
   top: 58px;
   left: 0;
 
-  width: 456px;
+  width: 280px;
 
-  background: #0b0b0b;
+  background: #ffffff;
 
-  border: 1px solid #f5b82e;
+  border: 1px solid #e5e5e5;
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
 
   z-index: 1000;
 }
 
+
+/* =====================================================
+   CATEGORY LINKS
+===================================================== */
+
 .category-menu a {
   display: block;
 
-  padding: 16px 30px;
+  padding: 13px 20px;
 
-  color: #ffffff;
+  color: #222222;
 
   text-decoration: none;
 
   font-family: "Poppins", Arial, sans-serif;
 
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;
 
-  border-bottom: 1px solid rgba(245, 184, 46, 0.2);
+  line-height: 1.4;
+
+  border-bottom: 1px solid #eeeeee;
 
   transition: all 0.2s ease;
 }
 
 .category-menu a:hover {
   background: #f5b82e;
-  color: #090909;
+
+  color: #111111;
 }
 
 .category-menu a:last-child {
@@ -161,113 +194,82 @@
 }
 
 
-/* =========================
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 1100px) {
 
-  .browse-categories {
-    width: 300px;
-
-    padding: 0 25px;
-    gap: 18px;
-
-    font-size: 17px;
+  .navbar {
+    height: 56px;
   }
 
   .nav-links {
-    gap: 20px;
-    padding: 0 20px;
+    height: 56px;
+
+    gap: 28px;
+
+    padding: 0 18px;
   }
 
-  .nav-links a {
-    font-size: 15px;
+  .nav-links a,
+  .nav-links button {
+    font-size: 13px;
   }
 
   .category-menu {
-    width: 300px;
+    width: 250px;
+
+    top: 56px;
   }
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+   HIDE DESKTOP NAVBAR COMPLETELY
+===================================================== */
 
 @media (max-width: 768px) {
 
   .navbar {
-    height: 55px;
+    display: none !important;
 
-    display: block;
+    width: 0;
+    height: 0;
 
-    background: #090909;
+    margin: 0;
+    padding: 0;
 
-    border-top: 1px solid rgba(245, 184, 46, 0.3);
-    border-bottom: 1px solid rgba(245, 184, 46, 0.4);
+    border: none;
   }
-
-
-  /* ONLY BROWSE CATEGORIES */
-
-  .browse-categories {
-    width: 100%;
-    height: 55px;
-
-    padding: 0 20px;
-
-    background: #f5b82e;
-    color: #090909;
-
-    font-size: 17px;
-
-    gap: 15px;
-  }
-
-  .browse-categories .menu-icon {
-    font-size: 22px;
-  }
-
-  .browse-categories .arrow-icon {
-    font-size: 15px;
-  }
-
-
-  /* HIDE HOME PRODUCTS ABOUT BLOG CONTACT */
 
   .nav-links {
     display: none;
   }
 
-
-  /* MOBILE CATEGORY DROPDOWN */
-
   .category-menu {
-    top: 55px;
-    left: 0;
+    display: none;
+  }
+}
 
-    width: 100%;
 
-    background: #090909;
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
-    border: 1px solid #f5b82e;
+@media (max-width: 480px) {
 
-    z-index: 9999;
+  .navbar {
+    display: none !important;
+
+    width: 0;
+    height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
   }
 
-  .category-menu a {
-    padding: 15px 22px;
-
-    font-size: 15px;
-
-    color: #ffffff;
-
-    border-bottom: 1px solid rgba(245, 184, 46, 0.2);
-  }
-
-  .category-menu a:hover {
-    background: #f5b82e;
-    color: #090909;
-  }
 }

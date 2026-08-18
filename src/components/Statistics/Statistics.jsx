@@ -24,16 +24,32 @@ function Statistics() {
   return (
     <section className="statistics-section">
 
+      {/* DARK BACKGROUND */}
+      <div className="statistics-background"></div>
+
       <div className="statistics-overlay">
 
-        <h2 className="statistics-title">
-          Our Achievements
-        </h2>
+        {/* SECTION HEADING */}
+        <div className="statistics-heading">
 
-        <p className="statistics-subtitle">
-          Delivering trusted truck spare parts with quality and commitment.
-        </p>
+          <span className="statistics-small-title">
+            OUR ACHIEVEMENTS
+          </span>
 
+          <h2 className="statistics-title">
+            Trusted By Thousands
+          </h2>
+
+          <p className="statistics-subtitle">
+            Delivering trusted truck spare parts with quality and commitment.
+          </p>
+
+          <div className="statistics-line"></div>
+
+        </div>
+
+
+        {/* STATISTICS CARDS */}
         <div className="statistics-container">
 
           {stats.map((item, index) => (
@@ -41,9 +57,17 @@ function Statistics() {
               className="statistics-card"
               key={index}
             >
-              <h3>{item.number}</h3>
 
-              <p>{item.title}</p>
+              <div className="statistics-number">
+                {item.number}
+              </div>
+
+              <div className="statistics-card-line"></div>
+
+              <p>
+                {item.title}
+              </p>
+
             </div>
           ))}
 

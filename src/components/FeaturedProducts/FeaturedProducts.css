@@ -1,19 +1,20 @@
 /* =====================================================
-   FEATURED PRODUCTS — BLACK & GOLD
+   FEATURED PRODUCTS — WHITE & GOLD
 ===================================================== */
 
 .featured-products {
   width: 100%;
-  padding: 85px 40px 90px;
+  padding: 50px 40px 55px;
 
-  background: #080808;
-  color: #ffffff;
+  background: #ffffff;
+  color: #111111;
 
   font-family: "Poppins", Arial, sans-serif;
 
   box-sizing: border-box;
-
   overflow: hidden;
+
+  margin: 0;
 }
 
 
@@ -23,18 +24,17 @@
 
 .featured-heading {
   text-align: center;
-
   max-width: 750px;
 
-  margin: 0 auto 50px;
+  margin: 0 auto 35px;
 }
 
 .section-small-title {
   display: block;
 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
-  color: #d6a62c;
+  color: #d09b17;
 
   font-size: 13px;
   font-weight: 600;
@@ -43,9 +43,9 @@
 }
 
 .featured-heading h2 {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 
-  color: #f2c14e;
+  color: #111111;
 
   font-size: 38px;
   line-height: 1.2;
@@ -58,7 +58,7 @@
 .featured-heading p {
   margin: 0;
 
-  color: #a9a9a9;
+  color: #666666;
 
   font-size: 15px;
   line-height: 1.6;
@@ -77,11 +77,9 @@
   width: 55px;
   height: 2px;
 
-  margin: 22px auto 0;
+  margin: 18px auto 0;
 
-  background: #d6a62c;
-
-  box-shadow: 0 0 12px rgba(214, 166, 44, 0.35);
+  background: #f5b82e;
 }
 
 
@@ -96,7 +94,6 @@
   margin: 0 auto;
 
   display: flex;
-
   align-items: center;
 
   gap: 18px;
@@ -145,14 +142,13 @@
   position: relative;
 
   flex: 0 0 255px;
-
   width: 255px;
 
-  background: #111111;
+  background: #ffffff;
 
-  border: 1px solid rgba(214, 166, 44, 0.35);
+  border: 1px solid #dddddd;
 
-  border-radius: 3px;
+  border-radius: 4px;
 
   overflow: hidden;
 
@@ -172,11 +168,9 @@
 .featured-products .product-card:hover {
   transform: translateY(-7px);
 
-  border-color: #d6a62c;
+  border-color: #f5b82e;
 
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.55),
-    0 0 20px rgba(214, 166, 44, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
 
 
@@ -195,12 +189,7 @@
 
   height: 2px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #d6a62c,
-    transparent
-  );
+  background: #f5b82e;
 
   z-index: 2;
 }
@@ -215,7 +204,7 @@
 
   height: 245px;
 
-  background: #151515;
+  background: #ffffff;
 
   overflow: hidden;
 
@@ -232,14 +221,11 @@
   height: 100%;
 
   object-fit: cover;
-
   object-position: center;
 
   display: block;
 
-  transition:
-    transform 0.45s ease,
-    filter 0.45s ease;
+  transition: transform 0.45s ease;
 }
 
 
@@ -250,9 +236,7 @@
 .featured-products
 .product-card:hover
 .product-image img {
-  transform: scale(1.05);
-
-  filter: brightness(0.82);
+  transform: scale(1.04);
 }
 
 
@@ -261,11 +245,11 @@
 ===================================================== */
 
 .featured-products .product-info {
-  padding: 22px 20px 23px;
+  padding: 20px 20px 21px;
 
   text-align: center;
 
-  background: #111111;
+  background: #ffffff;
 
   box-sizing: border-box;
 }
@@ -276,15 +260,23 @@
 ===================================================== */
 
 .featured-products .product-info h3 {
-  margin: 0 0 17px;
+  margin: 0 0 15px;
 
-  color: #ffffff;
+  color: #111111;
 
   font-size: 17px;
 
   line-height: 1.4;
 
   font-weight: 600;
+
+  min-height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 }
 
 
@@ -297,13 +289,13 @@
 
   padding: 12px 20px;
 
-  border: 1px solid #d6a62c;
+  border: 1px solid #f5b82e;
 
   border-radius: 2px;
 
-  background: #d6a62c;
+  background: #f5b82e;
 
-  color: #080808;
+  color: #111111;
 
   font-family: "Poppins", Arial, sans-serif;
 
@@ -320,16 +312,12 @@
 }
 
 
-/* =====================================================
-   ENQUIRY HOVER
-===================================================== */
-
 .featured-products .enquiry-btn:hover {
-  background: transparent;
+  background: #111111;
 
-  border-color: #e7bc4c;
+  border-color: #111111;
 
-  color: #e7bc4c;
+  color: #ffffff;
 }
 
 
@@ -345,13 +333,13 @@
 
   flex-shrink: 0;
 
-  border: 1px solid rgba(214, 166, 44, 0.55);
+  border: 1px solid #f5b82e;
 
   border-radius: 50%;
 
-  background: #111111;
+  background: #ffffff;
 
-  color: #d6a62c;
+  color: #d09b17;
 
   font-size: 19px;
 
@@ -365,24 +353,16 @@
 
   padding: 0;
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease,
-    transform 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 
-/* =====================================================
-   CAROUSEL BUTTON HOVER
-===================================================== */
-
 .featured-products .carousel-button:hover {
-  background: #d6a62c;
+  background: #f5b82e;
 
-  border-color: #d6a62c;
+  border-color: #f5b82e;
 
-  color: #080808;
+  color: #111111;
 
   transform: scale(1.05);
 }
@@ -395,17 +375,17 @@
 .featured-products .view-all-btn {
   display: block;
 
-  margin: 42px auto 0;
+  margin: 32px auto 0;
 
   padding: 13px 32px;
 
-  border: 1px solid #d6a62c;
+  border: 1px solid #f5b82e;
 
   border-radius: 2px;
 
-  background: transparent;
+  background: #ffffff;
 
-  color: #d6a62c;
+  color: #111111;
 
   font-family: "Poppins", Arial, sans-serif;
 
@@ -415,23 +395,16 @@
 
   cursor: pointer;
 
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 
-/* =====================================================
-   VIEW ALL HOVER
-===================================================== */
-
 .featured-products .view-all-btn:hover {
-  background: #d6a62c;
+  background: #f5b82e;
 
-  border-color: #d6a62c;
+  border-color: #f5b82e;
 
-  color: #080808;
+  color: #111111;
 }
 
 
@@ -442,16 +415,16 @@
 @media (max-width: 900px) {
 
   .featured-products {
-    padding: 65px 25px 75px;
+    padding: 45px 25px 50px;
   }
 
+  .featured-heading {
+    margin-bottom: 30px;
+  }
 
   .featured-heading h2 {
     font-size: 32px;
   }
-
-
-  /* TABLET CARD */
 
   .featured-products .product-card {
     flex: 0 0 230px;
@@ -459,28 +432,21 @@
     width: 230px;
   }
 
-
   .featured-products .product-image {
     height: 220px;
   }
-
-
-  /* TABLET TRACK */
 
   .products-track {
     gap: 25px;
   }
 
-
-  /* TABLET CAROUSEL */
-
   .products-carousel {
     gap: 12px;
   }
 
-
   .featured-products .carousel-button {
     width: 40px;
+
     height: 40px;
 
     min-width: 40px;
@@ -491,13 +457,13 @@
 
 
 /* =====================================================
-   MOBILE
+   MOBILE — 2 CARDS
 ===================================================== */
 
 @media (max-width: 600px) {
 
   .featured-products {
-    padding: 55px 15px 65px;
+    padding: 40px 15px 45px;
 
     overflow: hidden;
   }
@@ -508,9 +474,8 @@
   ========================= */
 
   .featured-heading {
-    margin-bottom: 35px;
+    margin-bottom: 28px;
   }
-
 
   .section-small-title {
     font-size: 11px;
@@ -518,11 +483,9 @@
     letter-spacing: 2px;
   }
 
-
   .featured-heading h2 {
     font-size: 28px;
   }
-
 
   .featured-heading p {
     font-size: 14px;
@@ -532,7 +495,7 @@
 
 
   /* =========================
-     MOBILE CAROUSEL
+     CAROUSEL
   ========================= */
 
   .products-carousel {
@@ -545,7 +508,7 @@
 
 
   /* =========================
-     MOBILE WINDOW
+     PRODUCT WINDOW
   ========================= */
 
   .products-window {
@@ -558,7 +521,7 @@
 
 
   /* =========================
-     MOBILE TRACK
+     TRACK
   ========================= */
 
   .products-track {
@@ -568,32 +531,59 @@
   }
 
 
-  /* =========================
-     MOBILE PRODUCT CARD
-  ========================= */
+  /* ===================================================
+     IMPORTANT:
+     2 PRODUCT CARDS ON MOBILE
+  =================================================== */
 
   .featured-products .product-card {
-    flex: 0 0 calc(100vw - 110px);
 
-    width: calc(100vw - 110px);
+    /*
+      Available width is approximately:
 
-    max-width: calc(100vw - 110px);
+      viewport - left/right padding
+      - both arrow buttons
+      - gaps
+
+      Then divide by 2 cards.
+    */
+
+    flex: 0 0 calc((100vw - 125px) / 2);
+
+    width: calc((100vw - 125px) / 2);
+
+    max-width: calc((100vw - 125px) / 2);
+
+    min-width: 0;
   }
 
 
   /* =========================
-     MOBILE IMAGE
+     IMAGE
   ========================= */
 
   .featured-products .product-image {
+
     width: 100%;
 
-    height: 220px;
+    height: 180px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
   }
 
 
   .featured-products .product-image img {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
@@ -603,18 +593,28 @@
 
 
   /* =========================
-     MOBILE PRODUCT INFO
+     PRODUCT INFO
   ========================= */
 
   .featured-products .product-info {
-    padding: 20px 15px 20px;
+
+    padding: 15px 10px 15px;
   }
 
 
-  .featured-products .product-info h3 {
-    font-size: 16px;
+  /* =========================
+     PRODUCT NAME
+  ========================= */
 
-    margin-bottom: 15px;
+  .featured-products .product-info h3 {
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    margin-bottom: 12px;
+
+    min-height: 38px;
 
     white-space: nowrap;
 
@@ -625,22 +625,25 @@
 
 
   /* =========================
-     MOBILE ENQUIRY
+     ENQUIRY BUTTON
   ========================= */
 
   .featured-products .enquiry-btn {
-    padding: 11px 15px;
 
-    font-size: 14px;
+    padding: 10px 8px;
+
+    font-size: 12px;
   }
 
 
   /* =========================
-     MOBILE ARROWS
+     ARROWS
   ========================= */
 
   .featured-products .carousel-button {
+
     width: 34px;
+
     height: 34px;
 
     min-width: 34px;
@@ -656,10 +659,55 @@
   ========================= */
 
   .featured-products .view-all-btn {
-    margin-top: 35px;
+
+    margin-top: 30px;
 
     padding: 12px 25px;
 
     font-size: 13px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  .featured-products {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .featured-heading h2 {
+    font-size: 25px;
+  }
+
+  .featured-heading p {
+    font-size: 13px;
+  }
+
+  .featured-products .product-image {
+    height: 160px;
+  }
+
+  .featured-products .product-info {
+    padding: 12px 8px;
+  }
+
+  .featured-products .product-info h3 {
+    font-size: 12px;
+  }
+
+  .featured-products .enquiry-btn {
+    font-size: 11px;
+    padding: 9px 5px;
+  }
+
+  .featured-products .carousel-button {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
   }
 }

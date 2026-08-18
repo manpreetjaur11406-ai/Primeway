@@ -17,76 +17,179 @@ function Footer() {
 
       <div className="footer-container">
 
-        {/* Company */}
+        {/* =========================
+            COMPANY
+        ========================= */}
+
         <div className="footer-column">
+
           <h2>Primeway Truck Parts</h2>
 
           <p>
             Your trusted partner for premium truck spare parts.
             We provide quality products with reliable service and
-            complete customer satisfaction across India.
+            complete customer satisfaction.
           </p>
+
         </div>
 
-        {/* Quick Links */}
+
+        {/* =========================
+            QUICK LINKS
+        ========================= */}
+
         <div className="footer-column">
+
           <h3>Quick Links</h3>
 
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
+
+            <li>
+              <a href="#home">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="#about">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="#products">
+                Products
+              </a>
+            </li>
+
+            <li>
+              <a href="#contact">
+                Contact
+              </a>
+            </li>
+
           </ul>
+
         </div>
 
-        {/* Contact */}
+
+        {/* =========================
+            CONTACT
+        ========================= */}
+
         <div className="footer-column">
+
           <h3>Contact Us</h3>
+
+          {/* Address */}
 
           <p>
             <FaMapMarkerAlt />
-            <span>Safidon, Haryana</span>
+
+            <span>
+              California, CA
+            </span>
           </p>
+
+
+          {/* Phone */}
 
           <p>
             <FaPhoneAlt />
-            <span>+91 98765 43210</span>
+
+            <span>
+              +1 231 251 1111
+            </span>
           </p>
+
+
+          {/* Email */}
 
           <p>
             <FaEnvelope />
-            <span>info@primeway.com</span>
+
+            <span>
+              info@primewaytruckparts.com
+            </span>
           </p>
+
         </div>
 
-        {/* Social Media */}
+
+        {/* =========================
+            SOCIAL MEDIA
+        ========================= */}
+
         <div className="footer-column">
+
           <h3>Follow Us</h3>
 
           <div className="social-icons">
-            <a href="#" aria-label="Facebook">
+
+            {/* Facebook */}
+
+            <a
+              href="YOUR_PRIMEWAY_FACEBOOK_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FaFacebookF />
             </a>
 
-            <a href="#" aria-label="Instagram">
+
+            {/* Instagram */}
+
+            <a
+              href="YOUR_PRIMEWAY_INSTAGRAM_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FaInstagram />
             </a>
 
-            <a href="#" aria-label="LinkedIn">
+
+            {/* LinkedIn */}
+
+            <a
+              href="YOUR_PRIMEWAY_LINKEDIN_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <FaLinkedinIn />
             </a>
 
-            <a href="#" aria-label="WhatsApp">
+
+            {/* WhatsApp */}
+
+            <a
+              href="YOUR_PRIMEWAY_WHATSAPP_LINK"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+            >
               <FaWhatsapp />
             </a>
+
           </div>
+
         </div>
 
       </div>
 
+
+      {/* =========================
+          FOOTER BOTTOM
+      ========================= */}
+
       <div className="footer-bottom">
-        <p>© 2026 Primeway Truck Parts. All Rights Reserved.</p>
+
+        <p>
+          © 2026 Primeway Truck Parts. All Rights Reserved.
+        </p>
+
       </div>
 
     </footer>
