@@ -161,6 +161,7 @@ function Products() {
 
       </div>
 
+
       {/* =========================================
           CATEGORY FILTER
       ========================================= */}
@@ -183,6 +184,7 @@ function Products() {
         ))}
 
       </div>
+
 
       {/* =========================================
           PRODUCT GRID
@@ -211,7 +213,8 @@ function Products() {
 
             </div>
 
-            {/* PRODUCT INFO */}
+
+            {/* PRODUCT INFORMATION */}
 
             <div className="products-page-info">
 
@@ -231,6 +234,7 @@ function Products() {
                 onClick={() => setSelectedProduct(product)}
               >
                 Enquiry
+
                 <span>→</span>
               </button>
 
@@ -241,11 +245,13 @@ function Products() {
 
       </div>
 
+
       {/* =========================================
           ENQUIRY POPUP
       ========================================= */}
 
       {selectedProduct && (
+
         <div
           className="enquiry-modal-overlay"
           onClick={() => setSelectedProduct(null)}
@@ -267,6 +273,7 @@ function Products() {
               ×
             </button>
 
+
             {/* POPUP CONTENT */}
 
             <span className="enquiry-eyebrow">
@@ -280,6 +287,7 @@ function Products() {
             <p>
               Fill in your details and our team will contact you soon.
             </p>
+
 
             {/* ENQUIRY FORM */}
 
@@ -320,6 +328,7 @@ function Products() {
                 type="submit"
               >
                 Send Enquiry
+
                 <span>→</span>
               </button>
 
@@ -328,6 +337,7 @@ function Products() {
           </div>
 
         </div>
+
       )}
 
     </section>

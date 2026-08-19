@@ -5,12 +5,17 @@
 .products-page {
   width: 100%;
   min-height: 100vh;
+
   padding: 0 50px 100px;
+
   background: #ffffff;
   color: #111111;
+
   font-family: "Poppins", Arial, sans-serif;
+
   box-sizing: border-box;
 }
+
 
 /* =========================================
    PAGE HEADER
@@ -20,6 +25,7 @@
 .products-page-header {
   width: calc(100% + 100px);
   max-width: none;
+
   margin-left: -50px;
   margin-bottom: 65px;
 
@@ -39,7 +45,10 @@
   box-sizing: border-box;
 }
 
-/* GOLD SMALL TEXT */
+
+/* =========================================
+   GOLD SMALL TEXT
+========================================= */
 
 .products-eyebrow {
   display: block;
@@ -49,12 +58,16 @@
   color: #d4af37;
 
   font-size: 12px;
+
   font-weight: 700;
 
   letter-spacing: 3px;
 }
 
-/* OUR PRODUCTS */
+
+/* =========================================
+   OUR PRODUCTS
+========================================= */
 
 .products-page-header h1 {
   margin: 0 0 10px;
@@ -62,6 +75,7 @@
   color: #d4af37;
 
   font-size: 46px;
+
   line-height: 1.15;
 
   font-weight: 700;
@@ -69,7 +83,10 @@
   letter-spacing: -0.5px;
 }
 
-/* DESCRIPTION */
+
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .products-page-header p {
   max-width: 650px;
@@ -79,10 +96,14 @@
   color: #ffffff;
 
   font-size: 14px;
+
   line-height: 1.6;
 }
 
-/* GOLD LINE */
+
+/* =========================================
+   GOLD LINE
+========================================= */
 
 .products-page-header::after {
   content: "";
@@ -90,14 +111,17 @@
   display: block;
 
   width: 45px;
+
   height: 2px;
 
   margin: 16px auto 0;
 
   background: #d4af37;
 
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+  box-shadow:
+    0 0 10px rgba(212, 175, 55, 0.35);
 }
+
 
 /* =========================================
    CATEGORY FILTER BUTTONS
@@ -111,12 +135,14 @@
   display: flex;
 
   justify-content: center;
+
   align-items: center;
 
   flex-wrap: wrap;
 
   gap: 10px;
 }
+
 
 .category-filter-btn {
   padding: 11px 20px;
@@ -147,6 +173,7 @@
     box-shadow 0.25s ease;
 }
 
+
 .category-filter-btn:hover {
   transform: translateY(-2px);
 
@@ -156,8 +183,10 @@
 
   color: #9c7011;
 
-  box-shadow: 0 7px 18px rgba(214, 166, 44, 0.18);
+  box-shadow:
+    0 7px 18px rgba(214, 166, 44, 0.18);
 }
+
 
 .category-filter-btn.active {
   border-color: #d6a62c;
@@ -175,11 +204,13 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
+
 .category-filter-btn:focus-visible {
   outline: 3px solid rgba(214, 166, 44, 0.35);
 
   outline-offset: 3px;
 }
+
 
 /* =========================================
    PRODUCT GRID
@@ -198,6 +229,7 @@
 
   gap: 28px;
 }
+
 
 /* =========================================
    PRODUCT CARD
@@ -220,6 +252,7 @@
     box-shadow 0.35s ease;
 }
 
+
 .products-page-card:hover {
   transform: translateY(-8px);
 
@@ -229,6 +262,7 @@
     0 18px 40px rgba(0, 0, 0, 0.18),
     0 0 25px rgba(214, 166, 44, 0.18);
 }
+
 
 .products-page-card::before {
   content: "";
@@ -253,6 +287,7 @@
   z-index: 2;
 }
 
+
 /* =========================================
    PRODUCT IMAGE
 ========================================= */
@@ -269,8 +304,10 @@
   background: #ffffff;
 }
 
+
 .products-page-image img {
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -282,13 +319,17 @@
     filter 0.5s ease;
 }
 
+
 .products-page-card:hover .products-page-image img {
   transform: scale(1.07);
 
   filter: brightness(0.65) saturate(1.15);
 }
 
-/* IMAGE OVERLAY */
+
+/* =========================================
+   IMAGE OVERLAY
+========================================= */
 
 .products-image-overlay {
   position: absolute;
@@ -321,11 +362,13 @@
     transform 0.3s ease;
 }
 
+
 .products-page-card:hover .products-image-overlay {
   opacity: 1;
 
   transform: translateY(0);
 }
+
 
 /* =========================================
    PRODUCT INFORMATION
@@ -338,6 +381,7 @@
 
   background: #ffffff;
 }
+
 
 .product-category {
   display: block;
@@ -353,6 +397,7 @@
   letter-spacing: 2px;
 }
 
+
 .products-page-info h2 {
   margin: 0 0 15px;
 
@@ -365,6 +410,11 @@
   line-height: 1.35;
 }
 
+
+/* =========================================
+   PRODUCT PRICE
+========================================= */
+
 .product-price {
   margin-bottom: 22px;
 
@@ -374,6 +424,7 @@
 
   font-weight: 700;
 }
+
 
 /* =========================================
    ENQUIRY BUTTON
@@ -414,11 +465,13 @@
     border-color 0.3s ease;
 }
 
+
 .products-page-btn span {
   font-size: 18px;
 
   transition: transform 0.3s ease;
 }
+
 
 .products-page-btn:hover {
   background: #d6a62c;
@@ -428,9 +481,11 @@
   color: #080808;
 }
 
+
 .products-page-btn:hover span {
   transform: translateX(5px);
 }
+
 
 /* =========================================
    ENQUIRY POPUP
@@ -456,6 +511,7 @@
   backdrop-filter: blur(5px);
 }
 
+
 .enquiry-modal {
   position: relative;
 
@@ -477,7 +533,9 @@
   animation: enquiryPopup 0.3s ease;
 }
 
+
 @keyframes enquiryPopup {
+
   from {
     opacity: 0;
 
@@ -493,17 +551,23 @@
       translateY(0)
       scale(1);
   }
+
 }
 
-/* CLOSE BUTTON */
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
 
 .enquiry-close-btn {
   position: absolute;
 
   top: 13px;
+
   right: 16px;
 
   width: 35px;
+
   height: 35px;
 
   border: none;
@@ -523,13 +587,17 @@
   transition: 0.25s ease;
 }
 
+
 .enquiry-close-btn:hover {
   background: #d6a62c;
 
   color: #111111;
 }
 
-/* POPUP EYEBROW */
+
+/* =========================================
+   POPUP EYEBROW
+========================================= */
 
 .enquiry-eyebrow {
   display: block;
@@ -545,6 +613,7 @@
   letter-spacing: 2px;
 }
 
+
 .enquiry-modal h2 {
   margin: 0 0 10px;
 
@@ -552,6 +621,7 @@
 
   font-size: 27px;
 }
+
 
 .enquiry-modal p {
   margin: 0 0 25px;
@@ -563,7 +633,10 @@
   line-height: 1.6;
 }
 
-/* POPUP FORM */
+
+/* =========================================
+   POPUP FORM
+========================================= */
 
 .enquiry-modal form {
   display: flex;
@@ -572,6 +645,7 @@
 
   gap: 13px;
 }
+
 
 .enquiry-modal input,
 .enquiry-modal textarea {
@@ -600,9 +674,11 @@
     box-shadow 0.25s ease;
 }
 
+
 .enquiry-modal textarea {
   resize: vertical;
 }
+
 
 .enquiry-modal input:focus,
 .enquiry-modal textarea:focus {
@@ -612,6 +688,7 @@
     0 0 0 3px rgba(214, 166, 44, 0.14);
 }
 
+
 .enquiry-product-input {
   color: #956b0e !important;
 
@@ -620,7 +697,10 @@
   background: #fff9e9 !important;
 }
 
-/* POPUP SUBMIT */
+
+/* =========================================
+   POPUP SUBMIT
+========================================= */
 
 .enquiry-submit-btn {
   display: flex;
@@ -658,6 +738,7 @@
     box-shadow 0.25s ease;
 }
 
+
 .enquiry-submit-btn:hover {
   transform: translateY(-2px);
 
@@ -665,15 +746,18 @@
     0 10px 20px rgba(190, 137, 24, 0.3);
 }
 
+
 .enquiry-submit-btn span {
   font-size: 18px;
 }
+
 
 /* =========================================
    TABLET
 ========================================= */
 
 @media (max-width: 992px) {
+
   .products-page {
     padding: 0 30px 80px;
   }
@@ -693,90 +777,387 @@
   .products-page-header h1 {
     font-size: 42px;
   }
+
 }
+
 
 /* =========================================
    MOBILE
+   2 PRODUCTS SIDE-BY-SIDE
 ========================================= */
 
 @media (max-width: 650px) {
+
   .products-page {
-    padding: 0 18px 70px;
+    width: 100%;
+
+    padding: 0 12px 60px;
+
+    overflow-x: hidden;
   }
+
+
+  /* =========================================
+     MOBILE HEADER
+  ========================================= */
 
   .products-page-header {
-    width: calc(100% + 36px);
+    width: calc(100% + 24px);
 
-    margin-left: -18px;
+    margin-left: -12px;
 
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 
-    padding: 34px 18px 30px;
+    padding: 30px 15px 28px;
   }
+
 
   .products-eyebrow {
-    font-size: 10px;
+    font-size: 9px;
 
-    letter-spacing: 2.2px;
+    letter-spacing: 2px;
 
-    margin-bottom: 7px;
+    margin-bottom: 6px;
   }
 
+
   .products-page-header h1 {
-    font-size: 34px;
+    font-size: 32px;
+
+    line-height: 1.2;
 
     margin-bottom: 8px;
   }
 
+
   .products-page-header p {
-    font-size: 13px;
+    max-width: 340px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
   }
+
 
   .products-page-header::after {
     width: 38px;
 
-    margin-top: 13px;
+    margin-top: 12px;
   }
 
+
+  /* =========================================
+     MOBILE CATEGORY FILTER
+  ========================================= */
+
   .products-category-filter {
+    width: calc(100% + 24px);
+
+    margin: -5px -12px 28px;
+
+    padding: 5px 12px 12px;
+
+    display: flex;
+
     justify-content: flex-start;
 
     flex-wrap: nowrap;
 
+    gap: 8px;
+
     overflow-x: auto;
 
-    margin: -15px -18px 35px;
-
-    padding: 5px 18px 12px;
+    scrollbar-width: none;
   }
+
+
+  .products-category-filter::-webkit-scrollbar {
+    display: none;
+  }
+
 
   .category-filter-btn {
     flex: 0 0 auto;
 
-    padding: 10px 17px;
+    padding: 9px 14px;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+  }
+
+
+  /* =========================================
+     MOBILE PRODUCT GRID
+     2 CARDS
+  ========================================= */
+
+  .products-page-container {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+    gap: 16px;
+
+    align-items: stretch;
+  }
+
+
+  /* =========================================
+     MOBILE PRODUCT CARD
+  ========================================= */
+
+  .products-page-card {
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+
+  .products-page-card:hover {
+    transform: none;
+
+    box-shadow:
+      0 5px 15px rgba(0, 0, 0, 0.12);
+  }
+
+
+  /* =========================================
+     MOBILE IMAGE FRAME
+  ========================================= */
+
+  .products-page-image {
+    width: 100%;
+
+    height: 190px;
+
+    min-height: 190px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+
+  .products-page-image img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    transition: none;
+  }
+
+
+  .products-page-card:hover
+  .products-page-image img {
+    transform: none;
+
+    filter: none;
+  }
+
+
+  /* =========================================
+     HIDE IMAGE OVERLAY ON MOBILE
+  ========================================= */
+
+  .products-image-overlay {
+    display: none;
+  }
+
+
+  /* =========================================
+     MOBILE PRODUCT INFORMATION
+  ========================================= */
+
+  .products-page-info {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 15px 10px 12px;
+
+    text-align: center;
+
+    background: #ffffff;
+  }
+
+
+  .product-category {
+    display: none;
+  }
+
+
+  .products-page-info h2 {
+    min-height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0 0 12px;
+
+    color: #111111;
+
+    font-size: 15px;
+
+    line-height: 1.3;
+
+    font-weight: 600;
+
+    text-align: center;
+  }
+
+
+  /* =========================================
+     MOBILE PRICE
+  ========================================= */
+
+  .product-price {
+    margin: 0 0 12px;
+
+    color: #c49218;
+
+    font-size: 15px;
+
+    font-weight: 700;
+  }
+
+
+  /* =========================================
+     MOBILE ENQUIRY BUTTON
+  ========================================= */
+
+  .products-page-btn {
+    width: 100%;
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 11px 6px;
+
+    border: 1px solid #d6a62c;
+
+    border-radius: 3px;
+
+    background: #f7b928;
+
+    color: #111111;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0;
+
+    text-align: center;
+  }
+
+
+  .products-page-btn span {
+    display: none;
+  }
+
+
+  .products-page-btn:hover {
+    background: #d6a62c;
+
+    border-color: #d6a62c;
+
+    color: #111111;
+  }
+
+
+  /* =========================================
+     MOBILE ENQUIRY POPUP
+  ========================================= */
+
+  .enquiry-modal-overlay {
+    padding: 15px;
+  }
+
+
+  .enquiry-modal {
+    width: 100%;
+
+    max-width: 430px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 30px 18px 22px;
+
+    border-radius: 10px;
+  }
+
+
+  .enquiry-modal h2 {
+    font-size: 21px;
+
+    line-height: 1.3;
+  }
+
+
+  .enquiry-modal p {
+    font-size: 12px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .enquiry-modal input,
+  .enquiry-modal textarea {
+    padding: 11px 12px;
 
     font-size: 12px;
   }
 
-  .products-page-container {
-    grid-template-columns: 1fr;
 
-    gap: 22px;
+  .enquiry-submit-btn {
+    padding: 12px 15px;
+
+    font-size: 12px;
   }
 
-  .products-page-image {
-    height: 250px;
-  }
-
-  .products-page-info {
-    padding: 22px;
-  }
-
-  .enquiry-modal {
-    padding: 32px 22px 25px;
-  }
-
-  .enquiry-modal h2 {
-    font-size: 23px;
-  }
 }
