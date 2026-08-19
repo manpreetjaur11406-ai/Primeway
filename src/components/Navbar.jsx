@@ -4,25 +4,17 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-
   const [menuOpen, setMenuOpen] = useState(false);
-
   const navigate = useNavigate();
 
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  /* =========================================
-     SMOOTH SCROLL TO HOME SECTION
-  ========================================= */
-
   const goToSection = (sectionId) => {
     closeMenu();
 
-    const currentPath = window.location.pathname;
-
-    if (currentPath === "/") {
+    if (window.location.pathname === "/") {
       const section = document.getElementById(sectionId);
 
       if (section) {
@@ -51,93 +43,51 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-
-      {/* MAIN NAVIGATION */}
-
       <div className="nav-links">
-
-        <button
-          type="button"
-          onClick={() => goToSection("home")}
-        >
+        <button type="button" onClick={() => goToSection("home")}>
           Home
         </button>
 
-        <Link
-          to="/products"
-          onClick={closeMenu}
-        >
+        <Link to="/products" onClick={closeMenu}>
           Products
         </Link>
 
-        <button
-          type="button"
-          onClick={() => goToSection("about")}
-        >
+        <Link to="/about" onClick={closeMenu}>
           About Us
-        </button>
+        </Link>
 
-        <Link
-          to="/blog"
-          onClick={closeMenu}
-        >
+        <Link to="/blog" onClick={closeMenu}>
           Blog
         </Link>
 
-        <button
-          type="button"
-          onClick={() => goToSection("contact")}
-        >
+        <Link to="/contact" onClick={closeMenu}>
           Contact Us
-        </button>
-
+        </Link>
       </div>
 
-      {/* CATEGORY DROPDOWN */}
-
       {menuOpen && (
-
         <div className="category-menu">
-
-          <Link
-            to="/products"
-            onClick={closeMenu}
-          >
+          <Link to="/products" onClick={closeMenu}>
             All Products
           </Link>
 
-          <Link
-            to="/products"
-            onClick={closeMenu}
-          >
+          <Link to="/products" onClick={closeMenu}>
             Engine Parts
           </Link>
 
-          <Link
-            to="/products"
-            onClick={closeMenu}
-          >
+          <Link to="/products" onClick={closeMenu}>
             Filters
           </Link>
 
-          <Link
-            to="/products"
-            onClick={closeMenu}
-          >
+          <Link to="/products" onClick={closeMenu}>
             Brake Parts
           </Link>
 
-          <Link
-            to="/products"
-            onClick={closeMenu}
-          >
+          <Link to="/products" onClick={closeMenu}>
             Truck Accessories
           </Link>
-
         </div>
-
       )}
-
     </nav>
   );
 }

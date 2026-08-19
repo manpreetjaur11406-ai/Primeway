@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ServiceFeatures from "./components/ServiceFeatures";
 import Welcome from "./components/Welcome/Welcome";
-
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
 import Brands from "./components/Brands/Brands";
 import Statistics from "./components/Statistics/Statistics";
@@ -13,69 +12,147 @@ import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
 import Testimonials from "./components/Testimonials/Testimonials";
 import CallToAction from "./components/CallToAction/CallToAction";
 import Contact from "./components/Contact/Contact";
-
 import Footer from "./components/Footer";
 
 import Login from "./pages/Login";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
+
+/* =====================================================
+   FULL CONTACT PAGE
+   ===================================================== */
+
+import ContactUs from "./pages/ContactUs";
 
 
 /* =====================================================
    HOME PAGE
-===================================================== */
+   ===================================================== */
 
 function Home() {
   return (
     <>
-      {/* HEADER */}
       <Header />
 
-      {/* NAVBAR */}
       <Navbar />
 
-      {/* HERO */}
+
+      {/* =========================
+          HERO
+      ========================= */}
+
       <section id="home">
         <Hero />
       </section>
 
-      {/* FEATURED PRODUCTS */}
+
+      {/* =========================
+          FEATURED PRODUCTS
+      ========================= */}
+
       <section id="products">
         <FeaturedProducts />
       </section>
 
-      {/* WELCOME */}
+
+      {/* =========================
+          WELCOME
+      ========================= */}
+
       <Welcome />
 
-      {/* SERVICE FEATURES */}
+
+      {/* =========================
+          SERVICE FEATURES
+      ========================= */}
+
       <ServiceFeatures />
 
-      {/* BRANDS */}
+
+      {/* =========================
+          BRANDS
+      ========================= */}
+
       <section id="brands">
         <Brands />
       </section>
 
-      {/* WHY CHOOSE US */}
+
+      {/* =========================
+          ABOUT / WHY CHOOSE US
+      ========================= */}
+
       <section id="about">
         <WhyChooseUs />
       </section>
 
-      {/* STATISTICS */}
+
+      {/* =========================
+          STATISTICS
+      ========================= */}
+
       <Statistics />
 
-      {/* TESTIMONIALS */}
+
+      {/* =========================
+          TESTIMONIALS
+      ========================= */}
+
       <Testimonials />
 
-      {/* CALL TO ACTION */}
+
+      {/* =========================
+          CALL TO ACTION
+      ========================= */}
+
       <CallToAction />
 
-      {/* CONTACT */}
+
+      {/* =================================================
+          HOME CONTACT SECTION
+
+          IMPORTANT:
+          This is ONLY the short contact section:
+          - Contact Us
+          - Address
+          - Phone
+          - Email
+          - Working Hours
+          - Contact Form
+
+          The detailed Contact Us page is separate.
+      ================================================= */}
+
       <section id="contact">
         <Contact />
       </section>
 
-      {/* FOOTER */}
+
+      {/* =========================
+          FOOTER
+      ========================= */}
+
+      <Footer />
+    </>
+  );
+}
+
+
+/* =====================================================
+   PRODUCTS PAGE
+   ===================================================== */
+
+function ProductsPage() {
+  return (
+    <>
+      <Header />
+
+      <Navbar />
+
+      <Products />
+
       <Footer />
     </>
   );
@@ -84,12 +161,13 @@ function Home() {
 
 /* =====================================================
    ABOUT PAGE
-===================================================== */
+   ===================================================== */
 
 function AboutPage() {
   return (
     <>
       <Header />
+
       <Navbar />
 
       <About />
@@ -102,12 +180,13 @@ function AboutPage() {
 
 /* =====================================================
    BLOG PAGE
-===================================================== */
+   ===================================================== */
 
 function BlogPage() {
   return (
     <>
       <Header />
+
       <Navbar />
 
       <Blog />
@@ -119,16 +198,17 @@ function BlogPage() {
 
 
 /* =====================================================
-   CONTACT PAGE
-===================================================== */
+   SINGLE BLOG ARTICLE PAGE
+   ===================================================== */
 
-function ContactPage() {
+function BlogArticlePage() {
   return (
     <>
       <Header />
+
       <Navbar />
 
-      <Contact />
+      <BlogArticle />
 
       <Footer />
     </>
@@ -137,50 +217,117 @@ function ContactPage() {
 
 
 /* =====================================================
-   MAIN APP / ROUTES
-===================================================== */
+   FULL CONTACT US PAGE
+   ===================================================== */
+
+function ContactPage() {
+  return (
+    <>
+      <Header />
+
+      <Navbar />
+
+      {/* 
+        IMPORTANT:
+        Do NOT use <Contact /> here.
+
+        <Contact /> is the short contact section
+        used on the Home page.
+
+        <ContactUs /> is the complete detailed
+        Contact Us page.
+      */}
+
+      <ContactUs />
+
+      <Footer />
+    </>
+  );
+}
+
+
+/* =====================================================
+   MAIN APP
+   ===================================================== */
 
 function App() {
   return (
     <Routes>
 
-      {/* HOME */}
+      {/* =========================
+          HOME
+      ========================= */}
+
       <Route
         path="/"
         element={<Home />}
       />
 
-      {/* PRODUCTS */}
+
+      {/* =========================
+          PRODUCTS
+      ========================= */}
+
       <Route
         path="/products"
-        element={<Products />}
+        element={<ProductsPage />}
       />
 
-      {/* ABOUT US */}
+
+      {/* =========================
+          ABOUT
+      ========================= */}
+
       <Route
         path="/about"
         element={<AboutPage />}
       />
 
-      {/* BLOG */}
+
+      {/* =========================
+          BLOG
+      ========================= */}
+
       <Route
         path="/blog"
         element={<BlogPage />}
       />
 
-      {/* CONTACT US */}
+
+      {/* =========================
+          BLOG ARTICLE
+      ========================= */}
+
+      <Route
+        path="/blog/:slug"
+        element={<BlogArticlePage />}
+      />
+
+
+      {/* =========================
+          FULL CONTACT US PAGE
+      ========================= */}
+
       <Route
         path="/contact"
         element={<ContactPage />}
       />
 
-      {/* LOGIN */}
+
+      {/* =========================
+          LOGIN
+      ========================= */}
+
       <Route
         path="/login"
         element={<Login />}
       />
 
-      {/* ANY UNKNOWN URL → HOME */}
+
+      {/* =========================
+          INVALID URL
+      ========================= */}
+
       <Route
         path="*"
         element={<Navigate to="/" replace />}

@@ -1,17 +1,14 @@
-import React, { useState } from "react";
-import "./Contact.css";
-
+import { useState } from "react";
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
+  FaClock,
 } from "react-icons/fa";
 
-function Contact() {
-  // =========================
-  // FORM DATA
-  // =========================
+import "./Contact.css";
 
+function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,62 +18,36 @@ function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [message, setMessage] = useState("");
 
-  // =========================
-  // HANDLE INPUT CHANGE
-  // =========================
-
-  const handleChange = (e) => {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  // =========================
-  // SUBMIT ENQUIRY
-  // =========================
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
     setLoading(true);
-    setSuccessMessage("");
-    setErrorMessage("");
+    setMessage("");
 
     try {
-      const response = await fetch(
-        "http://localhost:5000/enquiry",
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json",
-          },
-
-          body: JSON.stringify(formData),
-        }
-      );
-
-      const data = await response.json();
+      const response = await fetch("http://localhost:5000/enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (!response.ok) {
-        throw new Error(
-          data.message || "Something went wrong."
-        );
+        throw new Error("Unable to submit enquiry.");
       }
 
-      // =========================
-      // SUCCESS
-      // =========================
+      setMessage("Your enquiry has been submitted successfully!");
 
-      setSuccessMessage(
-        "Your enquiry has been submitted successfully!"
-      );
-
-      // Clear form
       setFormData({
         name: "",
         email: "",
@@ -84,240 +55,212 @@ function Contact() {
         product: "",
         message: "",
       });
-
     } catch (error) {
-      console.error("Enquiry error:", error);
-
-      // =========================
-      // ERROR
-      // =========================
-
-      setErrorMessage(
-        "Unable to submit enquiry. Please try again."
-      );
-
+      setMessage("Unable to submit enquiry. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  // =========================
-  // JSX
-  // =========================
-
   return (
-    <section className="contact-section">
+    <section className="contact-page">
 
-      <div className="contact-container">
+      <div className="contact-form-section">
 
-        {/* =========================
-            CONTACT INFORMATION
-        ========================= */}
+        <div className="contact-form-container">
 
-        <div className="contact-info">
+          {/* =================================================
+              LEFT SIDE — ONLY BASIC CONTACT INFORMATION
+          ================================================= */}
 
-          <h2>Contact Us</h2>
+          <div className="contact-info">
 
-          <p>
-            We'd love to hear from you. Contact Primeway
-            Truck Parts for enquiries, orders, or product
-            information.
-          </p>
+            <p className="contact-tag">
+              GET IN TOUCH
+            </p>
+
+            <h1>
+              Contact Us
+            </h1>
+
+            <p className="contact-intro">
+              Have a question or need a truck spare part?
+              Get in touch with our team and we'll be happy to help.
+            </p>
+
+            <div className="contact-info-list">
+
+              {/* LOCATION */}
+              <div className="contact-info-item">
+
+                <div className="contact-info-icon">
+                  <FaMapMarkerAlt />
+                </div>
+
+                <div>
+                  <h3>Our Location</h3>
+
+                  <p>
+                    California, CA
+                  </p>
+                </div>
+
+              </div>
 
 
-          {/* =========================
-              ADDRESS
-          ========================= */}
+              {/* PHONE */}
+              <div className="contact-info-item">
 
-          <div className="info-box">
+                <div className="contact-info-icon">
+                  <FaPhoneAlt />
+                </div>
 
-            <FaMapMarkerAlt className="icon" />
+                <div>
+                  <h3>Phone Number</h3>
 
-            <div>
+                  <p>
+                    +1 231 251 1111
+                  </p>
+                </div>
 
-              <h4>Address</h4>
+              </div>
 
-              <p>
-                California, CA
-              </p>
+
+              {/* EMAIL */}
+              <div className="contact-info-item">
+
+                <div className="contact-info-icon">
+                  <FaEnvelope />
+                </div>
+
+                <div>
+                  <h3>Email Address</h3>
+
+                  <p>
+                    info@primewaytruckparts.com
+                  </p>
+                </div>
+
+              </div>
+
+
+              {/* WORKING HOURS */}
+              <div className="contact-info-item">
+
+                <div className="contact-info-icon">
+                  <FaClock />
+                </div>
+
+                <div>
+                  <h3>Working Hours</h3>
+
+                  <p>
+                    Monday - Friday: 9:00 AM - 6:00 PM
+                  </p>
+                </div>
+
+              </div>
 
             </div>
 
           </div>
 
 
-          {/* =========================
-              PHONE
-          ========================= */}
+          {/* =================================================
+              RIGHT SIDE — FORM
+          ================================================= */}
 
-          <div className="info-box">
+          <div className="contact-page-form">
 
-            <FaPhoneAlt className="icon" />
+            <p className="contact-tag">
+              SEND AN ENQUIRY
+            </p>
 
-            <div>
+            <h2>
+              Send Us a Message
+            </h2>
 
-              <h4>Phone</h4>
-
-              <p>
-                +1 231 251 1111
-              </p>
-
-            </div>
-
-          </div>
+            <p className="form-description">
+              Fill in the form below and our team will get back to you.
+            </p>
 
 
-          {/* =========================
-              EMAIL
-          ========================= */}
+            <form onSubmit={handleSubmit}>
 
-          <div className="info-box">
+              <div className="contact-form-row">
 
-            <FaEnvelope className="icon" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
 
-            <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
 
-              <h4>Email</h4>
-
-              <p>
-                info@primewaytruckparts.com
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-        {/* =========================
-            ENQUIRY FORM
-        ========================= */}
-
-        <div className="contact-form">
-
-          <h2>Send an Enquiry</h2>
-
-          <form onSubmit={handleSubmit}>
-
-            {/* =========================
-                NAME
-            ========================= */}
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
+              </div>
 
 
-            {/* =========================
-                EMAIL
-            ========================= */}
+              <div className="contact-form-row">
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
 
+                <input
+                  type="text"
+                  name="product"
+                  placeholder="Product Name"
+                  value={formData.product}
+                  onChange={handleChange}
+                  required
+                />
 
-            {/* =========================
-                PHONE
-            ========================= */}
-
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
+              </div>
 
 
-            {/* =========================
-                PRODUCT
-            ========================= */}
-
-            <input
-              type="text"
-              name="product"
-              placeholder="Product Name"
-              value={formData.product}
-              onChange={handleChange}
-              required
-            />
+              <textarea
+                name="message"
+                placeholder="Write your message..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              />
 
 
-            {/* =========================
-                MESSAGE
-            ========================= */}
-
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
+              {message && (
+                <p className="contact-message">
+                  {message}
+                </p>
+              )}
 
 
-            {/* =========================
-                SUCCESS MESSAGE
-            ========================= */}
-
-            {successMessage && (
-              <p
-                style={{
-                  color: "#d4af37",
-                  marginBottom: "15px",
-                  fontWeight: "600",
-                }}
+              <button
+                type="submit"
+                disabled={loading}
               >
-                {successMessage}
-              </p>
-            )}
+                {loading
+                  ? "Sending..."
+                  : "Send Enquiry →"}
+              </button>
 
+            </form>
 
-            {/* =========================
-                ERROR MESSAGE
-            ========================= */}
-
-            {errorMessage && (
-              <p
-                style={{
-                  color: "#d4af37",
-                  marginBottom: "15px",
-                  fontWeight: "600",
-                }}
-              >
-                {errorMessage}
-              </p>
-            )}
-
-
-            {/* =========================
-                SUBMIT BUTTON
-            ========================= */}
-
-            <button
-              type="submit"
-              disabled={loading}
-            >
-              {loading
-                ? "Sending..."
-                : "Send Message"}
-            </button>
-
-          </form>
+          </div>
 
         </div>
 
